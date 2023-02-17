@@ -1,12 +1,12 @@
-import './App.css';
-import ChatInterface from './ChatInterface/ChatInterface';
-import DisplayScouts from './DisplayScouts/DisplayScouts';
+import "./App.css";
+import DisplayScouts from "./DisplayScouts/DisplayScouts";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
   return (
     <div className="App">
-        <DisplayScouts/>
-        {/* <ChatInterface/> */}
+      {/* <DisplayScouts/> */}
+      <ChatPage />
     </div>
   );
 }

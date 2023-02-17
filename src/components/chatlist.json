@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "avatar": "user.jpg",
+      "name": "John Doe",
+      "lastMessage": "Hello"
+    },
+    {
+      "id": 2,
+      "avatar": "user.jpg",
+      "name": "Jane Smith",
+      "lastMessage": "How are you?"
+    },
+    {
+      "id": 3,
+      "avatar": "user.jpg",
+      "name": "Bob Johnson",
+      "lastMessage": "Nice to meet you"
+    }
+]
