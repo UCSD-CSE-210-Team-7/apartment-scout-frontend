@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "rating": 3,
-    "image": "./user.jpg"
+    "name": "Shanay Shah",
+    "username": "sh21",
+    "email": "shs004@ucsd.edu",
+    "rating": 4.8,
+    "image": "./pic.jpg",
+    "phone": 8583065455
   },
   {
     "id": 2,
@@ -65,9 +66,26 @@
   },
   {
     "id": 10,
-    "name": "Clementina DuBuque",
-    "username": "Moriah.Stanton",
-    "email": "Rey.Padberg@karina.biz",
-    "rating": 3
+    "name": "Ajinkya Bokade",
+    "username": "abok23",
+    "email": "abok23@gmail.com",
+    "rating": 3.5,
+    "phone": 8583044345
+  },
+  {
+    "id": 11,
+    "name": "Guy Nir",
+    "username": "gnir007",
+    "email": "gnir007@ucsd.edu",
+    "rating": 2.9,
+    "phone": 8583044677
+  },
+  {
+    "id": 12,
+    "name": "Manasi Agrawal",
+    "username": "magrawal",
+    "email": "magrawal@ucsd.edu",
+    "rating": 3.5,
+    "phone": 8583044848
   }
 ]
