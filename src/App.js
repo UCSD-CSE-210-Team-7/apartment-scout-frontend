@@ -9,11 +9,11 @@ import Profile from './pages/Profile';
 function App() {
   return (
     <div className="App">
-      {/* <Profile /> */}
+      <Profile />
     {/* <WelcomePage /> */}
       
         {/* <ChatPage/>       */}
-        <DisplayScouts />
+        {/* <DisplayScouts /> */}
         {/* <PickRolePage /> */}
         {/* <SignUpPage /> */}
     </div>
