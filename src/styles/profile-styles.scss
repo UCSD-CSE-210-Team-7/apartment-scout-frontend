@@ -1,0 +1,42 @@
+.row {
+    display: flex;
+}
+
+.left-half {
+    padding-left: 10px;
+    background-color: gray;
+}
+
+.image-container {
+    position: relative;
+    // top: 30%;
+    // left: 20%;
+}
+
+.upload-photo-button {
+    // position: relative;
+    // top: 38%;
+    // left: 28%;
+}
+
+.personl-info-header-section {
+    border: 1px dotted black;
+    display: flex;
+    align-items: center;
+}
+
+.personal-info-header {
+    margin: 0;
+}
+
+.edit-button {
+    margin-left: auto;
+}
+
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+}
