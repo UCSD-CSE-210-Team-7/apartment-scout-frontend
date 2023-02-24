@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { makeStyles } from '@mui/styles';
 import {
   Grid,
   Card,
@@ -8,26 +7,11 @@ import {
   Avatar,
   Typography,
   Rating
-} from "@mui/material"
+} from "@mui/material";
 import scoutData from "./scouts.json";
 import userImage from "./user.jpg";
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   card: {
-//     maxWidth: 345,
-//   },
-//   avatar: {
-//     backgroundColor: theme.palette.primary.main,
-//     width: 120,
-//     height: 120
-//   },
-// }));
-
 function DisplayScouts() {
-  // const classes = useStyles();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -40,7 +24,7 @@ function DisplayScouts() {
       <Grid container spacing={3}>
         {users.map((user) => (
           <Grid item key={user.id} xs={12} sm={6} md={4}>
-            <Card className="card">
+            <Card className="confirmPassword">
               <CardHeader
                 avatar={
                   <Avatar
