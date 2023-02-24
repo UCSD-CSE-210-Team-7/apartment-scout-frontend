@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import chatlistData from "./chatlist.json";
-import userImage from "../img/user.jpg";
+import userImage from "../../img/user.jpg";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
