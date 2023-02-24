@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from '@mui/styles';
 import {
   Grid,
   Card,
@@ -7,48 +7,27 @@ import {
   CardHeader,
   Avatar,
   Typography,
-} from "@material-ui/core";
-import Rating from '@material-ui/lab/Rating';
+  Rating
+} from "@mui/material"
 import scoutData from "./scouts.json";
 import userImage from "./user.jpg";
 
-// export const  DisplayScouts = () => {
-//     const [scouts, setScouts] = useState([]);
-
-//     useEffect(() => {
-//         setScouts(scoutData);
-//         console.log(scoutData);
-//     }, []);
-
-//     return (
-//         <div>
-//             <h1>Scouts</h1>
-//             {scouts.map((scout) => {
-//                 return (<li key={scout.id}>
-//                     <img src={user} width="150" height="150" alt="userimage"/>
-//                     <h2>{scout.name}</h2>
-//                 </li>)
-//             })}
-//         </div>
-//     )
-// }
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  card: {
-    maxWidth: 345,
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary.main,
-    width: 120,
-    height: 120
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   card: {
+//     maxWidth: 345,
+//   },
+//   avatar: {
+//     backgroundColor: theme.palette.primary.main,
+//     width: 120,
+//     height: 120
+//   },
+// }));
 
 function DisplayScouts() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -57,15 +36,15 @@ function DisplayScouts() {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div className="root">
       <Grid container spacing={3}>
         {users.map((user) => (
           <Grid item key={user.id} xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className="card">
               <CardHeader
                 avatar={
                   <Avatar
-                    className={classes.avatar}
+                    className="avatar"
                     src={userImage}
                   >
                     {/* {user.name.substring(0, 1)} */}

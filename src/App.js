@@ -5,8 +5,8 @@ import DisplayScouts from './DisplayScouts/DisplayScouts';
 function App() {
   return (
     <div className="App">
-        <DisplayScouts/>
-        {/* <ChatInterface/> */}
+        {/* <DisplayScouts/> */}
+        <ChatInterface/>
     </div>
   );
 }

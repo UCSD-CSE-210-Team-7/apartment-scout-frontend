@@ -1,4 +1,3 @@
-import { ChatList, ChatItem, Input, Button } from "react-chat-elements";
 import { useState, useEffect } from "react";
 import messagesData from "./messages.json";
 
