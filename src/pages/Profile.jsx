@@ -34,7 +34,7 @@ const Profile = () => {
     // Hash it and then save
     setConfirmPassword(event.target.value);
   };
-  
+
   const handleImageUpload = (event) => {
     setImage(event.target.files[0]);
   };
@@ -46,7 +46,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      <Grid container spacing={2} align="center">
+      <Grid container spacing={2} align="center" justifyContent="center">
         <Grid item xs={12}>
           <Grid container direction="column">
             <Grid item>
@@ -59,13 +59,13 @@ const Profile = () => {
                 startIcon={<CloudUploadIcon />}
                 onChange={handleImageUpload}
               >
-                Upload
+                Upload Photo
               </Button>{" "}
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} marginTop={5}>
-          <h3>Personal Information</h3>
+        <Grid item marginTop={5} className="personal-details-container">
+          <h1>Personal Information</h1>
           <Button
             variant="contained"
             className="upload-photo-button"

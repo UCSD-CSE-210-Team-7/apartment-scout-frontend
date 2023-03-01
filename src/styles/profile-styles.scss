@@ -1,11 +1,23 @@
-TextField {
-    width: 500px;
+.img-thumbnail {
+  margin-top: 2rem;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
 }
 
-.img-thumbnail {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: none;
-    border-radius: 50%;
+.profile-container {
+  background: #023e8a;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.personal-details-container {
+  background: #fcf6f6;
+  width: 60rem;
+  padding-bottom: 1.5rem;
 }
