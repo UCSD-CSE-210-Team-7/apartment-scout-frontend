@@ -1,5 +1,5 @@
 .home {
-  background-color: #5d6076;
+  background-color: #023e8a;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -7,7 +7,6 @@
 }
 
 .container {
-  border: 1px solid white;
   border-radius: 10px;
   width: 80%;
   height: 85%;
@@ -17,7 +16,7 @@
 
 .sidebar {
   flex: 1;
-  background-color: #4d4b74;
+  background-color: #d9d9d9;
   position: relative;
 }
 
@@ -32,7 +31,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: white;
+  color: black;
 
   img {
     width: 48px;
@@ -45,31 +44,38 @@
   span {
     font-size: 18px;
     font-weight: 500;
+    color: black;
   }
   p {
     font-size: 14px;
-    color: lightgray;
+    color: black;
   }
 }
 
 .mainChat {
   flex: 2;
+  border: 3px solid black;
 }
 
-.chatInfo {
-  height: 30px;
-  background-color: #4d4c76;
+.contact-photo {
+  height: 50px;
+  margin-right: 2rem;
+}
+
+.chatHeader {
+  height: 5rem;
+  background-color: #d9d9d9;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 8px;
-  color: lightgray;
+  color: black;
 }
 
 .messages {
-  background-color: #ddddf7;
+  background-color: #f5f5f5;
   padding: 15px;
-  height: calc(100% - 135px);
+  height: calc(100% - 119px);
   overflow: scroll;
 
   .message {
@@ -121,7 +127,7 @@
 
   .send-button {
     button {
-      padding: 10px 15px;
+      padding: 7px 14px;
       color: white;
       border: none;
       border-radius: 10px;
@@ -130,5 +136,3 @@
     }
   }
 }
-
-
