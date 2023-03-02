@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import {
-  Container,
-  Row,
-  Col,
   Button,
-  Alert,
-  Form,
-  Spinner,
+  // Alert,
+  // Spinner,
 } from "react-bootstrap";
 // import { auth } from "../firebase";
 import { Grid, TextField } from "@mui/material";
 import "../styles/signup-styles.scss";
 
 function SignUpPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
   const handleSubmit = () => {
     // todo
   };
@@ -26,18 +21,8 @@ function SignUpPage() {
           <h1 className="signup-header">Sign Up</h1>
           <Grid item>
             <TextField
-              label="First Name"
-              placeholder="Enter your first name"
-              fullWidth
-              sx={{ background: "#D9D9D9", width: "36vw" }}
-              required
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Last Name"
-              variant="outlined"
-              placeholder="Enter your last name"
+              label="Name"
+              placeholder={user.name || "Enter your name"}
               fullWidth
               sx={{ background: "#D9D9D9", width: "36vw" }}
               required
@@ -47,9 +32,9 @@ function SignUpPage() {
             <TextField
               label="Email"
               type="email"
-              placeholder="Enter your email"
               variant="outlined"
-              value={email}
+              value={user.email||""}
+              disabled
               fullWidth
               sx={{ background: "#D9D9D9", width: "36vw" }}
               required

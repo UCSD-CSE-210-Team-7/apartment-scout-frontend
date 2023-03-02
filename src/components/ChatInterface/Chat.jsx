@@ -1,19 +1,130 @@
-import React from "react";
-import Messages from "./Messages";
-import Input from "./Input";
-import userImg from "../../img/user.jpg";
+import React, { useEffect, useState, useRef } from "react";
+import userImg from "../../img/user.png";
+import sendButtonImg from "../../img/send_icon.png";
 
-const Chat = () => {
-  return (
-    <div className="mainChat">
-      <div className="chatHeader">
-        <img src={userImg} className="contact-photo" />
-        <span>John</span>
-      </div>
-      <Messages />
-      <Input />
+const Message = ({ message, sentBySelf }) => {
+    const baseStyle = {
+        listStyleType: 'none',
+        maxWidth: '80%',
+            margin: '1em 2em',
+            borderRadius: '1em',
+            padding: '1em',
+            boxShadow: '0 4px 4px #00000040',
+        width: 'fit-content',
+        display: 'flex',
+        flexDirection: 'column',
+    } 
+
+    const otherStyle = {
+        ...baseStyle, 
+        background: 'white',
+    }
+    const selfStyle = {
+        ...baseStyle,
+        background: '#537fb7',
+        alignSelf: 'flex-end',
+    }
+
+    const date = new Date(message.msg_time)
+    const now = new Date()
+
+    let msg_time = ''
+
+    if (now.getMonth() == date.getMonth() && now.getDate() == date.getDate()){
+        msg_time = date.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric'})
+    }
+    else {
+        msg_time = date.toLocaleString('en-US', {year: undefined, month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'})
+    }
+
+    return (
+    <div style={sentBySelf ? selfStyle : otherStyle}>
+        <p style={{margin: 0}}>{message.msg_text}</p>
+        <span style={{
+            fontSize: '0.5em',
+            alignSelf: 'flex-end',
+        }}>{msg_time}</span>
     </div>
   );
+};
+
+const Input = ({sendMessage}) => {
+  const [text, setText] = useState("");
+
+    const handleSend = () => {
+        sendMessage(text)
+        setText('')
+    }
+
+  return (
+    <div style={{
+        display: 'flex',
+        padding: '0.5em',
+    }}>
+      <input
+        type="text"
+        placeholder="Type..."
+        onKeyPress={e => e.key === 'Enter' ? handleSend() : undefined}
+        onChange={e => setText(e.target.value)}
+        value={text}
+        style={{
+            flexGrow: 1,
+            border: '0.5px solid black',
+                background: '#f5f5f5',
+                borderRadius: '2em',
+                padding: '0 1em',
+        }}
+      />
+      <img src={sendButtonImg} style={{
+        height:'2em',
+        width:'2em',
+        margin: '0em 1em',
+      }} onClick={handleSend}/>
+    </div>
+  );
+};
+
+const Chat = ({ messages, sendMessage, user }) => {
+
+    const messagesEndRef = useRef(null)
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({behavior: 'smooth'})
+    }, [messages]);
+
+    return (
+      <div style={{
+          display: 'flex',
+              flexDirection: 'column',
+              background: '#f5f5f5',
+          fontSize: '1.5em',
+      }}>
+          <div style={{
+              background: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1em',
+              color: 'black',
+          }}>
+            <img src={userImg} className="contact-photo" />
+            <span>John</span>
+          </div>
+          <div style={{
+              display: 'flex',
+                  flexDirection: 'column',
+                  flexGrow: 2,
+              maxHeight: '70vh',
+              overflowY: 'scroll',
+          }}>
+            {messages.map((m) => (
+              <Message message={m} key={m.msg_id} sentBySelf={m.sender.email === user.email}/>
+            ))}
+            <div ref={messagesEndRef}/>
+          </div>
+          <Input sendMessage={sendMessage}/>
+      </div>
+    );
 };
 
 export default Chat;

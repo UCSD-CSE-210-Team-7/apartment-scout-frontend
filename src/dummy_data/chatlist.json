@@ -1,0 +1,60 @@
+{
+  "data": {
+    "conversations": [
+      {
+        "conversation_id": 1,
+        "person_a": {
+          "name": "Shubham Kulkarni"
+        },
+        "person_b": {
+          "name": "Manasi Agrawal"
+        },
+        "last_msg": {
+          "msg_id": 48,
+          "msg_text": "Hi",
+          "msg_time": "2023-03-01T16:54:53.465Z",
+          "sender": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          }
+        }
+      },
+      {
+        "conversation_id": 2,
+        "person_a": {
+          "name": "Shubham Kulkarni"
+        },
+        "person_b": {
+          "name": "Test User"
+        },
+        "last_msg": {
+          "msg_id": 48,
+          "msg_text": "Hi",
+          "msg_time": "2023-03-02T16:54:53.465Z",
+          "sender": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          }
+        }
+      },
+      {
+        "conversation_id": 3,
+        "person_a": {
+          "name": "Shubham Kulkarni"
+        },
+        "person_b": {
+          "name": "George Foreman"
+        },
+        "last_msg": {
+          "msg_id": 48,
+          "msg_text": "Hi",
+          "msg_time": "2023-02-28T16:54:53.465Z",
+          "sender": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          }
+        }
+      }
+    ]
+  }
+}

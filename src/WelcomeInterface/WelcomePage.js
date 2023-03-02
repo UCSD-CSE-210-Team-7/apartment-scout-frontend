@@ -21,32 +21,32 @@ function WelcomePage() {
   };
 
   return (
-    <div className="overlay">
-      <div className="center">
-        <Container
-          fluid
-          className="h-100 d-flex flex-column justify-content-center align-items-center"
-        >
-          <Row>
-            <img
-              src={aptScoutLogo}
-              alt="aptscout_logo"
-              className="apt-scout-logo"
-            ></img>
-          </Row>
-          <Row className="d-grid gap-2">
-            <Col className="text-center">
-              <Button
-                variant="success"
+    <div style={{
+        flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+    }}>
+        <div style={{
+            fontSize: '8em'
+        }}>
+            <span style={{ color: '#ADE8F4'}}>apt</span>
+            <span style={{ color: '#FFFFFF'}}>scout</span>
+        </div>
+              <button
                 onClick={handleLogin}
-                className="login-button"
+                  style={{
+                    background: '#ADE8F4',
+                    color: '#023E8A',
+                    fontSize: '2.5em',
+                    border: '0',
+                    borderRadius: '2.5rem',
+                          padding: '1rem',
+                  }}
               >
-                Log In
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+                sign in
+              </button>
     </div>
   );
 }

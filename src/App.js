@@ -11,13 +11,15 @@ import SignUpPage from './WelcomeInterface/SignUpPage';
 import PickRolePage from './WelcomeInterface/PickRolePage';
 import Profile from './pages/Profile';
 
+import NavBar from './components/NavBar';
 
 function App() {
     return (
-        <div className="App">
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', background: '#023e8a' }} className="App">
             <BrowserRouter>
                 <AuthProvider>
                     <ApolloProvider>
+                        <NavBar/>
                         <Routes>
                             <Route path="/" element={<WelcomePage/>} />
                             <Route path="/home" element={<DisplayScouts/>} />

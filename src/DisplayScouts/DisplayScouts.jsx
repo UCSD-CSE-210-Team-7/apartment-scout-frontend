@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Grid, Button, TextField } from "@mui/material";
 import scoutData from "./scouts.json";
-import userImage from "./user.jpg";
+import userImage from "../img/user.png";
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "./ScoutCard";
-import { useQuery, gql } from "@apollo/client";
+import { useLazyQuery, gql } from "@apollo/client";
 
 const QUERY_USER_BY_REGIONS = gql`
   query UsersByRegion($zipcode: Int) {
@@ -16,71 +16,82 @@ const QUERY_USER_BY_REGIONS = gql`
   }
 `;
 
+function InputBar({submit}){
+    const [zipcode, setZipcode] = useState('');
+    return (
+        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1em 6em 0'}}>
+          <h1 style={{fontSize: '3.5em', color: '#FFFFFF'}}>Find a Scout</h1>
+          <div style={{
+            display: 'flex',
+                  alignItems: 'center',
+          }}>
+            <input style={{
+                fontSize: '2em', 
+                    textAlign: 'center', 
+                    height: '2em', 
+                    background: '#D9D9D9', 
+                    border: '0', 
+                    borderRadius: '2em', 
+                    width: '8em',
+            }} type="text" placeholder="(zipcode)" value={zipcode} onChange={e => setZipcode(e.target.value)}/>
+            <button style={{
+                fontSize: '2em', 
+                    textAlign: 'center', 
+                    height: '2em', 
+                    background: '#ADE8F4', 
+                    border: '0', 
+                    borderRadius: '2em', 
+                    padding: '0 1em',
+                    margin: '0 0 0 1em',
+            }} onClick={() => submit(parseInt(zipcode))}>
+              Go
+            </button>
+          </div>
+        </div>
+    )
+}
+
 function DisplayScouts() {
-  const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
-  const [zipcode, setZipcode] = useState("");
+    const [zipcode, setZipcode] = useState("");
 
-  const { loading, error, refetch } = useQuery(QUERY_USER_BY_REGIONS, {
-    skip: true, // initially skip query execution
-    onCompleted: (result) => {
-      setUsers(result.usersByRegion.users);
-    },
-    variables: { zipcode: zipcode },
-  });
+    const [ getUsersByRegion, { data, loading, error, refetch } ] = useLazyQuery(QUERY_USER_BY_REGIONS);
 
-  useEffect(() => {}, []);
+    console.log(data, loading, error, refetch)
 
-  const handleZipcodeChange = (event) => {
-    setZipcode(Number(event.target.value));
-  };
+    useEffect(() => {}, []);
 
-  const HandleZipCodeSearch = () => {
-    // Fire the usersByRegion API
-    refetch({ variables: { zipcode: zipcode } }); // pass the value as a variable to the query
-  };
+    const HandleZipCodeSearch = () => {
+        // Fire the usersByRegion API
+        refetch({ variables: { zipcode: zipcode } }); // pass the value as a variable to the query
+    };
 
-  return (
-    <div className="scouts-container">
-      <div className="search-bar-header">
-        <h1 className="search-label">Find a Scout</h1>
-        <div className="search-input">
-          <TextField
-            label="Zipcode"
-            placeholder="Enter zip code"
-            className="zipcode-search-bar"
-            sx={{ width: "25%" }}
-            value={zipcode}
-            onChange={handleZipcodeChange}
-          />
-          <Button
-            variant="contained"
-            className="search-button"
-            color="primary"
-            onClick={HandleZipCodeSearch}
-          >
-            Go
-          </Button>
+    /*
+    useEffect(() => {
+        // Fetch data from an API or database
+        setUsers([...scoutData]);
+    }, []);
+     */
+
+    return (
+      <div>
+        <InputBar submit={zipcode => getUsersByRegion({ variables: { zipcode}}) }/>
+        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', 
+                padding: '1em 7em',
+        }}>
+            {
+                data && 
+                data.usersByRegion && 
+                data.usersByRegion.users &&
+                data.usersByRegion.users.map((user) => (
+                  <ScoutCard key={user.name} user={user} userImage={userImage}></ScoutCard>
+                ))
+            }
         </div>
       </div>
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>Error :(</h1>}
-      <div className="scouts-grid-wrapper">
-        <Grid
-          container
-          columnSpacing={6}
-          rowSpacing={5}
-          className="scouts-grid"
-        >
-          {users.map((user) => (
-            <Grid item key={user.id} xs={12} sm={6} md={4} lg={3}>
-              <ScoutCard user={user} userImage={userImage}></ScoutCard>
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-    </div>
-  );
+    );
+// >>>>>>> redesign pages
 }
 
 export default DisplayScouts;

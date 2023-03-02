@@ -1,0 +1,168 @@
+{
+  "data": {
+    "messages": [
+      {
+        "msg_id": 1,
+        "msg_text": "Hi. This is Shubham.",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 2,
+        "msg_text": "Hi Shubham. This is Manasi.",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Manasi Agrawal",
+          "email": "maagrawa@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 3,
+        "msg_text": "Hi Manasi. How can I help you today?",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 4,
+        "msg_text": "I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Manasi Agrawal",
+          "email": "maagrawa@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 5,
+        "msg_text": "On my way now.",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 6,
+        "msg_text": "Tour is complete. Please leave a review!",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 7,
+        "msg_text": "Thanks for your work!",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Manasi Agrawal",
+          "email": "maagrawa@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 8,
+        "msg_text": "Thanks Manasi!",
+        "msg_time": "2023-02-28T13:58:49.334Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      },
+      {
+        "msg_id": 23,
+        "msg_text": "Hi",
+        "msg_time": "2023-02-28T15:23:30.278Z",
+        "sender": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "conversation": {
+          "person_a": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
+          },
+          "person_b": {
+            "email": "maagrawa@ucsd.edu"
+          }
+        }
+      }
+    ]
+  }
+}
