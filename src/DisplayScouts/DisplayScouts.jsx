@@ -58,27 +58,11 @@ function DisplayScouts() {
 
     const [ getUsersByRegion, { data, loading, error, refetch } ] = useLazyQuery(QUERY_USER_BY_REGIONS);
 
-    console.log(data, loading, error, refetch)
-
-    useEffect(() => {}, []);
-
-    const HandleZipCodeSearch = () => {
-        // Fire the usersByRegion API
-        refetch({ variables: { zipcode: zipcode } }); // pass the value as a variable to the query
-    };
-
-    /*
-    useEffect(() => {
-        // Fetch data from an API or database
-        setUsers([...scoutData]);
-    }, []);
-     */
-
     return (
       <div>
         <InputBar submit={zipcode => getUsersByRegion({ variables: { zipcode}}) }/>
-        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', 
-                padding: '1em 7em',
+        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', 
+                padding: '1em 6em',
         }}>
             {
                 data && 

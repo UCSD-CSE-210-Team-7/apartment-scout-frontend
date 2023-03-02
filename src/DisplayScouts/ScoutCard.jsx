@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Rating } from "@mui/material";
+import { Grid, Typography, Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
 
 function ScoutCard(props) {
@@ -12,7 +12,7 @@ function ScoutCard(props) {
             alignItems: 'center', 
             padding: '1em 2em',
             width: '30em',
-            margin: '3em',
+            margin: '1em 0em',
             borderRadius: '1em',
             boxShadow: '0.5em 0.5em 2em -1em black',
     }}>
@@ -35,6 +35,7 @@ function ScoutCard(props) {
                 borderRadius: '1em',
                 // boxShadow: '0.5em 0.5em 2em -1em black',
                 margin: '1em 0',
+                background: '#023E8AB7'
         }}>
             <Rating
                 name="user-rating"
@@ -46,6 +47,7 @@ function ScoutCard(props) {
                         display: 'flex',
                         justifyContent: 'center',
                 }}
+                emptyIcon={<Icon style={{ color: '#D4D4D4', opacity: 0.55 }} fontSize="inherit">star</Icon>}
                 />
         </div>
         <div style={{
@@ -54,7 +56,9 @@ function ScoutCard(props) {
             justifyContent: 'center',
             flexGrow: 1,
         }}>
-            <h1>
+            <h1 style={{
+                fontSize: '1.8em',
+            }}>
                 {user.name}
             </h1>
         </div>

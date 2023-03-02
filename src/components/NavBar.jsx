@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Auth from '../utils/auth';
-import styles from '../styles/NavBar.css';
+import '../styles/NavBar.css';
 
 const NavigationBar = () => {
 
-    const { user, handleSignOut } = useContext(Auth);
+    const { logout } = useContext(Auth);
     const { pathname } = useLocation()
 
     const NavLink = props => {
@@ -17,7 +17,7 @@ const NavigationBar = () => {
         )
     }
 
-    if(pathname == '/'){
+    if(pathname === '/'){
         return;
     }
 
@@ -33,6 +33,7 @@ const NavigationBar = () => {
                 <NavLink href="/home">home</NavLink>
                 <NavLink href="/chat">chat</NavLink>
                 <NavLink href="/profile">account</NavLink>
+                <span style={{ cursor: 'pointer', padding: '0 1vw', color: '#FFFFFF'}} onClick={logout}>logout</span>
             </div>
         </nav >
     )

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Grid, Button, TextField } from "@mui/material";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import userImg from "../img/user.png";
 import "../styles/profile-styles.scss";
+import userImg from "../img/user.png";
 import users from "../dummy_data/users.json";
 
 function Badge({name, state='false', color='green'}){
@@ -34,15 +32,13 @@ function Field({name, value, handleChange, disabled}){
 }
 
 const Profile = () => {
-    const [editMode, setEditMode] = useState(false);
-
     const fileInput = React.createRef()
 
-    const [user, setUser] = useState(users.data.users[0])
-
-    function handleEditButtonClick() {
-        setEditMode(!editMode);
-    }
+    const [user, setUser] = useState({
+        ...users.data.users[0],
+        image: userImg,
+        
+    })
 
     const handleNameChange = e => {
         setUser({...user, name: e.target.value})

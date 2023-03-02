@@ -1,6 +1,30 @@
 import React, { useEffect, useState, useRef } from "react";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
+import { useLazyQuery, gql } from "@apollo/client";
+
+const QUERY_MESSAGES = gql`
+    query Messages($conversation_id: Int!){
+        messages(conversation_id: $conversation_id) {
+            msg_id
+            msg_text
+            msg_time
+            sender {
+                name
+                email
+            }
+            conversation {
+                person_a {
+                    email
+                    name
+                }
+                person_b {
+                    email
+                }
+            }
+        }
+    }
+`;
 
 const Message = ({ message, sentBySelf }) => {
     const baseStyle = {
@@ -30,7 +54,7 @@ const Message = ({ message, sentBySelf }) => {
 
     let msg_time = ''
 
-    if (now.getMonth() == date.getMonth() && now.getDate() == date.getDate()){
+    if (now.getMonth() === date.getMonth() && now.getDate() === date.getDate()){
         msg_time = date.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric'})
     }
     else {
@@ -75,7 +99,7 @@ const Input = ({sendMessage}) => {
                 padding: '0 1em',
         }}
       />
-      <img src={sendButtonImg} style={{
+      <img alt="send-button" src={sendButtonImg} style={{
         height:'2em',
         width:'2em',
         margin: '0em 1em',
@@ -84,7 +108,16 @@ const Input = ({sendMessage}) => {
   );
 };
 
-const Chat = ({ messages, sendMessage, user }) => {
+const Chat = ({ conversation, sendMessage, user }) => {
+
+    const [
+        getMessages,
+        { 
+            data: { messages } = { messages: [] }, 
+            loading: messagesLoading, 
+            error: messagesError, 
+        }
+    ] = useLazyQuery(QUERY_MESSAGES);
 
     const messagesEndRef = useRef(null)
 
@@ -92,37 +125,51 @@ const Chat = ({ messages, sendMessage, user }) => {
         messagesEndRef.current?.scrollIntoView({behavior: 'smooth'})
     }, [messages]);
 
+    useEffect(() => {
+        getMessages({ variables: {conversation_id: conversation?.conversation_id}})
+    }, [conversation]);
+
     return (
       <div style={{
           display: 'flex',
-              flexDirection: 'column',
-              background: '#f5f5f5',
+          flexDirection: 'column',
+          background: '#f5f5f5',
           fontSize: '1.5em',
+          flexGrow: 1,
+          height: '70vh',
+          justifyContent: 'center',
       }}>
-          <div style={{
-              background: 'white',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '1em',
-              color: 'black',
-          }}>
-            <img src={userImg} className="contact-photo" />
-            <span>John</span>
-          </div>
-          <div style={{
-              display: 'flex',
-                  flexDirection: 'column',
-                  flexGrow: 2,
-              maxHeight: '70vh',
-              overflowY: 'scroll',
-          }}>
-            {messages.map((m) => (
-              <Message message={m} key={m.msg_id} sentBySelf={m.sender.email === user.email}/>
-            ))}
-            <div ref={messagesEndRef}/>
-          </div>
-          <Input sendMessage={sendMessage}/>
+        { 
+          (conversation === null) ? 
+              <h1 style={{alignSelf: 'center'}}>Select a conversation</h1> : 
+              (
+                  <>
+                      <div style={{
+                          background: 'white',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          padding: '1em',
+                          color: 'black',
+                      }}>
+                        <img alt="profile-pic" src={userImg} className="contact-photo" />
+                        <span>{conversation.person_a.email === user.email ? conversation.person_b.name : conversation.person_a.name}</span>
+                      </div>
+                      <div style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          flexGrow: 2,
+                          overflowY: 'scroll',
+                      }}>
+                        {messages.map((m) => (
+                          <Message message={m} key={m.msg_id} sentBySelf={m.sender.email === user.email}/>
+                        ))}
+                        <div ref={messagesEndRef}/>
+                      </div>
+                      <Input sendMessage={sendMessage}/>
+                  </>
+              )
+        }
       </div>
     );
 };

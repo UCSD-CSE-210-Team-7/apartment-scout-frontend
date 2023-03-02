@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
-import { GoogleSignOn } from './firebase'
 import Cookies from 'universal-cookie'
 
 const Auth = React.createContext();
@@ -11,8 +10,6 @@ export default Auth;
 const cookies = new Cookies()
 
 export const AuthProvider = (props) => {
-
-    const sessionCookie = cookies.get('sessionCookie')
 
     const [credential, setCredential] = React.useState(null)
     const navigate = useNavigate();
@@ -29,29 +26,11 @@ export const AuthProvider = (props) => {
     }
 
     async function logout(){
+        alert('logging out')
         setCredential(null);
         cookies.remove('sessionCookie')
-        navigate('/welcome')
+        navigate('/')
     }
-
-    async function handleSignOn(){
-        try {
-            const auth = getAuth()
-            const result = await signInWithPopup(auth, GoogleSignOn)
-            const token = await auth.currentUser.getIdToken()
-            if (token) 
-                return setCredential(token)
-        } catch (error){
-            console.log(error)
-        }
-    }
-
-    async function handleSignOut() {
-        setCredential(null);
-        cookies.remove('sessionCookie')
-        navigate('/welcome')
-    }
-
 
     /*
     React.useEffect(() => {

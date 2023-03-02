@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 
 import { 
-    ApolloProvider as _ApolloProvider, 
+    ApolloProvider as ReferenceApolloProvider, 
     ApolloClient, 
     HttpLink, 
     ApolloLink, 
@@ -9,13 +9,9 @@ import {
     concat 
 } from '@apollo/client';
 
-import Cookies from 'universal-cookie'
 import Auth from '../utils/auth';
 
-const cookies = new Cookies()
-
 export const ApolloProvider = (props) => {
-
 
     const auth = useContext(Auth)
 
@@ -40,8 +36,8 @@ export const ApolloProvider = (props) => {
     });
 
     return (
-        <_ApolloProvider client={client}>
+        <ReferenceApolloProvider client={client}>
             {props.children}
-        </_ApolloProvider>
+        </ReferenceApolloProvider>
     )
 }
