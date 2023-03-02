@@ -18,12 +18,7 @@ function ScoutCard(props) {
           <img src={props.userImage} alt="userImage" className="user-avatar" />
         </Grid>
         <Grid item xs className="ratings">
-          <Rating
-            name="user-rating"
-            value={user.rating}
-            precision={0.1}
-            readOnly
-          />
+          <Rating name="user-rating" value={2.5} precision={0.1} readOnly />
         </Grid>
         <Grid item xs>
           <Typography
