@@ -12,8 +12,6 @@ const Profile = () => {
   }
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [image, setImage] = useState(null);
 
@@ -23,16 +21,6 @@ const Profile = () => {
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    // Hash it and then save
-    setPassword(event.target.value);
-  };
-
-  const handleConfirmPasswordChange = (event) => {
-    // Hash it and then save
-    setConfirmPassword(event.target.value);
   };
 
   const handleImageUpload = (event) => {
@@ -50,7 +38,7 @@ const Profile = () => {
         <Grid item xs={12}>
           <Grid container direction="column">
             <Grid item>
-              <img src={userImg} className="img-thumbnail" />
+              <img src={userImg} alt="user" className="img-thumbnail" />
             </Grid>
             <Grid item>
               <Button
@@ -68,7 +56,7 @@ const Profile = () => {
           <h1>Personal Information</h1>
           <Button
             variant="contained"
-            className="upload-photo-button"
+            className="edit-info-button"
             color="primary"
             disabled={editMode}
             onClick={handleEditButtonClick}
@@ -83,7 +71,7 @@ const Profile = () => {
               value={name}
               disabled={!editMode}
               onChange={handleNameChange}
-              sx={{ width: "25%" }}
+              sx={{ width: "35%" }}
             />
           </Grid>
           <Grid item>
@@ -94,7 +82,7 @@ const Profile = () => {
               value={email}
               disabled={!editMode}
               onChange={handleEmailChange}
-              sx={{ width: "25%" }}
+              sx={{ width: "35%" }}
             />
           </Grid>
           <Grid item>
@@ -105,34 +93,12 @@ const Profile = () => {
               value={phone}
               disabled={!editMode}
               onChange={handlePhoneChange}
-              sx={{ width: "25%" }}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Password"
-              type="password"
-              variant="outlined"
-              value={password}
-              disabled={!editMode}
-              onChange={handlePasswordChange}
-              sx={{ width: "25%" }}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              label="Re-enter Password"
-              type="password"
-              variant="outlined"
-              value={confirmPassword}
-              disabled={!editMode}
-              onChange={handleConfirmPasswordChange}
-              sx={{ width: "25%" }}
+              sx={{ width: "35%" }}
             />
           </Grid>
           <Button
             variant="contained"
-            className="upload-photo-button"
+            className="save-info-button"
             color="primary"
             disabled={!editMode}
             onClick={handleEditButtonClick}

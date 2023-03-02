@@ -87,5 +87,61 @@
     "email": "magrawal@ucsd.edu",
     "rating": 3.5,
     "phone": 8583044848
+  },
+  {
+    "id": 13,
+    "name": "Kevin Murphy",
+    "username": "kmurphy",
+    "email": "kmurphy@gmail.edu",
+    "rating": 3.5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "John Krasinski",
+    "username": "jKrasinski",
+    "email": "Krasinski@gmail.edu",
+    "rating": 3.5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "Tom Riddle",
+    "username": "tRiddle",
+    "email": "tRiddle@gmail.edu",
+    "rating": 5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "Tom Riddle",
+    "username": "tRiddle",
+    "email": "tRiddle@gmail.edu",
+    "rating": 5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "Tom Riddle",
+    "username": "tRiddle",
+    "email": "tRiddle@gmail.edu",
+    "rating": 5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "Tom Riddle",
+    "username": "tRiddle",
+    "email": "tRiddle@gmail.edu",
+    "rating": 5,
+    "phone": 8583044848
+  },
+  {
+    "id": 14,
+    "name": "Tom Riddle",
+    "username": "tRiddle",
+    "email": "tRiddle@gmail.edu",
+    "rating": 5,
+    "phone": 8583044848
   }
 ]
