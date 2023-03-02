@@ -23,3 +23,11 @@
   height: 3rem;
   font-size: 1.4rem !important;
 }
+
+.scout-button,
+.requester-button {
+  background-color: #ade8f4 !important;
+  color: black !important;
+  width: 15rem;
+  height: 3rem;
+}

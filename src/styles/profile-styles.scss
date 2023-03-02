@@ -1,10 +1,11 @@
 .img-thumbnail {
   margin-top: 2rem;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   object-fit: cover;
   border: none;
-  border-radius: 50%;
+  border-radius: 50% !important;
+  margin-bottom: 1rem;
 }
 
 .profile-container {
@@ -20,4 +21,12 @@
   background: #fcf6f6;
   width: 60rem;
   padding-bottom: 1.5rem;
+}
+
+.edit-info-button {
+  margin-bottom: 1rem !important;
+}
+
+.save-info-button {
+  margin-top: 1rem !important;
 }

@@ -1,0 +1,52 @@
+.scouts-container {
+  background: #023e8a;
+  padding-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.search-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-label {
+  color: white;
+  margin-left: 2rem;
+  padding-right: 2rem;
+}
+
+.search-input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.zipcode-search-bar {
+  width: 30vh !important;
+  background-color: #d9d9d9;
+  margin-right: 1rem !important;
+}
+
+.search-button {
+  background-color: #ade8f4 !important;
+  color: #023e8a !important;
+  border-radius: 40% !important;
+  margin-right: 1rem !important;
+}
+
+.scouts-grid-wrapper {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  height: 78vh;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.scouts-grid {
+  padding-bottom: 1rem;
+}
