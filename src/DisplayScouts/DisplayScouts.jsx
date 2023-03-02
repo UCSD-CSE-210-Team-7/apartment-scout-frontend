@@ -1,17 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Grid, Button, TextField } from "@mui/material";
 import scoutData from "./scouts.json";
 import userImage from "./user.jpg";
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "./ScoutCard";
+import { useQuery, gql } from "@apollo/client";
+
+const QUERY_USER_BY_REGIONS = gql`
+  query UsersByRegion($zipcode: Int) {
+    usersByRegion(zipcode: $zipcode) {
+      users {
+        name
+      }
+    }
+  }
+`;
 
 function DisplayScouts() {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    // Fetch data from an API or database
-    setUsers(scoutData);
-  }, []);
+  const [zipcode, setZipcode] = useState("");
+
+  const { loading, error, refetch } = useQuery(QUERY_USER_BY_REGIONS, {
+    skip: true, // initially skip query execution
+    onCompleted: (result) => {
+      setUsers(result.usersByRegion.users);
+    },
+    variables: { zipcode: zipcode },
+  });
+
+  useEffect(() => {}, []);
+
+  const handleZipcodeChange = (event) => {
+    setZipcode(Number(event.target.value));
+  };
+
+  const HandleZipCodeSearch = () => {
+    // Fire the usersByRegion API
+    refetch({ variables: { zipcode: zipcode } }); // pass the value as a variable to the query
+  };
 
   return (
     <div className="scouts-container">
@@ -23,12 +50,21 @@ function DisplayScouts() {
             placeholder="Enter zip code"
             className="zipcode-search-bar"
             sx={{ width: "25%" }}
+            value={zipcode}
+            onChange={handleZipcodeChange}
           />
-          <Button variant="contained" className="search-button" color="primary">
+          <Button
+            variant="contained"
+            className="search-button"
+            color="primary"
+            onClick={HandleZipCodeSearch}
+          >
             Go
           </Button>
         </div>
       </div>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>Error :(</h1>}
       <div className="scouts-grid-wrapper">
         <Grid
           container
