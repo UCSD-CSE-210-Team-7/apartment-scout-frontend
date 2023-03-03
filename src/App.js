@@ -12,6 +12,8 @@ import PickRolePage from './WelcomeInterface/PickRolePage';
 import Profile from './pages/Profile';
 
 import NavBar from './components/NavBar';
+import ScoutHomePage from './pages/ScoutHomePage';
+import RequesterHomePage from './pages/RequesterHomePage';
 
 function App() {
     return (
@@ -27,6 +29,8 @@ function App() {
                             <Route path="/chat" element={<ChatPage/>} />
                             <Route path="/pickrole" element={<PickRolePage/>} />
                             <Route path="/signup" element={<SignUpPage/>} />
+                            <Route path="/scouthome" element={<ScoutHomePage/>} />
+                            <Route path="/requesterhome" element={<RequesterHomePage/>} />
                         </Routes>
                     </ApolloProvider>
                 </AuthProvider>
