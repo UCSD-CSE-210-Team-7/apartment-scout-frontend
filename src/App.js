@@ -10,6 +10,7 @@ import WelcomePage from './WelcomeInterface/WelcomePage';
 import SignUpPage from './WelcomeInterface/SignUpPage';
 import PickRolePage from './WelcomeInterface/PickRolePage';
 import Profile from './pages/Profile';
+import ScoutDetails from './ScoutDetails/ScoutDetails';
 
 import NavBar from './components/NavBar';
 import ScoutHomePage from './pages/ScoutHomePage';
@@ -31,6 +32,7 @@ function App() {
                             <Route path="/signup" element={<SignUpPage/>} />
                             <Route path="/scouthome" element={<ScoutHomePage/>} />
                             <Route path="/requesterhome" element={<RequesterHomePage/>} />
+                            <Route path="/scoutdetails" element={<ScoutDetails/>}/>
                         </Routes>
                     </ApolloProvider>
                 </AuthProvider>
