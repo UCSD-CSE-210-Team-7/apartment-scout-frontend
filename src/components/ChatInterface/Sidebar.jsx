@@ -47,7 +47,7 @@ const Sidebar = ({onSelectConversation, user}) => {
               <img src={userImage} alt="" />
               <div className="userChatInfo">
                 <span>{conversation.person_b.name}</span>
-                <p>{conversation.last_msg.msg_text}</p>
+                <p>{(conversation.last_msg.sender.email === user.email ? 'You: ' : '') + conversation.last_msg.msg_text}</p>
               </div>
             </div>
             <hr className="chat-divider"/>

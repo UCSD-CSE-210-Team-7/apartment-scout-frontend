@@ -10,16 +10,6 @@ const ChatPage = () => {
         email: 'skulkarn@ucsd.edu'
     }
 
-    const sendMessage = m => {
-        const message = {
-            msg_text: m,
-            msg_time: Date.now(),
-            sender: user
-        }
-        console.log(message)
-        // setMessages([...messages, message])
-    }
-
     // console.log(conversations, conversationsLoading, conversationsError)
     // console.log(messages)
 
@@ -34,11 +24,13 @@ const ChatPage = () => {
         // return <h1>Loading...</h1>
 
     return (
-      <div className="home">
-        <div className="container">
+      <div style={{
+          display: 'flex',
+          flexGrow: 1,
+          maxHeight: '100vh',
+      }}>
           <Sidebar user={user} onSelectConversation={onSelectConversation}/>
-          <Chat conversation={selectedConversation} user={user} sendMessage={sendMessage}/>
-        </div>
+          <Chat conversation={selectedConversation} user={user}/>
       </div>
     );
 };

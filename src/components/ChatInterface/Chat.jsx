@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
-import { useLazyQuery, gql } from "@apollo/client";
+import { useMutation, useQuery, gql } from "@apollo/client";
 
 const QUERY_MESSAGES = gql`
     query Messages($conversation_id: Int!){
@@ -26,14 +26,29 @@ const QUERY_MESSAGES = gql`
     }
 `;
 
+const SEND_MESSAGE = gql`
+    mutation CreateMessage($msg_text: String!, $sender: String!, $conversation: Int!){
+        createMessage(msg_text:$msg_text, sender: $sender, conversation: $conversation) {
+            sender {
+                email
+            }
+            conversation {
+                conversation_id
+            }
+            msg_text
+            msg_time
+        }
+    }
+`;
+
 const Message = ({ message, sentBySelf }) => {
     const baseStyle = {
         listStyleType: 'none',
         maxWidth: '80%',
-            margin: '1em 2em',
-            borderRadius: '1em',
-            padding: '1em',
-            boxShadow: '0 4px 4px #00000040',
+        margin: '0.5em 2em',
+        borderRadius: '1em',
+        padding: '1em',
+        boxShadow: '0 4px 4px #00000040',
         width: 'fit-content',
         display: 'flex',
         flexDirection: 'column',
@@ -76,7 +91,8 @@ const Input = ({sendMessage}) => {
   const [text, setText] = useState("");
 
     const handleSend = () => {
-        sendMessage(text)
+        if(text.length > 0)
+            sendMessage(text)
         setText('')
     }
 
@@ -108,26 +124,66 @@ const Input = ({sendMessage}) => {
   );
 };
 
-const Chat = ({ conversation, sendMessage, user }) => {
+const Chat = ({ conversation, user }) => {
 
-    const [
-        getMessages,
-        { 
+    const {
             data: { messages } = { messages: [] }, 
             loading: messagesLoading, 
             error: messagesError, 
-        }
-    ] = useLazyQuery(QUERY_MESSAGES);
+            refetch: refetchMessages,
+        } = useQuery(QUERY_MESSAGES, { variables: {conversation_id: conversation?.conversation_id}});
+
+    const [
+        sendMessageMutation, 
+        { data, loading, error }
+    ] = useMutation(SEND_MESSAGE, {
+    });
+
+    const sendMessage = async msg_text => {
+        await sendMessageMutation({
+            variables: { 
+                msg_text,
+                sender: user.email,
+                conversation: conversation.conversation_id
+            }, 
+            optimisticResponse: {
+                createMessage: {
+                    sender: {
+                        email: user.email,
+                    },
+                    conversation: {
+                        conversation_id: conversation.conversation_id,
+                    },
+                    msg_time: new Date().toLocaleString(),
+                    msg_text,
+                }
+            }, 
+            update: (cache, {data}) => {
+                cache.modify({
+                    fields: {
+                        messages: existingMessages => [...existingMessages, data.createMessage],
+                        conversations: existingConversations => {
+                            return [
+                                {
+                                    ...conversation,
+                                    last_msg: data.createMessage,
+                                },
+                                ...(existingConversations 
+                                    .filter(i => i.conversation_id !== conversation.conversation_id)
+                                )
+                            ]
+                        }
+                    }
+                })
+            }
+        })
+    }
 
     const messagesEndRef = useRef(null)
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({behavior: 'smooth'})
     }, [messages]);
-
-    useEffect(() => {
-        getMessages({ variables: {conversation_id: conversation?.conversation_id}})
-    }, [conversation]);
 
     return (
       <div style={{
@@ -136,7 +192,6 @@ const Chat = ({ conversation, sendMessage, user }) => {
           background: '#f5f5f5',
           fontSize: '1.5em',
           flexGrow: 1,
-          height: '70vh',
           justifyContent: 'center',
       }}>
         { 
@@ -159,6 +214,7 @@ const Chat = ({ conversation, sendMessage, user }) => {
                           display: 'flex',
                           flexDirection: 'column',
                           flexGrow: 2,
+                          maxHeight: '70vh',
                           overflowY: 'scroll',
                       }}>
                         {messages.map((m) => (

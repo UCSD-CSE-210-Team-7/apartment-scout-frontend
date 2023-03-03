@@ -32,7 +32,22 @@ const NavigationBar = () => {
             <div>
                 <NavLink href="/home">home</NavLink>
                 <NavLink href="/chat">chat</NavLink>
+                <div className="dropdown">
                 <NavLink href="/profile">account</NavLink>
+                  <div className="dropdown-content">
+                    
+                    <Link to='/profile'>
+                      <button className="dropdown">Account Settings</button>
+                    </Link>
+                    {/*
+                    <Link to='/friends'>
+                      <button className="dropdown">Friends</button>
+                    </Link>
+                    */}
+                    <button className="dropdown"
+                      onClick={logout}>Sign out</button>
+                  </div>
+                </div>
                 <span style={{ cursor: 'pointer', padding: '0 1vw', color: '#FFFFFF'}} onClick={logout}>logout</span>
             </div>
         </nav >
