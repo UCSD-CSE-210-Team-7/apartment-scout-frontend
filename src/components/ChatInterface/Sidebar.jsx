@@ -34,7 +34,14 @@ const Sidebar = ({onSelectConversation, user}) => {
         data: { conversations } = { conversations: [] }, 
         loading: conversationsLoading, 
         error: conversationsError, 
-    } = useQuery(QUERY_CONVERSATIONS, { variables: {user: user.email}});
+    } = useQuery(QUERY_CONVERSATIONS, { variables: {user: user?.email}});
+
+    if(user === null){
+        return (
+            <h1>Loading...</h1>
+        )
+
+    }
 
     return (
       <div style={{
@@ -42,7 +49,7 @@ const Sidebar = ({onSelectConversation, user}) => {
               width: '20em',
       }}>
         {conversations.map(conversation => (
-          <div onClick={() => onSelectConversation(conversation)}>
+          <div style={{cursor: 'pointer'}} onClick={() => onSelectConversation(conversation)}>
             <div className="userChat" key={conversation.conversation_id}>
               <img src={userImage} alt="" />
               <div className="userChatInfo">

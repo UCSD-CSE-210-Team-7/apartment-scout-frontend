@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import { useLocation } from 'react-router-dom'; 
 
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -37,6 +38,10 @@ function ScoutDetails() {
     useEffect(() => {
         console.log(auth, auth.currentUser);
     }, []);
+
+    const { state } = useLocation();
+
+    console.log(state)
 
     return (
         

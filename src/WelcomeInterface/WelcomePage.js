@@ -16,7 +16,7 @@ function WelcomePage() {
     const auth = await getAuth();
     const result = await signInWithPopup(auth, GoogleSignOn);
 
-    await authContext.login();
+    // await authContext.login();
     navigate("/home");
   };
 
