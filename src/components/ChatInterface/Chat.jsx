@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
-import { useMutation, useQuery, gql } from "@apollo/client";
+import { useMutation, useQuery, useSubscription, gql } from "@apollo/client";
 
 const QUERY_MESSAGES = gql`
     query Messages($conversation_id: Int!){
@@ -20,6 +20,7 @@ const QUERY_MESSAGES = gql`
                 }
                 person_b {
                     email
+                    name
                 }
             }
         }
@@ -40,6 +41,30 @@ const SEND_MESSAGE = gql`
         }
     }
 `;
+const MESSAGE_SUBSCRIPTION = gql`
+    subscription Message {
+        message {
+            msg_id
+            msg_text
+            msg_time
+            sender {
+                name
+                email
+            }
+            conversation {
+                person_a {
+                    email
+                    name
+                }
+                person_b {
+                    email
+                    name
+                }
+            }
+        }
+    }
+`;
+
 
 const Message = ({ message, sentBySelf }) => {
     const baseStyle = {
@@ -126,18 +151,27 @@ const Input = ({sendMessage}) => {
 
 const Chat = ({ conversation, user }) => {
 
-    const {
-            data: { messages } = { messages: [] }, 
-            loading: messagesLoading, 
-            error: messagesError, 
-            refetch: refetchMessages,
-        } = useQuery(QUERY_MESSAGES, { variables: {conversation_id: conversation?.conversation_id}});
+    const { 
+        data: { messages } = { messages: [] }, 
+        refetch,
+        subscribeToMore
+    } = useQuery(QUERY_MESSAGES, { variables: {conversation_id: conversation?.conversation_id}});
 
-    const [
-        sendMessageMutation, 
-        { data, loading, error }
-    ] = useMutation(SEND_MESSAGE, {
-    });
+    subscribeToMore({
+        document: MESSAGE_SUBSCRIPTION,
+        updateQuery: (prev, current) => {
+            if(current?.subscriptionData?.data?.message)
+                return ({
+                    messages: [
+                        ...(prev && prev.messages || []),
+                        current.subscriptionData.data.message 
+                    ]
+                })
+            return prev
+        }
+    })
+
+    const [ sendMessageMutation ] = useMutation(SEND_MESSAGE);
 
     const sendMessage = async msg_text => {
         await sendMessageMutation({
@@ -155,10 +189,16 @@ const Chat = ({ conversation, user }) => {
                         conversation_id: conversation.conversation_id,
                     },
                     msg_time: new Date().toLocaleString(),
-                    msg_text,
+                    msg_text: 'optimistic ' + msg_text,
+                    msg_id: -1,
                 }
             }, 
             update: (cache, {data}) => {
+                console.log(data)
+                console.log(cache.readQuery({ 
+                    query: QUERY_MESSAGES ,
+                    variables: {conversation_id: conversation?.conversation_id},
+                }))
                 cache.modify({
                     fields: {
                         messages: existingMessages => [...existingMessages, data.createMessage],
@@ -175,6 +215,11 @@ const Chat = ({ conversation, user }) => {
                         }
                     }
                 })
+                console.log(cache.readQuery({ 
+                    query: QUERY_MESSAGES ,
+                    variables: {conversation_id: conversation?.conversation_id},
+                }))
+                console.log(cache)
             }
         })
     }
@@ -184,6 +229,8 @@ const Chat = ({ conversation, user }) => {
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({behavior: 'smooth'})
     }, [messages]);
+
+    console.log(messages)
 
     return (
       <div style={{
@@ -214,7 +261,6 @@ const Chat = ({ conversation, user }) => {
                           display: 'flex',
                           flexDirection: 'column',
                           flexGrow: 2,
-                          maxHeight: '70vh',
                           overflowY: 'scroll',
                       }}>
                         {messages.map((m) => (

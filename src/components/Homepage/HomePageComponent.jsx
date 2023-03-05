@@ -29,7 +29,7 @@ function HomePageComponent({ pageType, tableColumns, tableData }) {
 
     const firstName = getFirstName(pageType, tableData)
     return (
-        <div className="overlay">
+        <div style={{flexGrow: 1}}>
             <div className="inprogress-header">
                 <h1 className="inprogress-text">In Progress Tours </h1>
             </div>
