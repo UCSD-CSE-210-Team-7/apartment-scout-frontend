@@ -39,7 +39,7 @@ function ScoutCard(props) {
         }}>
             <Rating
                 name="user-rating"
-                value={user.rating}
+                value={2}
                 precision={0.1}
                 readOnly
                 style={{

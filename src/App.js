@@ -11,6 +11,7 @@ import SignUpPage from './WelcomeInterface/SignUpPage';
 import PickRolePage from './WelcomeInterface/PickRolePage';
 import Profile from './pages/Profile';
 import ScoutDetails from './ScoutDetails/ScoutDetails';
+import ScoutCalendarPage from './components/ScoutCalendar/ScoutCalendarPage';
 
 import NavBar from './components/NavBar';
 import ScoutHomePage from './pages/ScoutHomePage';
@@ -33,6 +34,7 @@ function App() {
                             <Route path="/scouthome" element={<ScoutHomePage/>} />
                             <Route path="/requesterhome" element={<RequesterHomePage/>} />
                             <Route path="/scoutdetails" element={<ScoutDetails/>}/>
+                            <Route path="/scoutcalendar" element={<ScoutCalendarPage/>}/>
                         </Routes>
                     </ApolloProvider>
                 </AuthProvider>
