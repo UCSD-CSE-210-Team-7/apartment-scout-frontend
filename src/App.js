@@ -28,13 +28,13 @@ function App() {
                             <Route path="/" element={<WelcomePage/>} />
                             <Route path="/home" element={<DisplayScouts/>} />
                             <Route path="/profile" element={<Profile/>} />
-                            <Route path="/chat" element={<ChatPage/>} />
+                            <Route path="/chat/:email" element={<ChatPage/>} />
                             <Route path="/pickrole" element={<PickRolePage/>} />
                             <Route path="/signup" element={<SignUpPage/>} />
                             <Route path="/scouthome" element={<ScoutHomePage/>} />
                             <Route path="/requesterhome" element={<RequesterHomePage/>} />
-                            <Route path="/scoutdetails" element={<ScoutDetails/>}/>
-                            <Route path="/scoutcalendar" element={<ScoutCalendarPage/>}/>
+                            <Route path="/browse/:email" element={<ScoutDetails/>}/>
+                            <Route path="/scout/:email" element={<ScoutCalendarPage/>}/>
                         </Routes>
                     </ApolloProvider>
                 </AuthProvider>

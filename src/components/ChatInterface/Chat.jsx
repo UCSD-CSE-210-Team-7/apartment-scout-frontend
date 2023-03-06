@@ -38,6 +38,7 @@ const SEND_MESSAGE = gql`
             }
             msg_text
             msg_time
+            msg_id
         }
     }
 `;
@@ -157,9 +158,10 @@ const Chat = ({ conversation, user }) => {
         subscribeToMore
     } = useQuery(QUERY_MESSAGES, { variables: {conversation_id: conversation?.conversation_id}});
 
-    subscribeToMore({
+    useEffect(() => subscribeToMore({
         document: MESSAGE_SUBSCRIPTION,
         updateQuery: (prev, current) => {
+            console.log('arrived via subscription', current)
             if(current?.subscriptionData?.data?.message)
                 return ({
                     messages: [
@@ -169,7 +171,8 @@ const Chat = ({ conversation, user }) => {
                 })
             return prev
         }
-    })
+    }), [])
+    
 
     const [ sendMessageMutation ] = useMutation(SEND_MESSAGE);
 
@@ -194,11 +197,6 @@ const Chat = ({ conversation, user }) => {
                 }
             }, 
             update: (cache, {data}) => {
-                console.log(data)
-                console.log(cache.readQuery({ 
-                    query: QUERY_MESSAGES ,
-                    variables: {conversation_id: conversation?.conversation_id},
-                }))
                 cache.modify({
                     fields: {
                         messages: existingMessages => [...existingMessages, data.createMessage],
@@ -215,10 +213,6 @@ const Chat = ({ conversation, user }) => {
                         }
                     }
                 })
-                console.log(cache.readQuery({ 
-                    query: QUERY_MESSAGES ,
-                    variables: {conversation_id: conversation?.conversation_id},
-                }))
                 console.log(cache)
             }
         })
