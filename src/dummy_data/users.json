@@ -13,11 +13,7 @@
             "tour_address": "625 8th Avenue New York NY "
           }
         ],
-        "regions": [
-          92092,
-          60605,
-          10010
-        ],
+        "regions": [92092, 60605, 10010],
         "conversations": [
           {
             "conversation_id": 1
@@ -36,10 +32,7 @@
             "tour_address": "37 W Van Buren Street Chicago IL 60605"
           }
         ],
-        "regions": [
-          92092,
-          60605
-        ],
+        "regions": [92092, 60605],
         "conversations": [
           {
             "conversation_id": 2
@@ -58,10 +51,7 @@
             "tour_address": "9500 Gilman Drive La Jolla CA 92092"
           }
         ],
-        "regions": [
-          92092,
-          99971
-        ],
+        "regions": [92092, 99971],
         "conversations": [
           {
             "conversation_id": 3

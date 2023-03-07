@@ -1,45 +1,44 @@
 nav span {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 nav a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-    background-color: #ffb511;
-    color: black;
-    border-radius: 6px;
+  background-color: #ffb511;
+  color: black;
+  border-radius: 6px;
 }
 
-a:hover{
-    text-decoration: none
+a:hover {
+  text-decoration: none;
 }
 
-.d{
-    position: relative;
+.d {
+  position: relative;
 }
 
-.dc{
-    display: none;
-    position: absolute;
-    right: 0;
-    background: rgb(2, 62, 138);
-    border: 1px solid white;
+.dc {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: rgb(2, 62, 138);
+  border: 1px solid white;
 }
 
-.dc span{
-    display: block;
-    text-align: center;
-    padding: 0 0vw;
+.dc span {
+  display: block;
+  text-align: center;
+  padding: 0 0vw;
 }
 
 .d:hover .dc {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /*
 .dropdown {

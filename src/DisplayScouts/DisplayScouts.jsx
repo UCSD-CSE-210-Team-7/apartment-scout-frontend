@@ -16,66 +16,94 @@ const QUERY_USER_BY_REGIONS = gql`
   }
 `;
 
-function InputBar({submit}){
-    const [zipcode, setZipcode] = useState('');
-    return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1em 6em 0'}}>
-          <h1 style={{fontSize: '3.5em', color: '#FFFFFF'}}>Find a Scout</h1>
-          <div style={{
-            display: 'flex',
-                  alignItems: 'center',
-          }}>
-            <input style={{
-                fontSize: '2em', 
-                    textAlign: 'center', 
-                    height: '2em', 
-                    background: '#D9D9D9', 
-                    border: '0', 
-                    borderRadius: '2em', 
-                    width: '8em',
-            }} type="text" placeholder="(zipcode)" value={zipcode} onChange={e => setZipcode(e.target.value)}/>
-            <button style={{
-                fontSize: '2em', 
-                    textAlign: 'center', 
-                    height: '2em', 
-                    background: '#ADE8F4', 
-                    border: '0', 
-                    borderRadius: '2em', 
-                    padding: '0 1em',
-                    margin: '0 0 0 1em',
-            }} onClick={() => submit(parseInt(zipcode))}>
-              Go
-            </button>
-          </div>
-        </div>
-    )
+function InputBar({ submit }) {
+  const [zipcode, setZipcode] = useState("");
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "1em 6em 0",
+      }}
+    >
+      <h1 style={{ fontSize: "3.5em", color: "#FFFFFF" }}>Find a Scout</h1>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <input
+          style={{
+            fontSize: "2em",
+            textAlign: "center",
+            height: "2em",
+            background: "#D9D9D9",
+            border: "0",
+            borderRadius: "2em",
+            width: "8em",
+          }}
+          type="text"
+          placeholder="(zipcode)"
+          value={zipcode}
+          onChange={(e) => setZipcode(e.target.value)}
+        />
+        <button
+          style={{
+            fontSize: "2em",
+            textAlign: "center",
+            height: "2em",
+            background: "#ADE8F4",
+            border: "0",
+            borderRadius: "2em",
+            padding: "0 1em",
+            margin: "0 0 0 1em",
+          }}
+          onClick={() => submit(parseInt(zipcode))}
+        >
+          Go
+        </button>
+      </div>
+    </div>
+  );
 }
 
 function DisplayScouts() {
-    const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
 
-    const [zipcode, setZipcode] = useState("");
+  const [zipcode, setZipcode] = useState("");
 
-    const [ getUsersByRegion, { data, loading, error, refetch } ] = useLazyQuery(QUERY_USER_BY_REGIONS);
+  const [getUsersByRegion, { data, loading, error, refetch }] = useLazyQuery(
+    QUERY_USER_BY_REGIONS
+  );
 
-    return (
-      <div>
-        <InputBar submit={zipcode => getUsersByRegion({ variables: { zipcode}}) }/>
-        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', 
-                padding: '1em 6em',
-        }}>
-            {
-                data && 
-                data.usersByRegion && 
-                data.usersByRegion.users &&
-                data.usersByRegion.users.map((user) => (
-                  <ScoutCard key={user.name} user={user} userImage={userImage}></ScoutCard>
-                ))
-            }
-        </div>
+  return (
+    <div>
+      <InputBar
+        submit={(zipcode) => getUsersByRegion({ variables: { zipcode } })}
+      />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          padding: "1em 6em",
+        }}
+      >
+        {data &&
+          data.usersByRegion &&
+          data.usersByRegion.users &&
+          data.usersByRegion.users.map((user) => (
+            <ScoutCard
+              key={user.name}
+              user={user}
+              userImage={userImage}
+            ></ScoutCard>
+          ))}
       </div>
-    );
-// >>>>>>> redesign pages
+    </div>
+  );
+  // >>>>>>> redesign pages
 }
 
 export default DisplayScouts;

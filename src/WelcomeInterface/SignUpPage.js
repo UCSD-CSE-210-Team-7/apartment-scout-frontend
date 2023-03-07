@@ -33,7 +33,7 @@ function SignUpPage() {
               label="Email"
               type="email"
               variant="outlined"
-              value={user.email||""}
+              value={user.email || ""}
               disabled
               fullWidth
               sx={{ background: "#D9D9D9", width: "36vw" }}

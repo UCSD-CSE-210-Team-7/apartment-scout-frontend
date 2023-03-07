@@ -1,37 +1,37 @@
 .overlay {
-    background: #023e8a;
-    // position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top: 0;
-    padding-top: 1rem;
-    overflow: auto;
+  background: #023e8a;
+  // position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding-top: 1rem;
+  overflow: auto;
 }
 
 .inprogress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .inprogress-text {
-    color: white;
-    margin-left: 2rem;
-    padding-right: 2rem;
+  color: white;
+  margin-left: 2rem;
+  padding-right: 2rem;
 }
 
 .past-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .past-text {
-    color: white;
-    margin-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
+  color: white;
+  margin-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
 }

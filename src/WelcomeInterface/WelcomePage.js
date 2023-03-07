@@ -21,32 +21,36 @@ function WelcomePage() {
   };
 
   return (
-    <div style={{
+    <div
+      style={{
         flexGrow: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-    }}>
-        <div style={{
-            fontSize: '8em'
-        }}>
-            <span style={{ color: '#ADE8F4'}}>apt</span>
-            <span style={{ color: '#FFFFFF'}}>scout</span>
-        </div>
-              <button
-                onClick={handleLogin}
-                  style={{
-                    background: '#ADE8F4',
-                    color: '#023E8A',
-                    fontSize: '2.5em',
-                    border: '0',
-                    borderRadius: '2.5rem',
-                          padding: '1rem',
-                  }}
-              >
-                sign in
-              </button>
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "8em",
+        }}
+      >
+        <span style={{ color: "#ADE8F4" }}>apt</span>
+        <span style={{ color: "#FFFFFF" }}>scout</span>
+      </div>
+      <button
+        onClick={handleLogin}
+        style={{
+          background: "#ADE8F4",
+          color: "#023E8A",
+          fontSize: "2.5em",
+          border: "0",
+          borderRadius: "2.5rem",
+          padding: "1rem",
+        }}
+      >
+        sign in
+      </button>
     </div>
   );
 }
