@@ -13,7 +13,7 @@ import { Grid, Rating } from "@mui/material";
 import Auth from "../utils/auth";
 
 import userImage from "../img/user.png";
-import ScoutCard from "../DisplayScouts/ScoutCard";
+import ScoutCard from "../components/ScoutCard";
 
 import { styled } from "@mui/material/styles";
 

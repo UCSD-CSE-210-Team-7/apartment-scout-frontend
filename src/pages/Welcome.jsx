@@ -1,23 +1,50 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import styles from "../styles/welcome.module.css";
+import { useContext, useEffect } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import "./style.css";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import { GoogleSignOn } from "../utils//firebase";
 
 import Auth from "../utils/auth";
 import aptScoutLogo from "../img/aptscout_logo.png";
+import { useClient, useLazyQuery, useMutation, gql } from '@apollo/client';
+
+const MUTATION_CREATE_USER = gql`
+  mutation CreateUser($name: String!) {
+    createUser(name: $name){
+      name
+      email
+    }
+  }
+`;
 
 function WelcomePage() {
   const authContext = useContext(Auth);
   const navigate = useNavigate();
 
+  const [ createUserMutation ] = useMutation( MUTATION_CREATE_USER);
+
   const handleLogin = async () => {
     const auth = await getAuth();
     const result = await signInWithPopup(auth, GoogleSignOn);
+    console.log(result)
 
-    // await authContext.login();
-    navigate("/home");
+    createUserMutation({
+      variables: {
+        name: result.user.displayName
+      }, 
+      context: {
+        headers: {
+          authorization: result.user.accessToken
+        }
+      }
+    }).then(r => {
+      console.log('user created', r)
+      navigate('/profile')
+    }).catch(err => {
+      console.log('user already exists', err)
+      navigate('/home')
+    })
   };
 
   return (

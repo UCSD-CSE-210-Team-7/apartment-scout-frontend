@@ -36,12 +36,14 @@ export const ApolloProvider = (props) => {
 
   const authMiddleware = new ApolloLink((operation, forward) => {
     // add the authorization to the headers
-    operation.setContext(({ headers = {} }) => ({
-      headers: {
-        ...headers,
-        authorization: auth.credential,
-      },
-    }));
+    operation.setContext(data => {
+      return {
+        headers: {
+          authorization: auth.credential,
+          ...(data.headers ? data.headers : {}),
+        }
+      }
+    });
 
     return forward(operation);
   });

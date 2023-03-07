@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 
 import Cookies from "universal-cookie";
 
@@ -13,15 +13,15 @@ export const AuthProvider = (props) => {
   const navigate = useNavigate();
 
   getAuth().onAuthStateChanged((user) => {
-    if (credential === null) setCredential(user.accessToken);
+    console.log('setting credential state with', user)
+    if (credential === null && user !== null) setCredential(user.accessToken);
   });
 
   async function login() {
-    return;
   }
 
   async function logout() {
-    alert("logging out");
+    await signOut(getAuth())
     setCredential(null);
     cookies.remove("sessionCookie");
     navigate("/");

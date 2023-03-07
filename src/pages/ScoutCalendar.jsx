@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useCalendlyEventListener, InlineWidget } from "react-calendly";
-import ScoutCard from "../../DisplayScouts/ScoutCard";
+import ScoutCard from "../components/ScoutCard";
 import { useMutation, useQuery, gql } from "@apollo/client";
 import { Grid, TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
-import userImage from "../../img/user.png";
-import "../../styles/calendar-styles.scss";
+import userImage from "../img/user.png";
+import "../styles/calendar-styles.scss";
 
 const QUERY_USER_DETAILS = gql`
   query UserDetails($email: String!) {

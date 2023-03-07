@@ -5,20 +5,17 @@ import { AuthProvider } from "./utils/auth";
 import { ApolloProvider } from "./utils/apollo";
 
 import ChatPage from "./pages/ChatPage";
-import DisplayScouts from "./DisplayScouts/DisplayScouts";
-import WelcomePage from "./WelcomeInterface/WelcomePage";
-import SignUpPage from "./WelcomeInterface/SignUpPage";
-import PickRolePage from "./WelcomeInterface/PickRolePage";
+import DisplayScouts from "./pages/DisplayScouts";
+import WelcomePage from "./pages/Welcome";
 import Profile from "./pages/Profile";
-import ScoutDetails from "./ScoutDetails/ScoutDetails";
-import ScoutCalendarPage from "./components/ScoutCalendar/ScoutCalendarPage";
+import ScoutDetails from "./pages/ScoutDetails";
+import ScoutCalendarPage from "./pages/ScoutCalendar";
 
 import NavBar from "./components/NavBar";
 import ScoutHomePage from "./pages/ScoutHomePage";
 import RequesterHomePage from "./pages/RequesterHomePage";
 
 function App() {
-  console.log(styles)
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -29,9 +26,7 @@ function App() {
               <Route path="/" element={<WelcomePage />} />
               <Route path="/home" element={<DisplayScouts />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/chat/:email" element={<ChatPage />} />
-              <Route path="/pickrole" element={<PickRolePage />} />
-              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/chat" element={<ChatPage />} />
               <Route path="/scouthome" element={<ScoutHomePage />} />
               <Route path="/requesterhome" element={<RequesterHomePage />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />

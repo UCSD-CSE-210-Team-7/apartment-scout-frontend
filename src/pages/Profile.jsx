@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/profile-styles.scss";
 import userImg from "../img/user.png";
-import users from "../dummy_data/users.json";
 import { useQuery, useMutation, gql } from "@apollo/client";
 import { getAuth } from "firebase/auth";
 
@@ -164,7 +163,7 @@ const Profile = () => {
     },
   });
 
-  const [updateUserMutation] = useMutation(UPDATE_USER_MUTATION);
+  const [updateUserMutation, {loading: updateLoading}] = useMutation(UPDATE_USER_MUTATION, { onCompleted: () => alert('user updated!')});
 
   const handleNameChange = (e) => {
     setUser({ ...user, name: e.target.value });
@@ -174,7 +173,7 @@ const Profile = () => {
     setUser({ ...user, image: e.target.files[0] });
   };
 
-  console.log(user);
+  console.log(updateLoading);
 
   return (
     <div
@@ -293,9 +292,10 @@ const Profile = () => {
             updateUserMutation({
               variables: user,
             });
-          }}
+          }} 
+          disabled={updateLoading}
         >
-          Save
+          {updateLoading ? "Saving..." : "Save"}
         </button>
       </div>
     </div>

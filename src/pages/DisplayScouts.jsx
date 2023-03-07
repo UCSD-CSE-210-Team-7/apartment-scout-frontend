@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Grid, Button, TextField } from "@mui/material";
-import scoutData from "./scouts.json";
 import userImage from "../img/user.png";
 import "../styles/display-scout-styles.scss";
-import ScoutCard from "./ScoutCard";
+import ScoutCard from "../components/ScoutCard";
 import { useLazyQuery, gql } from "@apollo/client";
 
 const QUERY_USER_BY_REGIONS = gql`
