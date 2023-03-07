@@ -39,7 +39,7 @@ function ScoutCard(props) {
         }}>
             <Rating
                 name="user-rating"
-                value={2}
+                value={user.tours.map(i => i.tour_review_stars).reduce((a, b) => a+b, 0) / user.tours.length} 
                 precision={0.1}
                 readOnly
                 style={{

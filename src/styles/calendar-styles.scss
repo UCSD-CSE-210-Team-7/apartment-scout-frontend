@@ -1,8 +1,11 @@
 .card-calendar-container {
   background-color: #a9a8a8;
+  background-color: #ffffff;
   width: 98vw !important;
   margin-left: 1rem !important;
   margin-right: 1rem !important;
+  flex-grow: 1;
+  padding: 1em;
 }
 
 .calendar-widget {

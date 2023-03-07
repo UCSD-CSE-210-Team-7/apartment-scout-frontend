@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import { useLocation } from 'react-router-dom'; 
+import { useParams } from 'react-router-dom'; 
+import { useQuery, gql } from '@apollo/client';
 
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -23,6 +24,25 @@ import Paper from '@mui/material/Paper';
 import { getAuth } from "firebase/auth";
 
 
+const QUERY_USER_DETAILS = gql`
+  query UserDetails($email: String!) {
+    userDetails(email: $email) {
+        email
+        name
+        created_on
+        last_login
+        is_scout
+        calendly_link
+        tours {
+            tour_id
+            tour_review_text
+            tour_review_stars
+        }
+        regions
+    }
+  }
+`;
+
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -33,69 +53,34 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 function ScoutDetails() {
-    const authContext = useContext(Auth);
-    const auth = getAuth();
-    useEffect(() => {
-        console.log(auth, auth.currentUser);
-    }, []);
+    const { email } = useParams();
+    const { data, loading, error } = useQuery(QUERY_USER_DETAILS, { variables: { email } })
 
-    const { state } = useLocation();
+    const user = data?.userDetails
+    console.log(user)
 
-    console.log(state)
+    if(!user)
+        return <h1>Loading...</h1>
 
     return (
-        
         <Card sx={{margin: "50px", height: "730px"}}>
 
             
-            <Grid container spacing={1} display="flex">
+            <Grid container spacing={1} display="flex" direction="row">
                 
                 <Grid item xs={4}>
-                {/* <ScoutCard key={user.name} user={user} userImage={userImage}></ScoutCard> */}
-                <Card sx={{ maxWidth: "445px", width:"28vw", marginBottom: "50px", marginLeft: "10px", margin:"50px"}}>
-                    <CardMedia
-                        sx={{ height: "350px"  }}
-                        image= {userImage}
-                        style={{
-                            width: '20vw',
-                            height: '20vw',
-                            borderRadius: 200 / 2,
-                            marginLeft: "60px"
-                          }}
-                     />
-                    <CardContent>
-                    
- 
-                    
-                    <Stack spacing={4} marginLeft="80px">
-                    <Rating name="half-rating-read" defaultValue={3.5} precision={0.5} readOnly />
-                    
-                    </Stack>
+                    <ScoutCard key={user.name} user={user} userImage={userImage}></ScoutCard>
+                </Grid>
 
-                    <Typography gutterBottom variant="h5" component="div"marginLeft="80px">
-                            Lionel Messi 
-                        </Typography>
-                    </CardContent>
-
+                {user.tours.map(i => 
+                    (
+                        <Grid item xs={6}>
+                            <Item>Review 2</Item>
+                        </Grid>
+                    )
+                )
+                }
                 
-                    
-                </Card>
-                </Grid>
-                
-                <Grid item xs={6} padding="40px" margin={"70px"}>
-                <Item>Review 1</Item>
-                <Grid container spacing={1} display="flex" padding="30px"></Grid>
-                
-                <Grid item xs={12}>
-                <Item>Review 2</Item>
-                </Grid>
-
-                <Grid container spacing={1} display="flex" padding="30px"></Grid>
-                <Grid item xs={12}>
-                <Item>Review 3</Item>
-                </Grid>
-                </Grid>
-
                
 
             </Grid>

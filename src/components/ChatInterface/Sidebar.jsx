@@ -30,7 +30,7 @@ const QUERY_CONVERSATIONS = gql`
 
 const Sidebar = ({onSelectConversation, user}) => {
 
-    const { 
+    let { 
         data: { conversations } = { conversations: [] }, 
         loading: conversationsLoading, 
         error: conversationsError, 
@@ -40,8 +40,11 @@ const Sidebar = ({onSelectConversation, user}) => {
         return (
             <h1>Loading...</h1>
         )
-
     }
+
+    let sortable = [...conversations]
+    sortable.sort((a,b) => new Date(b?.last_msg?.msg_time) - new Date(a?.last_msg?.msg_time))
+    conversations = [...sortable]
 
     return (
       <div style={{
@@ -54,7 +57,7 @@ const Sidebar = ({onSelectConversation, user}) => {
               <img src={userImage} alt="" />
               <div className="userChatInfo">
                 <span>{conversation.person_b.name}</span>
-                <p>{(conversation.last_msg.sender.email === user.email ? 'You: ' : '') + conversation.last_msg.msg_text}</p>
+                {conversation.last_msg && <p>{(conversation.last_msg.sender.email === user.email ? 'You: ' : '') + conversation.last_msg.msg_text}</p>}
               </div>
             </div>
             <hr className="chat-divider"/>
