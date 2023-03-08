@@ -38,7 +38,7 @@ function ScoutCard(props) {
             width: "90%",
             textAlign: "center",
             padding: "0.5em",
-            background: "#FFFFFF",
+            // background: "#FFFFFF",
             borderRadius: "1em",
             // boxShadow: '0.5em 0.5em 2em -1em black',
             margin: "1em 0",

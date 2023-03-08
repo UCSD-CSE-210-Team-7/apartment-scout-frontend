@@ -153,7 +153,7 @@ const Profile = () => {
     image: userImg,
   });
 
-  const { data, loading, error } = useQuery(QUERY_USER_DETAILS, {
+  const { loading: userLoading } = useQuery(QUERY_USER_DETAILS, {
     onCompleted: (data) => {
       setUser({
         ...data.me,
@@ -168,11 +168,14 @@ const Profile = () => {
     setUser({ ...user, name: e.target.value });
   };
 
+  /*
   const handleImageUpload = (e) => {
     setUser({ ...user, image: e.target.files[0] });
   };
+  */
 
-  console.log(updateLoading);
+  if(userLoading)
+    return <h1>Loading...</h1>
 
   return (
     <div
