@@ -6,8 +6,9 @@ import { data } from '../../../dummy_data/messages_.json'
 
 import Chat, { QUERY_MESSAGES, SEND_MESSAGE, MESSAGE_SUBSCRIPTION } from '../Chat';
 
-beforeAll( () => {
+beforeEach( () => {
   window.HTMLElement.prototype.scrollIntoView = function() {};
+  dateNowSpy = jest.spyOn(Date.prototype, 'toLocaleString').mockImplementation(() => 'dummy date');
 })
 
 test("render with no user", () => {
@@ -31,8 +32,6 @@ test("render with no user", () => {
 });
 
 test("render with user", async () => {
-  window.HTMLElement.prototype.scrollIntoView = function() {};
-
   const { asFragment } = render( 
     <Chat conversation={data.messages[0].conversation} user={data.messages[0].sender} />, 
     { mocks: [ 
