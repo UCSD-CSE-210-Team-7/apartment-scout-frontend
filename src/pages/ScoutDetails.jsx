@@ -1,16 +1,11 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Grid, Rating } from "@mui/material";
-
-import Auth from "../utils/auth";
+import { Grid } from "@mui/material";
 
 import userImage from "../img/user.png";
 import ScoutCard from "../components/ScoutCard";
@@ -18,7 +13,6 @@ import ScoutCard from "../components/ScoutCard";
 import { styled } from "@mui/material/styles";
 
 import Paper from "@mui/material/Paper";
-import { getAuth } from "firebase/auth";
 
 const QUERY_USER_DETAILS = gql`
   query UserDetails($email: String!) {
@@ -49,7 +43,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function ScoutDetails() {
   const { email } = useParams();
-  const { data, loading, error } = useQuery(QUERY_USER_DETAILS, {
+  const { data } = useQuery(QUERY_USER_DETAILS, {
     variables: { email },
   });
 

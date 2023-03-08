@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import Sidebar from "../components/ChatInterface/Sidebar";
 import Chat from "../components/ChatInterface/Chat";
 import "../styles/chat-styles.scss";

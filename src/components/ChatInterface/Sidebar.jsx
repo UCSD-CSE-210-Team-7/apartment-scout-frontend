@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import userImage from "../../img/user.png";
 import { useQuery, gql } from "@apollo/client";
 
