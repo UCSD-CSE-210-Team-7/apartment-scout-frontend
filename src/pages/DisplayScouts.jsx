@@ -9,6 +9,7 @@ const QUERY_USER_BY_REGIONS = gql`
     usersByRegion(zipcode: $zipcode) {
       users {
         name
+        email
         tours {
           tour_review_stars
         }
@@ -70,9 +71,7 @@ function InputBar({ submit }) {
 }
 
 function DisplayScouts() {
-  const [getUsersByRegion, { data }] = useLazyQuery(
-    QUERY_USER_BY_REGIONS
-  );
+  const [getUsersByRegion, { data }] = useLazyQuery(QUERY_USER_BY_REGIONS);
 
   return (
     <div>
