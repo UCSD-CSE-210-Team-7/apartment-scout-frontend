@@ -1,0 +1,120 @@
+{
+  "data": {
+    "users": [
+      {
+        "email": "skulkarn@ucsd.edu",
+        "name": "Shubham Kulkarni",
+        "created_on": "2023-02-15T18:00:00.000Z",
+        "last_login": "2023-02-15T18:00:00.000Z",
+        "is_scout": true,
+        "is_requester": false,
+        "tours": [
+          {
+            "tour_address": "625 8th Avenue New York NY "
+          }
+        ],
+        "regions": [92092, 60605, 10010],
+        "conversations": [
+          {
+            "conversation_id": 1
+          }
+        ]
+      },
+      {
+        "email": "abokade@ucsd.edu",
+        "name": "Ajinkya Bokade",
+        "created_on": "2023-02-15T18:01:00.000Z",
+        "last_login": "2023-02-15T18:01:00.000Z",
+        "is_scout": true,
+        "is_requester": false,
+        "tours": [
+          {
+            "tour_address": "37 W Van Buren Street Chicago IL 60605"
+          }
+        ],
+        "regions": [92092, 60605],
+        "conversations": [
+          {
+            "conversation_id": 2
+          }
+        ]
+      },
+      {
+        "email": "gnir@ucsd.edu",
+        "name": "Guy Nir",
+        "created_on": "2023-02-15T18:02:00.000Z",
+        "last_login": "2023-02-15T18:02:00.000Z",
+        "is_scout": true,
+        "is_requester": false,
+        "tours": [
+          {
+            "tour_address": "9500 Gilman Drive La Jolla CA 92092"
+          }
+        ],
+        "regions": [92092, 99971],
+        "conversations": [
+          {
+            "conversation_id": 3
+          }
+        ]
+      },
+      {
+        "email": "maagrawa@ucsd.edu",
+        "name": "Manasi Agrawal",
+        "created_on": "2023-02-15T18:03:00.000Z",
+        "last_login": "2023-02-15T18:03:00.000Z",
+        "is_scout": false,
+        "is_requester": true,
+        "tours": [
+          {
+            "tour_address": "625 8th Avenue New York NY "
+          }
+        ],
+        "regions": [],
+        "conversations": [
+          {
+            "conversation_id": 1
+          }
+        ]
+      },
+      {
+        "email": "shs004@ucsd.edu",
+        "name": "Shanay Shah",
+        "created_on": "2023-02-15T18:04:00.000Z",
+        "last_login": "2023-02-15T18:04:00.000Z",
+        "is_scout": false,
+        "is_requester": true,
+        "tours": [
+          {
+            "tour_address": "37 W Van Buren Street Chicago IL 60605"
+          }
+        ],
+        "regions": [],
+        "conversations": [
+          {
+            "conversation_id": 2
+          }
+        ]
+      },
+      {
+        "email": "yaz083@ucsd.edu",
+        "name": "Yang Zhang",
+        "created_on": "2023-02-15T18:04:00.000Z",
+        "last_login": "2023-02-15T18:04:00.000Z",
+        "is_scout": false,
+        "is_requester": true,
+        "tours": [
+          {
+            "tour_address": "9500 Gilman Drive La Jolla CA 92092"
+          }
+        ],
+        "regions": [],
+        "conversations": [
+          {
+            "conversation_id": 3
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<DocumentFragment>
+  <nav
+    style="height: 10vh; align-items: center; padding: 1vw 3vw; background: rgb(2, 62, 138); display: flex; justify-content: space-between;"
+  >
+    <a
+      href="/home"
+    >
+      <div>
+        <span
+          style="font-size: 3.5em; color: rgb(173, 232, 244);"
+        >
+          apt
+        </span>
+        <span
+          style="font-size: 3.5em; color: rgb(255, 255, 255);"
+        >
+          scout
+        </span>
+      </div>
+    </a>
+    <div
+      style="display: flex; align-items: center;"
+    >
+      <a
+        href="/home"
+      >
+        <span
+          style="cursor: pointer; padding: 0px 1vw; color: rgb(2, 62, 138); background: rgb(173, 232, 244);"
+        >
+          home
+        </span>
+      </a>
+      <a
+        href="/chat"
+      >
+        <span
+          style="cursor: pointer; padding: 0px 1vw; color: rgb(255, 255, 255);"
+        >
+          chat
+        </span>
+      </a>
+      <div
+        class="d"
+      >
+        <a
+          href="/profile"
+        >
+          <span
+            style="cursor: pointer; padding: 0px 1vw; color: rgb(255, 255, 255);"
+          >
+            account
+          </span>
+        </a>
+        <div
+          class="dc"
+        >
+          <a
+            href="/profile"
+          >
+            <span
+              style="cursor: pointer; padding: 0px 1vw; color: rgb(255, 255, 255);"
+            >
+              profile
+            </span>
+          </a>
+          <a
+            href="/tours"
+          >
+            <span
+              style="cursor: pointer; padding: 0px 1vw; color: rgb(255, 255, 255);"
+            >
+              tours
+            </span>
+          </a>
+          <span
+            style="cursor: pointer; color: rgb(255, 255, 255);"
+          >
+            logout
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

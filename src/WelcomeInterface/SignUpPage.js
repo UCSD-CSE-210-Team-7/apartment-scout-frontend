@@ -9,7 +9,7 @@ import { Grid, TextField } from "@mui/material";
 import "../styles/signup-styles.scss";
 
 function SignUpPage() {
-  const [user, setUser] = useState("");
+  const [user] = useState("");
   const handleSubmit = () => {
     // todo
   };

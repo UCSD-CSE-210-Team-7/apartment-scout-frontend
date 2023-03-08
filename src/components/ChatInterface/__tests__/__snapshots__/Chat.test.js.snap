@@ -1,0 +1,500 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render with no user 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; background: rgb(245, 245, 245); font-size: 1.5em; flex-grow: 1; justify-content: center;"
+  >
+    <h1>
+       Loading...
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`render with user 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; background: rgb(245, 245, 245); font-size: 1.5em; flex-grow: 1; justify-content: center;"
+  >
+    <div
+      style="background: white; display: flex; align-items: center; justify-content: center; padding: 1em; color: black;"
+    >
+      <img
+        alt="profile-pic"
+        class="contact-photo"
+        src="user.png"
+      />
+      <span>
+        Test User
+      </span>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; flex-grow: 2; overflow-y: scroll;"
+    >
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi. This is Shubham.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Shubham. This is Manasi.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Manasi. How can I help you today?
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          On my way now.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Tour is complete. Please leave a review!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks for your work!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks Manasi!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div />
+    </div>
+    <div
+      style="display: flex; padding: 0.5em;"
+    >
+      <input
+        placeholder="Type..."
+        style="flex-grow: 1; border: 0.5px solid black; background: rgb(245, 245, 245); border-radius: 2em; padding: 0px 1em;"
+        type="text"
+        value=""
+      />
+      <img
+        alt="send-button"
+        src="send_icon.png"
+        style="height: 2em; width: 2em; margin: 0em 1em;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`render with user and new message 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; background: rgb(245, 245, 245); font-size: 1.5em; flex-grow: 1; justify-content: center;"
+  >
+    <div
+      style="background: white; display: flex; align-items: center; justify-content: center; padding: 1em; color: black;"
+    >
+      <img
+        alt="profile-pic"
+        class="contact-photo"
+        src="user.png"
+      />
+      <span>
+        Test User
+      </span>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; flex-grow: 2; overflow-y: scroll;"
+    >
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi. This is Shubham.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Shubham. This is Manasi.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Manasi. How can I help you today?
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          On my way now.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Tour is complete. Please leave a review!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks for your work!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks Manasi!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Additional Message
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div />
+    </div>
+    <div
+      style="display: flex; padding: 0.5em;"
+    >
+      <input
+        placeholder="Type..."
+        style="flex-grow: 1; border: 0.5px solid black; background: rgb(245, 245, 245); border-radius: 2em; padding: 0px 1em;"
+        type="text"
+        value=""
+      />
+      <img
+        alt="send-button"
+        src="send_icon.png"
+        style="height: 2em; width: 2em; margin: 0em 1em;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`send new message 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; background: rgb(245, 245, 245); font-size: 1.5em; flex-grow: 1; justify-content: center;"
+  >
+    <div
+      style="background: white; display: flex; align-items: center; justify-content: center; padding: 1em; color: black;"
+    >
+      <img
+        alt="profile-pic"
+        class="contact-photo"
+        src="user.png"
+      />
+      <span>
+        Test User
+      </span>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; flex-grow: 2; overflow-y: scroll;"
+    >
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi. This is Shubham.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Shubham. This is Manasi.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Hi Manasi. How can I help you today?
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          On my way now.
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Tour is complete. Please leave a review!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: white;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks for your work!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          Thanks Manasi!
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div
+        style="list-style-type: none; max-width: 80%; margin: 0.5em 2em; border-radius: 1em; padding: 1em; box-shadow: 0 4px 4px #00000040; display: flex; flex-direction: column; background: rgb(83, 127, 183); align-self: flex-end;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          test message
+        </p>
+        <span
+          style="font-size: 0.5em; align-self: flex-end;"
+        >
+          February 28 at 5:58 AM
+        </span>
+      </div>
+      <div />
+    </div>
+    <div
+      style="display: flex; padding: 0.5em;"
+    >
+      <input
+        placeholder="Type..."
+        style="flex-grow: 1; border: 0.5px solid black; background: rgb(245, 245, 245); border-radius: 2em; padding: 0px 1em;"
+        type="text"
+        value=""
+      />
+      <img
+        alt="send-button"
+        src="send_icon.png"
+        style="height: 2em; width: 2em; margin: 0em 1em;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

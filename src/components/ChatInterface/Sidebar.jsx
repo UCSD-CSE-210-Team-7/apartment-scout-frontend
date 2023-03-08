@@ -2,9 +2,9 @@ import React from "react";
 import userImage from "../../img/user.png";
 import { useQuery, gql } from "@apollo/client";
 
-const QUERY_CONVERSATIONS = gql`
-  query Conversations($user: String!) {
-    conversations(user: $user) {
+export const QUERY_CONVERSATIONS = gql`
+  query Conversations{
+    conversations{
       conversation_id
       person_a {
         name
@@ -31,10 +31,9 @@ const Sidebar = ({ onSelectConversation, user }) => {
   let {
     data: { conversations } = { conversations: [] },
     loading: conversationsLoading,
-    error: conversationsError,
-  } = useQuery(QUERY_CONVERSATIONS, { variables: { user: user?.email } });
+  } = useQuery(QUERY_CONVERSATIONS);
 
-  if (user === null) {
+  if (user === null || conversationsLoading) {
     return <h1>Loading...</h1>;
   }
 
@@ -53,6 +52,7 @@ const Sidebar = ({ onSelectConversation, user }) => {
     >
       {conversations.map((conversation) => (
         <div
+          key={conversation.conversation_id}
           style={{ cursor: "pointer" }}
           onClick={() => onSelectConversation(conversation)}
         >

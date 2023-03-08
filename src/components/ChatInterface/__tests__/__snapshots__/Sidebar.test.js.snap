@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render with no user 1`] = `
+<DocumentFragment>
+  <h1>
+    Loading...
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`render with user 1`] = `
+<DocumentFragment>
+  <div
+    style="background: rgb(217, 217, 217); width: 20em;"
+  >
+    <div
+      style="cursor: pointer;"
+    >
+      <div
+        class="userChat"
+      >
+        <img
+          alt=""
+          src="user.png"
+        />
+        <div
+          class="userChatInfo"
+        >
+          <span>
+            Test User
+          </span>
+          <p>
+            Thanks best friend!
+          </p>
+        </div>
+      </div>
+      <hr
+        class="chat-divider"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

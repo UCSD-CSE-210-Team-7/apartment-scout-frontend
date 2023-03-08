@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { signOut, getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 export default app;
 
 export const auth = getAuth();
+export { signOut };
 // export const storage = firebase.storage()
 export const GoogleSignOn = new GoogleAuthProvider();
 GoogleSignOn.setCustomParameters({

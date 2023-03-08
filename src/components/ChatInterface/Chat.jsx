@@ -3,7 +3,7 @@ import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
 import { useMutation, useQuery, gql } from "@apollo/client";
 
-const QUERY_MESSAGES = gql`
+export const QUERY_MESSAGES = gql`
   query Messages($conversation_id: Int!) {
     messages(conversation_id: $conversation_id) {
       msg_id
@@ -27,15 +27,13 @@ const QUERY_MESSAGES = gql`
   }
 `;
 
-const SEND_MESSAGE = gql`
+export const SEND_MESSAGE = gql`
   mutation CreateMessage(
     $msg_text: String!
-    $sender: String!
     $conversation: Int!
   ) {
     createMessage(
       msg_text: $msg_text
-      sender: $sender
       conversation: $conversation
     ) {
       sender {
@@ -50,7 +48,8 @@ const SEND_MESSAGE = gql`
     }
   }
 `;
-const MESSAGE_SUBSCRIPTION = gql`
+
+export const MESSAGE_SUBSCRIPTION = gql`
   subscription Message {
     message {
       msg_id
@@ -178,7 +177,7 @@ const Input = ({ sendMessage }) => {
 const Chat = ({ conversation, user }) => {
   const {
     data: { messages } = { messages: [] },
-    refetch,
+    loading: messagesLoading,
     subscribeToMore,
   } = useQuery(QUERY_MESSAGES, {
     variables: { conversation_id: conversation?.conversation_id },
@@ -189,18 +188,21 @@ const Chat = ({ conversation, user }) => {
       subscribeToMore({
         document: MESSAGE_SUBSCRIPTION,
         updateQuery: (prev, current) => {
-          console.log("arrived via subscription", current);
-          if (current?.subscriptionData?.data?.message)
+          if (
+            current?.subscriptionData?.data?.message && 
+            Object.keys(current?.subscriptionData?.data?.message).length
+          ) {
             return {
               messages: [
                 ...((prev && prev.messages) || []),
                 current.subscriptionData.data.message,
               ],
             };
-          return prev;
+          }
+          return undefined;
         },
       }),
-    []
+    [subscribeToMore]
   );
 
   const [sendMessageMutation] = useMutation(SEND_MESSAGE);
@@ -209,7 +211,6 @@ const Chat = ({ conversation, user }) => {
     await sendMessageMutation({
       variables: {
         msg_text,
-        sender: user.email,
         conversation: conversation.conversation_id,
       },
       optimisticResponse: {
@@ -245,7 +246,6 @@ const Chat = ({ conversation, user }) => {
             },
           },
         });
-        console.log(cache);
       },
     });
   };
@@ -255,8 +255,6 @@ const Chat = ({ conversation, user }) => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
-  console.log(messages);
 
   return (
     <div
@@ -271,7 +269,10 @@ const Chat = ({ conversation, user }) => {
     >
       {conversation === null ? (
         <h1 style={{ alignSelf: "center" }}>Select a conversation</h1>
-      ) : (
+      ) : 
+        messagesLoading ? 
+        <h1> Loading...</h1> : 
+        (
         <>
           <div
             style={{

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth, signOut } from "firebase/auth";
+import { auth, signOut } from "./firebase";
 
 import Cookies from "universal-cookie";
 
@@ -10,18 +10,21 @@ export default Auth;
 
 export const AuthProvider = (props) => {
   const [credential, setCredential] = React.useState(null);
+  const [user, setUser] = React.useState(null);
   const navigate = useNavigate();
 
-  getAuth().onAuthStateChanged((user) => {
-    console.log('setting credential state with', user)
-    if (credential === null && user !== null) setCredential(user.accessToken);
+  auth.onAuthStateChanged(u => {
+    if (credential === null && u !== null) {
+      setCredential(u.accessToken);
+      setUser(u)
+    }
   });
 
   async function login() {
   }
 
   async function logout() {
-    await signOut(getAuth())
+    await signOut(auth)
     setCredential(null);
     cookies.remove("sessionCookie");
     navigate("/");
@@ -29,7 +32,9 @@ export const AuthProvider = (props) => {
 
   const exportObj = {
     credential,
-    setCredential,
+    // setCredential,
+    user,
+    // setUser,
     login,
     logout,
     URL,

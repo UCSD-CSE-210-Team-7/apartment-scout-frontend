@@ -16,10 +16,10 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 function HomePageComponent({ pageType, tableColumns, tableData }) {
   function getFirstName(pageType, tableData) {
-    if (pageType == "scout") {
+    if (pageType === "scout") {
       const nameSplit = tableData[0].split(" ");
       return nameSplit[0];
-    } else if (pageType == "requester") {
+    } else if (pageType === "requester") {
       const nameSplit = tableData[2].split(" ");
       return nameSplit[0];
     }
