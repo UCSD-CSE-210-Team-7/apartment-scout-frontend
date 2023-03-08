@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
 
-function ScoutCard(props) {
-  const user = props.user;
+function ScoutCard({user, userImage}) {
+  if(!user)
+    return <h1>Loading...</h1>
+
   return (
     <Link to={`/browse/${user.email}`}>
       <div
@@ -31,7 +33,7 @@ function ScoutCard(props) {
             margin: "1em 0",
           }}
         >
-          <img src={props.userImage} alt="userImage" className="user-avatar" />
+          <img src={userImage} alt="userImage" className="user-avatar" />
         </div>
         <div
           style={{

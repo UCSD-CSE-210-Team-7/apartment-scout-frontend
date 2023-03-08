@@ -3,7 +3,6 @@ import { render } from '../../test_setup'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
-import Auth from '../../utils/auth';
 import NavBar from '../NavBar';
 
 test("render", () => {

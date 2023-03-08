@@ -1,0 +1,811 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render no data 1`] = `
+<DocumentFragment>
+  <h1>
+    Loading...
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`render with dummy data 1`] = `
+<DocumentFragment>
+  <a
+    href="/browse/skulkarn@ucsd.edu"
+  >
+    <div
+      style="background: rgb(217, 217, 217); display: flex; flex-direction: column; align-items: center; padding: 1em 2em; width: 30em; margin: 1em 0em; border-radius: 1em; box-shadow: 0.5em 0.5em 2em -1em black;"
+    >
+      <div
+        style="width: 90%; text-align: center; padding: 1em; background: rgb(255, 255, 255); border-radius: 1em; box-shadow: 0.5em 0.5em 2em -1em black; margin: 1em 0px;"
+      >
+        <img
+          alt="userImage"
+          class="user-avatar"
+          src="user.png"
+        />
+      </div>
+      <div
+        style="width: 90%; text-align: center; padding: 0.5em; border-radius: 1em; margin: 1em 0px; background: rgba(2, 62, 138, 0.718);"
+      >
+        <span
+          aria-label="NaN Stars"
+          class="MuiRating-root MuiRating-sizeMedium Mui-readOnly MuiRating-readOnly css-ryrseu-MuiRating-root"
+          role="img"
+          style="font-size: 3em; display: flex; justify-content: center;"
+        >
+          <span
+            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+          >
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+          </span>
+          <span
+            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+          >
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+          </span>
+          <span
+            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+          >
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+          </span>
+          <span
+            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+          >
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+          </span>
+          <span
+            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+          >
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span
+              style="width: 0%; overflow: hidden; position: absolute;"
+            >
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6mvfze-MuiIcon-root"
+                  style="color: rgb(212, 212, 212); opacity: 0.55;"
+                >
+                  star
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        style="display: flex; flex-direction: column; justify-content: center; flex-grow: 1;"
+      >
+        <h1
+          style="font-size: 1.8em;"
+        >
+          Shubham Kulkarni
+        </h1>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;
