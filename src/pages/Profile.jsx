@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/profile-styles.scss";
 import userImg from "../img/user.png";
 import { useQuery, useMutation, gql } from "@apollo/client";
-import { getAuth } from "firebase/auth";
 
 const QUERY_USER_DETAILS = gql`
   query Me {

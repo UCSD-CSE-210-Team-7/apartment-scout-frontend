@@ -5,7 +5,6 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import "../../styles/home-styles.scss";
-import { isNonEmptyArray } from "@apollo/client/utilities";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,

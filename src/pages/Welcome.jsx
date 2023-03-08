@@ -1,13 +1,8 @@
-import styles from "../styles/welcome.module.css";
-import { useContext, useEffect } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import { GoogleSignOn } from "../utils//firebase";
 
-import Auth from "../utils/auth";
-import aptScoutLogo from "../img/aptscout_logo.png";
-import { useClient, useLazyQuery, useMutation, gql } from '@apollo/client';
+import { useMutation, gql } from '@apollo/client';
 
 const MUTATION_CREATE_USER = gql`
   mutation CreateUser($name: String!) {
@@ -19,10 +14,9 @@ const MUTATION_CREATE_USER = gql`
 `;
 
 function WelcomePage() {
-  const authContext = useContext(Auth);
   const navigate = useNavigate();
 
-  const [ createUserMutation ] = useMutation( MUTATION_CREATE_USER);
+  const [ createUserMutation ] = useMutation(MUTATION_CREATE_USER);
 
   const handleLogin = async () => {
     const auth = await getAuth();

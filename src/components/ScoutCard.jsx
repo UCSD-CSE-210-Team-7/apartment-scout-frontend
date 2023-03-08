@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Rating, Icon } from "@mui/material";
+import { Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
 
 function ScoutCard(props) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
-import { useMutation, useQuery, useSubscription, gql } from "@apollo/client";
+import { useMutation, useQuery, gql } from "@apollo/client";
 
 const QUERY_MESSAGES = gql`
   query Messages($conversation_id: Int!) {

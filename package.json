@@ -15,7 +15,6 @@
     "firebase": "^9.17.1",
     "graphql": "^16.6.0",
     "graphql-ws": "^5.11.3",
-    "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-calendly": "4.0.0",
@@ -50,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
   }
 }

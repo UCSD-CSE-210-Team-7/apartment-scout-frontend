@@ -40,7 +40,7 @@ const CREATE_TOUR = gql`
 const ScoutCalendarPage = () => {
   const { email } = useParams();
   const [tourAddress, setTourAddress] = useState("");
-  const { data, loading, error, refetch } = useQuery(QUERY_USER_DETAILS, {
+  const { data } = useQuery(QUERY_USER_DETAILS, {
     variables: { email },
   });
   const scout = data?.userDetails;

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Grid, Button, TextField } from "@mui/material";
+import React, { useState } from "react";
 import userImage from "../img/user.png";
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "../components/ScoutCard";
@@ -10,6 +9,9 @@ const QUERY_USER_BY_REGIONS = gql`
     usersByRegion(zipcode: $zipcode) {
       users {
         name
+        tours {
+          tour_review_stars
+        }
       }
     }
   }
@@ -68,11 +70,7 @@ function InputBar({ submit }) {
 }
 
 function DisplayScouts() {
-  const [users, setUsers] = useState([]);
-
-  const [zipcode, setZipcode] = useState("");
-
-  const [getUsersByRegion, { data, loading, error, refetch }] = useLazyQuery(
+  const [getUsersByRegion, { data }] = useLazyQuery(
     QUERY_USER_BY_REGIONS
   );
 
