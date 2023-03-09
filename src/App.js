@@ -15,6 +15,9 @@ import NavBar from "./components/NavBar";
 import ScoutHomePage from "./pages/ScoutHomePage";
 import RequesterHomePage from "./pages/RequesterHomePage";
 
+import TourDetailsPage from "./pages/TourDetailsPage";
+
+
 function App() {
   return (
     <div className={styles.app}>
@@ -31,6 +34,7 @@ function App() {
               <Route path="/requesterhome" element={<RequesterHomePage />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
+              <Route path="/tourdetailspage" element={<TourDetailsPage />} />
             </Routes>
           </ApolloProvider>
         </AuthProvider>

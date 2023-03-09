@@ -1,0 +1,84 @@
+.container{
+	vertical-align: middle;
+	width: 900px !important;
+	overflow: auto;
+	min-height: 500px;
+	border:  1px solid;
+	padding: 30px;
+	border-radius: 5px;
+	display: grid;
+	background-color: white;
+}
+
+.title {
+	margin-top: 100px;
+	margin-left: 300px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+
+/* for the first two rows*/
+.line-row {
+	display: flex;
+	height: 100px;
+}
+
+.block-card {
+	display: inline;
+	width: 50%;
+}
+
+/* for the last row with vertical cards and buttons */
+
+.vertical-col {
+	/*display: flex;*/
+	width: 50%;
+}
+
+.vertical-col-right {
+	/*display: flex;*/
+	float: right;
+	width: 50%;
+}
+
+.vertical-card {
+	display: block;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.last-row {
+	display: flex;
+}
+
+.actions-chat{
+	background-color: #0F52BA; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 100px;
+	margin-right: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 15px;
+	align-items: center;
+}
+
+.actions-complete{
+	background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+	margin: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 15px;
+	align-items: center;
+}
