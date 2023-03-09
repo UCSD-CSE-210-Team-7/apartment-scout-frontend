@@ -1,0 +1,60 @@
+{
+  "data": {
+    "usersByRegion": {
+      "users": [
+        {
+          "email": "skulkarn@ucsd.edu",
+          "name": "Shubham Kulkarni",
+          "created_on": "2023-02-15T18:00:00.000Z",
+          "last_login": "2023-02-15T18:00:00.000Z",
+          "is_scout": true,
+          "calendly_link": "https://calendly.com/shubhamkulkarni01/60min",
+          "tours": [
+            {
+              "tour_review_stars": 5
+            }
+          ],
+          "regions": [
+            92092,
+            60605,
+            10010
+          ]
+        },
+        {
+          "email": "abokade@ucsd.edu",
+          "name": "Ajinkya Bokade",
+          "created_on": "2023-02-15T18:01:00.000Z",
+          "last_login": "2023-02-15T18:01:00.000Z",
+          "is_scout": true,
+          "calendly_link": null,
+          "tours": [
+            {
+              "tour_review_stars": 5
+            }
+          ],
+          "regions": [
+            92092,
+            60605
+          ]
+        },
+        {
+          "email": "gnir@ucsd.edu",
+          "name": "Guy Nir",
+          "created_on": "2023-02-15T18:02:00.000Z",
+          "last_login": "2023-02-15T18:02:00.000Z",
+          "is_scout": true,
+          "calendly_link": null,
+          "tours": [
+            {
+              "tour_review_stars": 5
+            }
+          ],
+          "regions": [
+            92092,
+            99971
+          ]
+        }
+      ]
+    }
+  }
+}

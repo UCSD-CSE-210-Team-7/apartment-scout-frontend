@@ -6,7 +6,7 @@ import '@testing-library/jest-dom'
 import NavBar from '../NavBar';
 
 test("render", () => {
-  const { asFragment } = render( <NavBar /> );
+  const { asFragment } = render( <NavBar />, { initialEntries: ['/home']});
   expect(asFragment()).toMatchSnapshot()
 });
 

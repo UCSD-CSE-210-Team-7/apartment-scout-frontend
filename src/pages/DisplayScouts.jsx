@@ -4,7 +4,7 @@ import "../styles/display-scout-styles.scss";
 import ScoutCard from "../components/ScoutCard";
 import { useLazyQuery, gql } from "@apollo/client";
 
-const QUERY_USER_BY_REGIONS = gql`
+export const QUERY_USER_BY_REGIONS = gql`
   query UsersByRegion($zipcode: Int) {
     usersByRegion(zipcode: $zipcode) {
       users {
@@ -71,7 +71,22 @@ function InputBar({ submit }) {
 }
 
 function DisplayScouts() {
-  const [getUsersByRegion, { data }] = useLazyQuery(QUERY_USER_BY_REGIONS);
+  const [getUsersByRegion, { data, loading }] = useLazyQuery(QUERY_USER_BY_REGIONS);
+
+  let content;
+  if(loading)
+    content = <h1>Loading...</h1>
+  else if(data?.usersByRegion?.users.length == 0)
+    content = <h1>No scouts in this zipcode yet :(</h1>
+  else if(data?.usersByRegion?.users.length > 0)
+    content = data.usersByRegion.users.map(user => <ScoutCard
+                  key={user.name}
+                  user={user}
+                  userImage={userImage}
+                  />
+              )
+  else
+    content = <h1> Enter a zipcode first! </h1>
 
   return (
     <div>
@@ -85,21 +100,11 @@ function DisplayScouts() {
           justifyContent: "space-between",
           padding: "1em 6em",
         }}
-      >
-        {data &&
-          data.usersByRegion &&
-          data.usersByRegion.users &&
-          data.usersByRegion.users.map((user) => (
-            <ScoutCard
-              key={user.name}
-              user={user}
-              userImage={userImage}
-            ></ScoutCard>
-          ))}
+      > 
+        {content}
       </div>
     </div>
   );
-  // >>>>>>> redesign pages
 }
 
 export default DisplayScouts;

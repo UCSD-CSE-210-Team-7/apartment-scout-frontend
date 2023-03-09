@@ -4,23 +4,25 @@ import { useQuery, gql } from "@apollo/client";
 
 export const QUERY_CONVERSATIONS = gql`
   query Conversations{
-    conversations{
-      conversation_id
-      person_a {
-        name
-        email
-      }
-      person_b {
-        name
-        email
-      }
-      last_msg {
-        msg_id
-        msg_text
-        msg_time
-        sender {
-          email
+    me {
+      conversations {
+        conversation_id
+        person_a {
           name
+          email
+        }
+        person_b {
+          name
+          email
+        }
+        last_msg {
+          msg_id
+          msg_text
+          msg_time
+          sender {
+            email
+            name
+          }
         }
       }
     }
@@ -29,13 +31,15 @@ export const QUERY_CONVERSATIONS = gql`
 
 const Sidebar = ({ onSelectConversation, user }) => {
   let {
-    data: { conversations } = { conversations: [] },
-    loading: conversationsLoading,
+    data, 
+    loading,
   } = useQuery(QUERY_CONVERSATIONS);
 
-  if (user === null || conversationsLoading) {
+  if (user === null || loading) {
     return <h1>Loading...</h1>;
   }
+
+  let conversations = data?.me.conversations
 
   let sortable = [...conversations];
   sortable.sort(

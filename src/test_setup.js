@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 import { AuthProvider } from '../src/utils/auth';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, BrowserRouter } from 'react-router-dom';
 import { MockedProvider } from "@apollo/client/testing";
 
 export function render (children, params = {}){
-  const { initialEntries = ['/home'], mocks = [] } = params
+  const { initialEntries = ['/test'], mocks = [] } = params
   return _r(
     <MemoryRouter initialEntries={initialEntries}>
       <AuthProvider>

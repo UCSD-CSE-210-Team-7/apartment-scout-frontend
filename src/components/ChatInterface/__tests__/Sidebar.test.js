@@ -12,7 +12,7 @@ test("render with no user", () => {
     { mocks: [ 
       { 
         request: { query: QUERY_CONVERSATIONS, }, 
-        result: { data }
+        result: { data: { me: { conversations: data.conversations } } }
       }
     ] }
   );
@@ -25,7 +25,7 @@ test("render with user", async () => {
     { mocks: [ 
       { 
         request: { query: QUERY_CONVERSATIONS, }, 
-        result: { data }
+        result: { data: { me: { conversations: data.conversations } } }
       }
     ] }
   );
@@ -40,7 +40,7 @@ test("data can be seen", async () => {
     { mocks: [ 
       { 
         request: { query: QUERY_CONVERSATIONS, }, 
-        result: { data }
+        result: { data: { me: { conversations: data.conversations } } }
       }
     ] }
   );
