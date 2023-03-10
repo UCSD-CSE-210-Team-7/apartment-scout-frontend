@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/tourdetailspage.scss";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
+import Loading from '../components/Loading';
 
 export const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
@@ -24,13 +26,32 @@ export const QUERY_TOUR_DETAILS = gql`
   }
 `;
 
+
 function TourDetailsPage() {
   const tour_id = parseInt(useParams().tour_id);
   const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
     variables: { tour_id },
   });
-  if (!data || loading) {
-    return <h1>Loading</h1>;
+
+  const navigate = useNavigate();
+
+  const navigateToTourSummary = () =>
+    navigate({
+      pathname: '/toursummary/'+ tour_id
+    });
+
+  const navigateToChat = () => {
+    //navigate to /home
+    navigate('/chat');
+};
+
+const navigateToReview = () => {
+  //navigate to /home
+  navigate('/requesterSubmitReview');
+};
+
+  if (!data || loading ) {
+    return <Loading/>
   }
 
   return (
@@ -89,8 +110,19 @@ function TourDetailsPage() {
           </div>
 
           <div className="vertical-col-right">
-            <button className="actions-chat"> Chat </button>
-            <button className="actions-complete"> Complete </button>
+            
+            <button className="actions-chat"
+            onClick={navigateToChat}>
+            Chat </button>
+            
+            <button className="actions-chat" 
+            onClick={navigateToReview}>
+            Submit a Review </button>
+
+            <button className="actions-complete" 
+            onClick={navigateToTourSummary}> 
+            View Summary </button>
+          
           </div>
         </div>
       </div>

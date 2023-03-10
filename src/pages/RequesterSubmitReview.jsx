@@ -1,8 +1,9 @@
+import "../styles/submit-review.scss";
 function RequesterSubmitReview() {
     return (
         <div>
             <div className="header">
-                <h1 className="text">Review your scout </h1>
+                <div className="text">Review your scout </div>
             </div>
             <div>
                 <textarea className="text-box" rows="10" cols="50" placeholder="Start typing here...">

@@ -6,6 +6,7 @@ import { Grid, TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
 import userImage from "../img/user.png";
 import "../styles/calendar-styles.scss";
+import Loading from '../components/Loading';
 
 export const QUERY_USER_DETAILS = gql`
   query UserDetails($email: String!) {
@@ -58,7 +59,7 @@ const ScoutCalendarPage = () => {
   });
 
   if (!data || loading)
-    return <h1>Loading...</h1>
+    return <Loading/>
 
   return (
     <div className="App">

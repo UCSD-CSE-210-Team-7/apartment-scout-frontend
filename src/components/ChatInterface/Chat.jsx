@@ -1,77 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
+import Auth from "../../utils/auth";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
-import { useMutation, useQuery, gql } from "@apollo/client";
-
-export const QUERY_MESSAGES = gql`
-  query Messages($conversation_id: Int!) {
-    messages(conversation_id: $conversation_id) {
-      msg_id
-      msg_text
-      msg_time
-      sender {
-        name
-        email
-      }
-      conversation {
-        person_a {
-          email
-          name
-        }
-        person_b {
-          email
-          name
-        }
-      }
-    }
-  }
-`;
-
-export const SEND_MESSAGE = gql`
-  mutation CreateMessage(
-    $msg_text: String!
-    $conversation: Int!
-  ) {
-    createMessage(
-      msg_text: $msg_text
-      conversation: $conversation
-    ) {
-      sender {
-        email
-      }
-      conversation {
-        conversation_id
-      }
-      msg_text
-      msg_time
-      msg_id
-    }
-  }
-`;
-
-export const MESSAGE_SUBSCRIPTION = gql`
-  subscription Message {
-    message {
-      msg_id
-      msg_text
-      msg_time
-      sender {
-        name
-        email
-      }
-      conversation {
-        person_a {
-          email
-          name
-        }
-        person_b {
-          email
-          name
-        }
-      }
-    }
-  }
-`;
+import Loading from '../Loading';
 
 const Message = ({ message, sentBySelf }) => {
   const baseStyle = {
@@ -174,81 +105,10 @@ const Input = ({ sendMessage }) => {
   );
 };
 
-const Chat = ({ conversation, user }) => {
-  const {
-    data: { messages } = { messages: [] },
-    loading: messagesLoading,
-    subscribeToMore,
-  } = useQuery(QUERY_MESSAGES, {
-    variables: { conversation_id: conversation?.conversation_id },
-  });
+const Chat = ({ loading, conversation, sendMessage }) => {
 
-  useEffect(
-    () =>
-      subscribeToMore({
-        document: MESSAGE_SUBSCRIPTION,
-        updateQuery: (prev, current) => {
-          if (
-            current?.subscriptionData?.data?.message && 
-            Object.keys(current?.subscriptionData?.data?.message).length
-          ) {
-            return {
-              messages: [
-                ...((prev && prev.messages) || []),
-                current.subscriptionData.data.message,
-              ],
-            };
-          }
-          return undefined;
-        },
-      }),
-    [subscribeToMore]
-  );
-
-  const [sendMessageMutation] = useMutation(SEND_MESSAGE);
-
-  const sendMessage = async (msg_text) => {
-    await sendMessageMutation({
-      variables: {
-        msg_text,
-        conversation: conversation.conversation_id,
-      },
-      optimisticResponse: {
-        createMessage: {
-          sender: {
-            email: user.email,
-          },
-          conversation: {
-            conversation_id: conversation.conversation_id,
-          },
-          msg_time: new Date().toLocaleString(),
-          msg_text: "optimistic " + msg_text,
-          msg_id: -1,
-        },
-      },
-      update: (cache, { data }) => {
-        cache.modify({
-          fields: {
-            messages: (existingMessages) => [
-              ...existingMessages,
-              data.createMessage,
-            ],
-            conversations: (existingConversations) => {
-              return [
-                {
-                  ...conversation,
-                  last_msg: data.createMessage,
-                },
-                ...existingConversations.filter(
-                  (i) => i.conversation_id !== conversation.conversation_id
-                ),
-              ];
-            },
-          },
-        });
-      },
-    });
-  };
+  const user = useContext(Auth)?.user?.email;
+  const messages = conversation?.messages
 
   const messagesEndRef = useRef(null);
 
@@ -267,11 +127,11 @@ const Chat = ({ conversation, user }) => {
         justifyContent: "center",
       }}
     >
-      {conversation === null ? (
+      {!conversation ? (
         <h1 style={{ alignSelf: "center" }}>Select a conversation</h1>
       ) : 
-        messagesLoading ? 
-        <h1> Loading...</h1> : 
+        loading ? 
+        <Loading/> :
         (
         <>
           <div
@@ -286,7 +146,7 @@ const Chat = ({ conversation, user }) => {
           >
             <img alt="profile-pic" src={userImg} className="contact-photo" />
             <span>
-              {conversation.person_a.email === user.email
+              {conversation.person_a.email === user
                 ? conversation.person_b.name
                 : conversation.person_a.name}
             </span>
@@ -299,11 +159,11 @@ const Chat = ({ conversation, user }) => {
               overflowY: "scroll",
             }}
           >
-            {messages.map((m) => (
+            {messages && messages.map((m) => (
               <Message
                 message={m}
                 key={m.msg_id}
-                sentBySelf={m.sender.email === user.email}
+                sentBySelf={m.sender.email === user}
               />
             ))}
             <div ref={messagesEndRef} />

@@ -5,6 +5,7 @@ import styles from "../styles/toursummary.module.css";
 import apt1 from "../img/apt1.jpeg";
 import apt2 from "../img/apt2.jpeg";
 import apt3 from "../img/apt3.jpeg";
+import Loading from '../components/Loading';
 
 const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
@@ -21,7 +22,7 @@ function TourSummaryPage() {
   });
 
   if (!data || loading) {
-    return <h1>Loading</h1>;
+    return <Loading/>
   }
 
   console.log(data, loading);
@@ -31,7 +32,7 @@ function TourSummaryPage() {
       <h1 className={styles.title}> Review </h1>
       <div className={styles.container}>
         <p>
-          {data.tour.summary}
+          {data.tour.tour_summary}
         </p>
       </div>
 

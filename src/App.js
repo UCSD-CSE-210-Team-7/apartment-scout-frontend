@@ -12,10 +12,9 @@ import ScoutDetails from "./pages/ScoutDetails";
 import ScoutCalendarPage from "./pages/ScoutCalendar";
 
 import NavBar from "./components/NavBar";
-import ScoutHomePage from "./pages/ScoutHomePage";
+import TourHomePage from "./pages/TourHomePage";
 import ScoutSubmitReview from "./pages/ScoutSubmitReview";
 import RequesterSubmitReview from "./pages/RequesterSubmitReview";
-import RequesterHomePage from "./pages/RequesterHomePage";
 
 import TourDetailsPage from "./pages/TourDetailsPage";
 import TourSummaryPage from "./pages/TourSummaryPage";
@@ -34,15 +33,15 @@ function App() {
               <Route path="/home" element={<DisplayScouts />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
-              <Route path="/chat/:email" element={<ChatPage />} />
-              <Route path="/scouthome" element={<ScoutHomePage />} />
-              <Route path="/scoutSubmitReview" element={<ScoutSubmitReview />} />
-              <Route path="/requesterhome" element={<RequesterHomePage />} />
+              <Route path="/chat/:conversation_id" element={<ChatPage />} />
+              <Route path="/tourhome" element={<TourHomePage />} />
+              <Route path="/scoutSubmitReview/" element={<ScoutSubmitReview />} />
+
               <Route path="/requesterSubmitReview" element={<RequesterSubmitReview />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
               <Route path="/tourdetails/:tour_id" element={<TourDetailsPage />} />
-              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />
+              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />   
             </Routes>
           </ApolloProvider>
         </AuthProvider>

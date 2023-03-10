@@ -5,6 +5,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import "../../styles/home-styles.scss";
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -14,20 +16,34 @@ const Item = styled(Paper)(({ theme }) => ({
   //boxShadow: 'none',
   // '.MuiOutlinedInput-notchedOutline': { border: 0 },
 }));
-function HomePageComponent({ pageType, tableColumns, tableData }) {
-  function getFirstName(pageType, tableData) {
-    if (pageType === "scout") {
-      const nameSplit = tableData[0].split(" ");
-      return nameSplit[0];
-    } else if (pageType === "requester") {
-      const nameSplit = tableData[2].split(" ");
-      return nameSplit[0];
-    }
-  } 
-  const firstName = getFirstName(pageType, tableData);
-  
+
+/*
+   TODO 1: Use user information to fetch ALL tours and display according to the activeButton
+   TODO 2: When user clicks view for one tour
+           a) pass tour_id to the url
+           b) pass activeButton whether his role is requester or scout to the url,
+              because it distinguishes the "write a review" in next page
+*/
+
+function HomePageComponent({ tableColumns, tableData }) {
+
+  const [activeButton, setActiveButton] = useState('requester');
+  const handleButtonClick = (buttonType) => {
+    setActiveButton(buttonType);
+  }
+  const navigate = useNavigate()
+  const tour_id = "1" 
+  const navigateToDetails = () =>
+    navigate({
+      pathname: '/tourdetails/' + tour_id
+    });
+
   return (
     <div style={{ flexGrow: 1 }}>
+      <div className="userTypeContainer">
+        <button className={`userTypeButton1 ${activeButton === 'requester' ? 'active' : 'inactive'}`} onClick={() => handleButtonClick('requester')}>Tours as a requester</button>
+        <button className={`userTypeButton2 ${activeButton === 'scout' ? 'active' : 'inactive'}`} onClick={() => handleButtonClick('scout')}>Tours as a scout</button>
+      </div>
       <div className="inprogress-header">
         <h1 className="inprogress-text">In Progress Tours </h1>
       </div>
@@ -68,7 +84,7 @@ function HomePageComponent({ pageType, tableColumns, tableData }) {
               xs={4}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              <Button variant="contained">Chat with {firstName}</Button>
+              <Button variant="contained" onClick={navigateToDetails}>View Tour</Button>
             </Grid>
           </Grid>
         </Box>
@@ -115,8 +131,8 @@ function HomePageComponent({ pageType, tableColumns, tableData }) {
               xs={4}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              <Button variant="contained" color="success">
-                View Receipt
+              <Button variant="contained" color="success" onClick={navigateToDetails}>
+                View Tour
               </Button>
             </Grid>
           </Grid>

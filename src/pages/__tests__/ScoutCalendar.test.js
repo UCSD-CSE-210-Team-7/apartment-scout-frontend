@@ -26,7 +26,7 @@ test("render", () => {
     }
   )
   expect(asFragment()).toMatchSnapshot()
-  expect(screen.getByText('Loading...')).not.toBeNull()
+  expect(screen.getByTitle('loading')).not.toBeNull()
 });
 
 test("render with no calendly", async () => {
@@ -48,7 +48,7 @@ test("render with no calendly", async () => {
     }
   );
 
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
 
   expect(asFragment()).toMatchSnapshot()
 });
@@ -96,7 +96,7 @@ test("entering a tour address and clicking go", async () => {
     }
   );
 
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
 
   act( () => {
     userEvent.type(screen.getByRole('textbox'), 'test address');

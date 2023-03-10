@@ -3,6 +3,7 @@ import userImage from "../img/user.png";
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "../components/ScoutCard";
 import { useLazyQuery, gql } from "@apollo/client";
+import Loading from '../components/Loading';
 
 export const QUERY_USER_BY_REGIONS = gql`
   query UsersByRegion($zipcode: Int) {
@@ -75,7 +76,7 @@ function DisplayScouts() {
 
   let content;
   if(loading)
-    content = <h1>Loading...</h1>
+    content = <Loading/>
   else if(data?.usersByRegion?.users.length === 0)
     content = <h1>No scouts in this zipcode yet :(</h1>
   else if(data?.usersByRegion?.users.length > 0)

@@ -11,6 +11,7 @@ import Auth from "../utils/auth";
 
 import userImage from "../img/user.png";
 import ScoutCard from "../components/ScoutCard";
+import Loading from '../components/Loading';
 
 import { styled } from "@mui/material/styles";
 
@@ -66,16 +67,17 @@ function ScoutDetails() {
   const user = data?.userDetails;
   console.log(user);
 
-  if (!user) return <h1>Loading...</h1>;
+  if (!user) return <Loading/>
 
-  const handleChatButtonClick = () => {
-    createConversationMutation({
+  const handleChatButtonClick = async () => {
+    const { data } = await createConversationMutation({
       variables: {
         person_a: selfEmail,
         person_b: email,
       },
     });
-    navigate(`/chat/${email}`);
+    console.log(data)
+    navigate(`/chat/${data.createConversation.conversation_id}`);
   };
 
   const handleScheduleButtonClick = () => {

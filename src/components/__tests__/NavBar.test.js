@@ -20,5 +20,5 @@ test("click buttons", async () => {
 
   expect(screen.getByRole('link', {name: 'profile'})).toHaveAttribute('href', '/profile')
 
-  expect(screen.getByRole('link', {name: 'tours'})).toHaveAttribute('href', '/tours')
+  expect(screen.getByRole('link', {name: 'tours'})).toHaveAttribute('href', '/tourhome')
 });
