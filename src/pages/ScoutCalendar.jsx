@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { useCalendlyEventListener, InlineWidget } from "react-calendly";
 import ScoutCard from "../components/ScoutCard";
 import { useMutation, useQuery, gql } from "@apollo/client";
