@@ -1,0 +1,36 @@
+.container{
+	vertical-align: middle;
+	width: 1300px !important;
+	overflow: auto;
+	min-height: 150px;
+    max-height: 800px;
+	border:  1px solid;
+	padding: 30px;
+	border-radius: 15px;
+	display: grid;
+	background-color: white;
+    font-size: 25px;
+}
+
+
+.title {
+	margin-top: 70px;
+	margin-left: 100px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.imagestyling {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+img {
+    margin-left: 120px;
+    margin-bottom: 70px;
+    height: 400px;
+    width: 600px;
+    border: 1px solid;
+}

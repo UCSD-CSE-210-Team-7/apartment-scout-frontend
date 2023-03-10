@@ -23,9 +23,9 @@ function HomePageComponent({ pageType, tableColumns, tableData }) {
       const nameSplit = tableData[2].split(" ");
       return nameSplit[0];
     }
-  } // TODO: tableData first element if pageType == "1" else tableData third element
-
+  } 
   const firstName = getFirstName(pageType, tableData);
+  
   return (
     <div style={{ flexGrow: 1 }}>
       <div className="inprogress-header">

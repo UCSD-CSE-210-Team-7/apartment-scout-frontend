@@ -13,9 +13,12 @@ import ScoutCalendarPage from "./pages/ScoutCalendar";
 
 import NavBar from "./components/NavBar";
 import ScoutHomePage from "./pages/ScoutHomePage";
+import ScoutSubmitReview from "./pages/ScoutSubmitReview";
+import RequesterSubmitReview from "./pages/RequesterSubmitReview";
 import RequesterHomePage from "./pages/RequesterHomePage";
 
 import TourDetailsPage from "./pages/TourDetailsPage";
+import TourSummaryPage from "./pages/TourSummaryPage";
 
 
 
@@ -32,10 +35,13 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
               <Route path="/scouthome" element={<ScoutHomePage />} />
+              <Route path="/scoutSubmitReview" element={<ScoutSubmitReview />} />
               <Route path="/requesterhome" element={<RequesterHomePage />} />
+              <Route path="/requesterSubmitReview" element={<RequesterSubmitReview />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
               <Route path="/tourdetailspage" element={<TourDetailsPage />} />
+              <Route path="/toursummary" element={<TourSummaryPage />} />
          
             </Routes>
           </ApolloProvider>

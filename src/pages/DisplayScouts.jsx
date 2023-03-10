@@ -76,7 +76,7 @@ function DisplayScouts() {
   let content;
   if(loading)
     content = <h1>Loading...</h1>
-  else if(data?.usersByRegion?.users.length == 0)
+  else if(data?.usersByRegion?.users.length === 0)
     content = <h1>No scouts in this zipcode yet :(</h1>
   else if(data?.usersByRegion?.users.length > 0)
     content = data.usersByRegion.users.map(user => <ScoutCard
