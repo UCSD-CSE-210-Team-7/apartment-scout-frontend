@@ -1,5 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`conversation can be clicked 1`] = `
+<DocumentFragment>
+  <div
+    style="background: rgb(217, 217, 217); width: 20em;"
+  >
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Manasi Agrawal
+        </span>
+        <p>
+          dsafdsafa
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Shubham Kulkarni
+        </span>
+        <p>
+          dsafdsaf
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Guy Nir
+        </span>
+        <p>
+          bnvcncvb
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Ajinkya Bokade
+        </span>
+        <p>
+          sfd
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`data can be seen 1`] = `
+<DocumentFragment>
+  <div
+    style="background: rgb(217, 217, 217); width: 20em;"
+  >
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Manasi Agrawal
+        </span>
+        <p>
+          dsafdsafa
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Shubham Kulkarni
+        </span>
+        <p>
+          dsafdsaf
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Guy Nir
+        </span>
+        <p>
+          bnvcncvb
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Ajinkya Bokade
+        </span>
+        <p>
+          sfd
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`render with no user 1`] = `
 <DocumentFragment>
   <h1>
@@ -8,35 +170,82 @@ exports[`render with no user 1`] = `
 </DocumentFragment>
 `;
 
-exports[`render with user 1`] = `
+exports[`selected conversation color change 1`] = `
 <DocumentFragment>
   <div
     style="background: rgb(217, 217, 217); width: 20em;"
   >
     <div
-      style="cursor: pointer;"
+      class="userChat"
     >
-      <div
-        class="userChat"
-      >
-        <img
-          alt=""
-          src="user.png"
-        />
-        <div
-          class="userChatInfo"
-        >
-          <span>
-            Test User
-          </span>
-          <p>
-            Thanks best friend!
-          </p>
-        </div>
-      </div>
-      <hr
-        class="chat-divider"
+      <img
+        alt=""
+        src="user.png"
       />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Manasi Agrawal
+        </span>
+        <p>
+          dsafdsafa
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Shubham Kulkarni
+        </span>
+        <p>
+          dsafdsaf
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Guy Nir
+        </span>
+        <p>
+          bnvcncvb
+        </p>
+      </div>
+    </div>
+    <div
+      class="userChat"
+    >
+      <img
+        alt=""
+        src="user.png"
+      />
+      <div
+        class="userChatInfo"
+      >
+        <span>
+          Ajinkya Bokade
+        </span>
+        <p>
+          sfd
+        </p>
+      </div>
     </div>
   </div>
 </DocumentFragment>

@@ -34,7 +34,7 @@ function App() {
               <Route path="/home" element={<DisplayScouts />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
-              <Route path="/chat/:email" element={<ChatPage />} />
+              <Route path="/chat/:conversation_id" element={<ChatPage />} />
               <Route path="/scouthome" element={<ScoutHomePage />} />
               <Route path="/scoutSubmitReview" element={<ScoutSubmitReview />} />
               <Route path="/requesterhome" element={<RequesterHomePage />} />
