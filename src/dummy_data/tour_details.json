@@ -1,0 +1,20 @@
+{
+  "data": {
+    "tour": {
+      "tour_id": 1,
+      "tour_address": "625 8th Avenue New York NY ",
+      "requested_by": {
+        "name": "Manasi Agrawal"
+      },
+      "scouted_by": {
+        "name": "Shubham Kulkarni"
+      },
+      "date_requested": "2023-02-15T18:08:00.000Z",
+      "date_completed": "2023-02-16T19:08:00.000Z",
+      "status": "COMPLETE",
+      "tour_summary": "Very loud. Be cautious.",
+      "tour_review_text": "Thanks for the excellent tour. I'll rent ASAP.",
+      "tour_review_stars": 5
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { GoogleSignOn } from "../utils//firebase";
 
 import { useMutation, gql } from '@apollo/client';
 
-const MUTATION_CREATE_USER = gql`
+export const MUTATION_CREATE_USER = gql`
   mutation CreateUser($name: String!) {
     createUser(name: $name){
       name

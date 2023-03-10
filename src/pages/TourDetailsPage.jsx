@@ -3,7 +3,7 @@ import "../styles/tourdetailspage.scss";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
-const QUERY_TOUR_DETAILS = gql`
+export const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
     tour(tour_id: $tour_id) {
       tour_id
@@ -29,7 +29,6 @@ function TourDetailsPage() {
   const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
     variables: { tour_id },
   });
-
   if (!data || loading) {
     return <h1>Loading</h1>;
   }
