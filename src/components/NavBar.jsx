@@ -58,7 +58,7 @@ const NavigationBar = () => {
           </NavLink>
           <div className="dc">
             <NavLink href="/profile">profile</NavLink>
-            <NavLink href="/tours">tours</NavLink>
+            <NavLink href="/tourhome">tours</NavLink>
             <span
               style={{ cursor: "pointer", color: "#FFFFFF" }}
               onClick={logout}

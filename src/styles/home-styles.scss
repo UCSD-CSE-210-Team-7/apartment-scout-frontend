@@ -18,7 +18,7 @@
 
 .inprogress-text {
   color: white;
-  margin-left: 2rem;
+  margin-left: 3rem;
   padding-right: 2rem;
 }
 
@@ -31,7 +31,37 @@
 
 .past-text {
   color: white;
-  margin-left: 2rem;
+  margin-left: 3rem;
   padding-right: 2rem;
   padding-top: 2rem;
+}
+
+.userTypeContainer{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.userTypeButton1 {
+  border-radius: 20px;
+  font-size: 1.5em;
+  padding: 10px;
+  margin-left: 1rem;
+}
+
+.inactive {
+  background-color: #FF681E ;
+}
+
+.active {
+  background-color: #006B3D;
+}
+
+.userTypeButton2 {
+  border-radius: 20px;
+  font-size: 1.5em;
+  padding: 10px;
+  margin-left: 1rem;
 }
