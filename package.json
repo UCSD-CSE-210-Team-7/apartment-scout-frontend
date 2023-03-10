@@ -35,6 +35,7 @@
     "lint": "prettier --write 'src/**/*jsx' 'src/**/*js' 'src/**/*css' 'src/**/*json'"
   },
   "eslintConfig": {
+    "no-unused-vars": ["error", { "args": "none" }],
     "extends": [
       "react-app",
       "react-app/jest"
