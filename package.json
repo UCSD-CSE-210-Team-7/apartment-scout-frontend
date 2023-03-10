@@ -31,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "prettier --write 'src/**/*jsx' 'src/**/*js' 'src/**/*css' 'src/**/*json'"
   },
   "eslintConfig": {
     "extends": [
