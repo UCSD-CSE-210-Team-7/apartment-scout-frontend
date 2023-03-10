@@ -36,12 +36,7 @@
   },
   "eslintConfig": {
     "rules": {
-      "no-unused-vars": [
-        "error",
-        {
-          "args": "none"
-        }
-      ]
+      "no-unused-vars": "off"
     },
     "extends": [
       "react-app",
