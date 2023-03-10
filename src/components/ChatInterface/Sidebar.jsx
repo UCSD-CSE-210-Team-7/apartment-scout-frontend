@@ -10,7 +10,7 @@ const Sidebar = ({ conversations, selectedConversation, onSelectConversation }) 
 
   let sortable = [...conversations];
   sortable.sort(
-    (a, b) => new Date(b.messages[b.messages.length-1].msg_time) - new Date(a.messages[a.messages.length-1].msg_time)
+    (a, b) => new Date(b.messages[b.messages.length-1]?.msg_time) - new Date(a.messages[a.messages.length-1]?.msg_time)
   );
   conversations = [...sortable];
 
