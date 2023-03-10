@@ -96,7 +96,7 @@ test("profile regions change", async () => {
     expect(asFragment()).toMatchSnapshot();
 
     expectedUser.regions.forEach((zipcode, i) => expect(screen.getByDisplayValue(zipcode)).toBeInTheDocument());
-        window.alert = () => {};
+    window.alert = () => {};
     act(() => {
         let zipCodeElement = screen.getByDisplayValue(expectedUser.regions[1]);
         userEvent.clear(zipCodeElement);
