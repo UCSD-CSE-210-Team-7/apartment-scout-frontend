@@ -34,6 +34,7 @@ function App() {
               <Route path="/home" element={<DisplayScouts />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
+              <Route path="/chat/:email" element={<ChatPage />} />
               <Route path="/scouthome" element={<ScoutHomePage />} />
               <Route path="/scoutSubmitReview" element={<ScoutSubmitReview />} />
               <Route path="/requesterhome" element={<RequesterHomePage />} />
@@ -41,7 +42,7 @@ function App() {
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
               <Route path="/tourdetails/:tour_id" element={<TourDetailsPage />} />
-              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />
+              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />   
             </Routes>
           </ApolloProvider>
         </AuthProvider>
