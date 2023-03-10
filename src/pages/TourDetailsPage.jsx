@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/tourdetailspage.scss";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 const QUERY_TOUR_DETAILS = gql`
-  query TourDetails($tour_id: Int){
-    tour(tour_id: $tour_id){
+  query TourDetails($tour_id: Int) {
+    tour(tour_id: $tour_id) {
       tour_id
       tour_address
       requested_by {
@@ -24,16 +24,15 @@ const QUERY_TOUR_DETAILS = gql`
   }
 `;
 
-
 function TourDetailsPage() {
   const tour_id = parseInt(useParams().tour_id);
-  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, { variables: { tour_id } });
+  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
+    variables: { tour_id },
+  });
 
-  if(!data || loading){
-    return <h1>Loading</h1>
+  if (!data || loading) {
+    return <h1>Loading</h1>;
   }
-
-  console.log(data, loading)
 
   return (
     <>
@@ -49,7 +48,6 @@ function TourDetailsPage() {
             <h4>Scouted By</h4>
             <p>{data.tour.scouted_by.name}</p>
           </div>
-
         </div>
 
         <div className="line-row">
@@ -68,24 +66,26 @@ function TourDetailsPage() {
           <div className="vertical-col">
             <div className="vertical-card">
               <h4> Requested on </h4>
-              <p>{new Date(data.tour.date_requested).toLocaleString("en-US", {
-                year: undefined,
-                month: "long",
-                day: "numeric",
-              })}</p>
+              <p>
+                {new Date(data.tour.date_requested).toLocaleString("en-US", {
+                  year: undefined,
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
             </div>
 
             <div className="vertical-card">
               <h4> Completed on </h4>
-              <p>{
-                data.tour.date_completed ? 
-                new Date(data.tour.date_completed).toLocaleString("en-US", {
-                  year: undefined,
-                  month: "long",
-                  day: "numeric",
-                }) : 
-                'Not completed'
-              }</p>
+              <p>
+                {data.tour.date_completed
+                  ? new Date(data.tour.date_completed).toLocaleString("en-US", {
+                      year: undefined,
+                      month: "long",
+                      day: "numeric",
+                    })
+                  : "Not completed"}
+              </p>
             </div>
           </div>
 

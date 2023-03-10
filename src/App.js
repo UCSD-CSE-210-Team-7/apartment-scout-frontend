@@ -41,7 +41,7 @@ function App() {
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
               <Route path="/tourdetails/:tour_id" element={<TourDetailsPage />} />
-              <Route path="/toursummary" element={<TourSummaryPage />} />
+              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />
             </Routes>
           </ApolloProvider>
         </AuthProvider>
