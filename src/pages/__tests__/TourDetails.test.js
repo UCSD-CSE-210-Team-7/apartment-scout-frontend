@@ -22,7 +22,7 @@ test("render", async () => {
       initialEntries: ["/test/1"],
     }
   );
-  expect(screen.getByText("Loading")).not.toBeNull();
+  expect(screen.getByTitle('loading')).not.toBeNull();
   await new Promise((res) => setTimeout(res, 1000));
   await act(async () => {
     expect(
@@ -94,9 +94,13 @@ test("render", async () => {
     ).toBeInTheDocument();
     const chatButton = await screen.findByRole("button", { name: "Chat" });
     expect(chatButton).toBeInTheDocument();
-    const completeButton = await screen.findByRole("button", {
-      name: "Complete",
+    const submitReviewButton = await screen.findByRole("button", {
+      name: "Submit a Review",
     });
-    expect(completeButton).toBeInTheDocument();
+    expect(submitReviewButton).toBeInTheDocument();
+    const viewSummaryButton = await screen.findByRole("button", {
+      name: "View Summary",
+    });
+    expect(viewSummaryButton).toBeInTheDocument();
   });
 });
