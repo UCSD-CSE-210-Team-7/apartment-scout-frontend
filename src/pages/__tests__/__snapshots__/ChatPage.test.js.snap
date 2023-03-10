@@ -927,9 +927,14 @@ exports[`render with no user 1`] = `
   <div
     style="display: flex; flex-grow: 1; max-height: 90vh;"
   >
-    <h1>
-      Loading...
-    </h1>
+    <div
+      style="flex-grow: 1; align-items: center; justify-content: center; display: flex;"
+    >
+      <span
+        class="loader"
+        title="loading"
+      />
+    </div>
     <div
       style="display: flex; flex-direction: column; background: rgb(245, 245, 245); font-size: 1.5em; flex-grow: 1; justify-content: center;"
     >

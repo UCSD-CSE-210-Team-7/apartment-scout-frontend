@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import Auth from "../../utils/auth";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
+import Loading from '../Loading';
 
 const Message = ({ message, sentBySelf }) => {
   const baseStyle = {
@@ -130,7 +131,7 @@ const Chat = ({ loading, conversation, sendMessage }) => {
         <h1 style={{ alignSelf: "center" }}>Select a conversation</h1>
       ) : 
         loading ? 
-        <h1> Loading...</h1> : 
+        <Loading/> :
         (
         <>
           <div

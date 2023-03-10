@@ -3,7 +3,7 @@ import "../styles/tourdetailspage.scss";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
-
+import Loading from '../components/Loading';
 
 const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
@@ -50,8 +50,8 @@ const navigateToReview = () => {
   navigate('/requesterSubmitReview');
 };
 
-  if (!data || loading) {
-    return <h1>Loading</h1>;
+  if (!data || loading ) {
+    return <Loading/>
   }
 
   return (

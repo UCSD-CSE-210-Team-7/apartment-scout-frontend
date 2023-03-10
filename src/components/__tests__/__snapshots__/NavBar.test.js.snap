@@ -67,7 +67,7 @@ exports[`render 1`] = `
             </span>
           </a>
           <a
-            href="/tours"
+            href="/tourhome"
           >
             <span
               style="cursor: pointer; padding: 0px 1vw; color: rgb(255, 255, 255);"

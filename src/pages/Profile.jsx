@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/profile-styles.scss";
 import userImg from "../img/user.png";
 import { useQuery, useMutation, gql } from "@apollo/client";
+import Loading from '../components/Loading';
 
 const QUERY_USER_DETAILS = gql`
   query Me {
@@ -175,7 +176,7 @@ const Profile = () => {
   */
 
   if(userLoading)
-    return <h1>Loading...</h1>
+    return <Loading/>
 
   return (
     <div

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import Auth from "../../utils/auth";
 import userImage from "../../img/user.png";
+import Loading from '../Loading';
 
 const Sidebar = ({ conversations, selectedConversation, onSelectConversation }) => {
   const user = useContext(Auth)?.user?.email;
 
   if (!conversations)
-    return <h1>Loading...</h1>;
+    return <Loading/>
 
   let sortable = [...conversations];
   sortable.sort(

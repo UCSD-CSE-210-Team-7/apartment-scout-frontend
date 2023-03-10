@@ -49,7 +49,7 @@ test("render after loading", async () => {
       }
     ] }
   );
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   expect(asFragment()).toMatchSnapshot()
 });
 
@@ -71,7 +71,7 @@ test("click a user", async () => {
       }
     ] }
   );
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   act(() => {
     userEvent.click(screen.getByText('Manasi Agrawal'));
   })
@@ -115,7 +115,7 @@ test("click user, subscribed", async () => {
       }
     ] }
   );
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   act(() => {
     userEvent.click(screen.getByText('Manasi Agrawal'));
   })
@@ -158,7 +158,7 @@ test("render with user and new message", async () => {
       }
     ] }
   );
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   expect(asFragment()).toMatchSnapshot()
 });
 
@@ -205,7 +205,7 @@ test("send new message", async () => {
       },
     ] }
   );
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   const textbox = screen.getByRole('textbox')
   fireEvent.change(textbox, {target: { value: msg_text }})
   fireEvent.click(screen.getByAltText('send-button'))

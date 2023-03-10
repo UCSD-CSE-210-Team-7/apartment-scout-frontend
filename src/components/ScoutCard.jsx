@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
+import Loading from './Loading';
 
 function ScoutCard({user, userImage}) {
   if(!user)
-    return <h1>Loading...</h1>
+    return <Loading/>
 
   return (
     <Link to={`/browse/${user.email}`}>

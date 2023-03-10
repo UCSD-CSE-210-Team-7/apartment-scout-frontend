@@ -172,9 +172,14 @@ exports[`data can be seen 1`] = `
 
 exports[`render with no user 1`] = `
 <DocumentFragment>
-  <h1>
-    Loading...
-  </h1>
+  <div
+    style="flex-grow: 1; align-items: center; justify-content: center; display: flex;"
+  >
+    <span
+      class="loader"
+      title="loading"
+    />
+  </div>
 </DocumentFragment>
 `;
 

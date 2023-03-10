@@ -43,8 +43,8 @@ test("entering a valid zipcode and clicking go", async () => {
     userEvent.click(screen.getByRole('button'));
   })
 
-  expect(screen.getByText('Loading...')).not.toBeNull();
-  await waitForElementToBeRemoved(screen.getByText('Loading...'));
+  expect(screen.getByTitle('loading')).not.toBeNull();
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
 
   expect(asFragment()).toMatchSnapshot()
   expect(screen.getAllByRole('link').length).toBe(data.usersByRegion.users.length)
