@@ -45,8 +45,8 @@ const Sidebar = ({ onSelectConversation, user, email }) => {
   console.log(conversations);
   function comparator(a, b) {
     if (email) {
-      if (a.person_b.email == email) return -1;
-      if (b.person_b.email == email) return 1;
+      if (a.person_b.email === email) return -1;
+      if (b.person_b.email === email) return 1;
     }
     return new Date(b?.last_msg?.msg_time) - new Date(a?.last_msg?.msg_time);
   }
