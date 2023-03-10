@@ -3,7 +3,7 @@ import "../styles/profile-styles.scss";
 import userImg from "../img/user.png";
 import { useQuery, useMutation, gql } from "@apollo/client";
 
-const QUERY_USER_DETAILS = gql`
+export const QUERY_USER_DETAILS = gql`
   query Me {
     me {
       email
@@ -22,7 +22,7 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
-const UPDATE_USER_MUTATION = gql`
+export const UPDATE_USER_MUTATION = gql`
   mutation UpdateUser(
     $email: String!
     $name: String
