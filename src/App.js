@@ -40,9 +40,8 @@ function App() {
               <Route path="/requesterSubmitReview" element={<RequesterSubmitReview />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
-              <Route path="/tourdetailspage" element={<TourDetailsPage />} />
+              <Route path="/tourdetails/:tour_id" element={<TourDetailsPage />} />
               <Route path="/toursummary" element={<TourSummaryPage />} />
-         
             </Routes>
           </ApolloProvider>
         </AuthProvider>
