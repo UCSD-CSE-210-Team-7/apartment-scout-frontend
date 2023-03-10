@@ -1,5 +1,5 @@
 import TourDetailsPage, { QUERY_TOUR_DETAILS } from "../TourDetailsPage";
-import { render as _r, screen, act } from "@testing-library/react";
+import { render as _r, screen, act, waitForElementToBeRemoved } from "@testing-library/react";
 import { render } from "../../test_setup";
 import { data } from "../../dummy_data/tour_details.json";
 import { Routes, Route } from "react-router-dom";
@@ -22,8 +22,8 @@ test("render", async () => {
       initialEntries: ["/test/1"],
     }
   );
-  expect(screen.getByTitle('loading')).not.toBeNull();
-  await new Promise((res) => setTimeout(res, 1000));
+  expect(screen.getByTitle("loading")).not.toBeNull();
+  await waitForElementToBeRemoved(screen.getByTitle('loading'));
   await act(async () => {
     expect(
       screen.getByText("Tour Details", { selector: "h1.title" })
