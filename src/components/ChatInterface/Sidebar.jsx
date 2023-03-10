@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Auth from "../../utils/auth";
 import userImage from "../../img/user.png";
 
@@ -24,9 +24,8 @@ const Sidebar = ({ conversations, selectedConversation, onSelectConversation }) 
       {conversations.map((conversation) => (
         <div
           key={conversation.conversation_id}
-          style={{ cursor: "pointer" }}
           onClick={() => onSelectConversation(conversation.conversation_id)}
-          style={conversation.conversation_id == selectedConversation ? {background: '#ADE8F4'} : {}}
+          style={conversation.conversation_id === selectedConversation ? {background: '#ADE8F4', cursor: 'pointer'} : {cursor: 'pointer'}}
         className="userChat"
         >
           <img src={userImage} alt="" />

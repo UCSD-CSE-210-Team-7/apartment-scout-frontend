@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
-import Auth from "../utils/auth";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/ChatInterface/Sidebar";
 import Chat from "../components/ChatInterface/Chat";
 import "../styles/chat-styles.scss";
@@ -93,8 +92,6 @@ export const MESSAGE_SUBSCRIPTION = gql`
 
 const ChatPage = () => {
   const conversation_id = parseInt(useParams().conversation_id) ?? 0;
-  const auth = useContext(Auth);
-  const user = auth?.user?.email;
 
   const [selectedConversation, setSelectedConversation] = useState(conversation_id);
 

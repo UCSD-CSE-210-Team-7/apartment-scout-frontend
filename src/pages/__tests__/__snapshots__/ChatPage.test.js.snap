@@ -10,7 +10,7 @@ exports[`click a user 1`] = `
     >
       <div
         class="userChat"
-        style="background: rgb(173, 232, 244);"
+        style="cursor: pointer; background: rgb(173, 232, 244);"
       >
         <img
           alt=""
@@ -29,6 +29,7 @@ exports[`click a user 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -47,6 +48,7 @@ exports[`click a user 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -65,6 +67,7 @@ exports[`click a user 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -412,6 +415,7 @@ exports[`click user, subscribed 1`] = `
     >
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -430,6 +434,7 @@ exports[`click user, subscribed 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -448,6 +453,7 @@ exports[`click user, subscribed 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -466,7 +472,7 @@ exports[`click user, subscribed 1`] = `
       </div>
       <div
         class="userChat"
-        style="background: rgb(173, 232, 244);"
+        style="cursor: pointer; background: rgb(173, 232, 244);"
       >
         <img
           alt=""
@@ -828,6 +834,7 @@ exports[`render after loading 1`] = `
     >
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -846,6 +853,7 @@ exports[`render after loading 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -864,6 +872,7 @@ exports[`render after loading 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
@@ -882,6 +891,7 @@ exports[`render after loading 1`] = `
       </div>
       <div
         class="userChat"
+        style="cursor: pointer;"
       >
         <img
           alt=""
