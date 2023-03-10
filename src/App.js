@@ -34,9 +34,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
               <Route path="/chat/:conversation_id" element={<ChatPage />} />
-              <Route path="/scouthome" element={<ScoutHomePage />} />
+              <Route path="/tourhome" element={<TourHomePage />} />
               <Route path="/scoutSubmitReview/" element={<ScoutSubmitReview />} />
-              <Route path="/requesterhome" element={<RequesterHomePage />} />
+
               <Route path="/requesterSubmitReview" element={<RequesterSubmitReview />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
