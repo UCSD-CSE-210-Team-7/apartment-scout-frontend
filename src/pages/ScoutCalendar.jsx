@@ -84,11 +84,6 @@ const ScoutCalendarPage = () => {
                     userImage={userImage}
                   ></ScoutCard>
                 </Grid>
-                <Grid item>
-                  <button className="chat-button" type="button">
-                    Chat with Me
-                  </button>
-                </Grid>
               </Grid>
             </Grid>
             {scout.calendly_link ? (

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery, gql } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
+import { useMutation, useQuery, gql } from "@apollo/client";
 
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import { Grid } from "@mui/material";
+import Auth from "../utils/auth";
 
 import userImage from "../img/user.png";
 import ScoutCard from "../components/ScoutCard";
@@ -33,6 +35,14 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
+const CREATE_CONVERSATION_MUTATION = gql`
+  mutation CreateConversation($person_a: String!, $person_b: String!) {
+    createConversation(person_a: $person_a, person_b: $person_b) {
+      conversation_id
+    }
+  }
+`;
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   padding: theme.spacing(1),
@@ -42,15 +52,35 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ScoutDetails() {
+  const navigate = useNavigate();
+  const auth = useContext(Auth);
   const { email } = useParams();
   const { data } = useQuery(QUERY_USER_DETAILS, {
     variables: { email },
   });
+  const selfEmail = auth?.user?.email;
+  const [createConversationMutation] = useMutation(
+    CREATE_CONVERSATION_MUTATION
+  );
 
   const user = data?.userDetails;
   console.log(user);
 
   if (!user) return <h1>Loading...</h1>;
+
+  const handleChatButtonClick = () => {
+    createConversationMutation({
+      variables: {
+        person_a: selfEmail,
+        person_b: email,
+      },
+    });
+    navigate(`/chat/${email}`);
+  };
+
+  const handleScheduleButtonClick = () => {
+    navigate(`/scout/${email}`)
+  }
 
   return (
     <Card sx={{ margin: "50px", height: "730px" }}>
@@ -78,8 +108,10 @@ function ScoutDetails() {
         height={"50px"}
       >
         <Button variant="contained">33 Tours Cpmpleted</Button>
-        <Button variant="contained">Chat with Me</Button>
-        <Button variant="contained">See Schedule</Button>
+        <Button variant="contained" onClick={handleChatButtonClick}>
+          Chat with Me
+        </Button>
+        <Button variant="contained" onClick={handleScheduleButtonClick}>See Schedule</Button>
       </Stack>
     </Card>
   );
