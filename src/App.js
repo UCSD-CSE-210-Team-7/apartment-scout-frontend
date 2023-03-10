@@ -18,6 +18,7 @@ import RequesterHomePage from "./pages/RequesterHomePage";
 import TourDetailsPage from "./pages/TourDetailsPage";
 
 
+
 function App() {
   return (
     <div className={styles.app}>
@@ -35,6 +36,7 @@ function App() {
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
               <Route path="/tourdetailspage" element={<TourDetailsPage />} />
+         
             </Routes>
           </ApolloProvider>
         </AuthProvider>
