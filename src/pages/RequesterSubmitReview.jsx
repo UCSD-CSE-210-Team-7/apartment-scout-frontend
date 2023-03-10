@@ -1,3 +1,4 @@
+import "../styles/submit-review.scss";
 function RequesterSubmitReview() {
     return (
         <div>

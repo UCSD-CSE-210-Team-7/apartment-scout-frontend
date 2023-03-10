@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/tourdetailspage.scss";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import { createSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const QUERY_TOUR_DETAILS = gql`

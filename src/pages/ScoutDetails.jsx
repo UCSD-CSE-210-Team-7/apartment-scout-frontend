@@ -68,14 +68,15 @@ function ScoutDetails() {
 
   if (!user) return <h1>Loading...</h1>;
 
-  const handleChatButtonClick = () => {
-    createConversationMutation({
+  const handleChatButtonClick = async () => {
+    const { data } = await createConversationMutation({
       variables: {
         person_a: selfEmail,
         person_b: email,
       },
     });
-    navigate(`/chat/${email}`);
+    console.log(data)
+    navigate(`/chat/${data.createConversation.conversation_id}`);
   };
 
   const handleScheduleButtonClick = () => {

@@ -1,0 +1,717 @@
+{
+  "data": {
+    "me": {
+      "conversations": [
+        {
+          "conversation_id": 6,
+          "person_a": {
+            "name": "Shubham Kulkarni",
+            "email": "skulkarn@ucsd.edu"
+          },
+          "person_b": {
+            "name": "Guy Nir",
+            "email": "gnir@ucsd.edu"
+          },
+          "last_msg": {
+            "msg_id": 80,
+            "msg_text": "bnvcncvb",
+            "msg_time": "2023-03-10T17:31:04.807Z",
+            "sender": {
+              "email": "skulkarn@ucsd.edu",
+              "name": "Shubham Kulkarni"
+            }
+          },
+          "messages": [
+            {
+              "msg_id": 27,
+              "msg_text": "fff",
+              "msg_time": "2023-03-10T16:05:31.743Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 29,
+              "msg_text": "hey",
+              "msg_time": "2023-03-10T16:14:21.507Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 30,
+              "msg_text": "test",
+              "msg_time": "2023-03-10T16:24:02.268Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 31,
+              "msg_text": "temp",
+              "msg_time": "2023-03-10T16:24:55.567Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 32,
+              "msg_text": "fff",
+              "msg_time": "2023-03-10T16:25:14.013Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 34,
+              "msg_text": "boop",
+              "msg_time": "2023-03-10T16:31:23.956Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 38,
+              "msg_text": "peace",
+              "msg_time": "2023-03-10T16:34:49.473Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 47,
+              "msg_text": "sdfsd",
+              "msg_time": "2023-03-10T16:40:46.015Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 50,
+              "msg_text": "s.3",
+              "msg_time": "2023-03-10T16:41:28.858Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 56,
+              "msg_text": "gasdas",
+              "msg_time": "2023-03-10T16:42:39.838Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 71,
+              "msg_text": "sdfds",
+              "msg_time": "2023-03-10T16:50:51.544Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 80,
+              "msg_text": "bnvcncvb",
+              "msg_time": "2023-03-10T17:31:04.807Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            }
+          ]
+        },
+        {
+          "conversation_id": 7,
+          "person_a": {
+            "name": "Shubham Kulkarni",
+            "email": "shubhamkulkarni01@gmail.com"
+          },
+          "person_b": {
+            "name": "Shubham Kulkarni",
+            "email": "skulkarn@ucsd.edu"
+          },
+          "last_msg": {
+            "msg_id": 82,
+            "msg_text": "dsafdsaf",
+            "msg_time": "2023-03-10T17:31:58.079Z",
+            "sender": {
+              "email": "skulkarn@ucsd.edu",
+              "name": "Shubham Kulkarni"
+            }
+          },
+          "messages": [
+            {
+              "msg_id": 33,
+              "msg_text": "hey",
+              "msg_time": "2023-03-10T16:30:42.936Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 35,
+              "msg_text": "glammo",
+              "msg_time": "2023-03-10T16:31:34.943Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 36,
+              "msg_text": "nice one",
+              "msg_time": "2023-03-10T16:33:58.652Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 37,
+              "msg_text": "monkey",
+              "msg_time": "2023-03-10T16:34:03.644Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 39,
+              "msg_text": "hey",
+              "msg_time": "2023-03-10T16:35:07.610Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 40,
+              "msg_text": "homie",
+              "msg_time": "2023-03-10T16:35:12.005Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 41,
+              "msg_text": "balthazar",
+              "msg_time": "2023-03-10T16:36:05.073Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 42,
+              "msg_text": "gremlin",
+              "msg_time": "2023-03-10T16:36:17.385Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 43,
+              "msg_text": "greedy",
+              "msg_time": "2023-03-10T16:36:22.316Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 44,
+              "msg_text": "stupid",
+              "msg_time": "2023-03-10T16:39:18.920Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 45,
+              "msg_text": "yes",
+              "msg_time": "2023-03-10T16:39:24.714Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 49,
+              "msg_text": "test",
+              "msg_time": "2023-03-10T16:40:51.165Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 53,
+              "msg_text": "sadfdsaf",
+              "msg_time": "2023-03-10T16:41:36.622Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 57,
+              "msg_text": "sdfdsf",
+              "msg_time": "2023-03-10T16:42:43.374Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 58,
+              "msg_text": "asdfas",
+              "msg_time": "2023-03-10T16:43:15.268Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 59,
+              "msg_text": "asdfdsaf",
+              "msg_time": "2023-03-10T16:43:25.650Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 60,
+              "msg_text": "test.",
+              "msg_time": "2023-03-10T16:44:39.057Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 61,
+              "msg_text": "xcvcxv",
+              "msg_time": "2023-03-10T16:45:17.073Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 62,
+              "msg_text": "adsfafda",
+              "msg_time": "2023-03-10T16:45:40.481Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 63,
+              "msg_text": "adsfdasf",
+              "msg_time": "2023-03-10T16:46:39.981Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 65,
+              "msg_text": ".fdgfdg",
+              "msg_time": "2023-03-10T16:47:09.458Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 66,
+              "msg_text": "gnrush",
+              "msg_time": "2023-03-10T16:48:32.425Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 67,
+              "msg_text": "safdsa",
+              "msg_time": "2023-03-10T16:49:04.425Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 68,
+              "msg_text": "sdfdsf",
+              "msg_time": "2023-03-10T16:50:32.488Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 69,
+              "msg_text": "dsafdsaf",
+              "msg_time": "2023-03-10T16:50:43.436Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 70,
+              "msg_text": "asdfdsaf",
+              "msg_time": "2023-03-10T16:50:45.535Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 72,
+              "msg_text": "sdfsdsdf",
+              "msg_time": "2023-03-10T16:50:54.772Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 73,
+              "msg_text": "sdafdsa",
+              "msg_time": "2023-03-10T16:52:22.721Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 75,
+              "msg_text": "dsafdsa",
+              "msg_time": "2023-03-10T16:52:28.140Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "shubhamkulkarni01@gmail.com"
+              }
+            },
+            {
+              "msg_id": 77,
+              "msg_text": "sadfdsafa",
+              "msg_time": "2023-03-10T17:28:38.453Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 78,
+              "msg_text": "sdagsafsda",
+              "msg_time": "2023-03-10T17:28:40.966Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 81,
+              "msg_text": "adsgsafsda",
+              "msg_time": "2023-03-10T17:31:39.039Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 82,
+              "msg_text": "dsafdsaf",
+              "msg_time": "2023-03-10T17:31:58.079Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            }
+          ]
+        },
+        {
+          "conversation_id": 5,
+          "person_a": {
+            "name": "Shubham Kulkarni",
+            "email": "skulkarn@ucsd.edu"
+          },
+          "person_b": {
+            "name": "Ajinkya Bokade",
+            "email": "abokade@ucsd.edu"
+          },
+          "last_msg": {
+            "msg_id": 55,
+            "msg_text": "sfd",
+            "msg_time": "2023-03-10T16:42:37.733Z",
+            "sender": {
+              "email": "skulkarn@ucsd.edu",
+              "name": "Shubham Kulkarni"
+            }
+          },
+          "messages": [
+            {
+              "msg_id": 26,
+              "msg_text": "ddd",
+              "msg_time": "2023-03-10T16:05:29.231Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 48,
+              "msg_text": "sdgsdfsd",
+              "msg_time": "2023-03-10T16:40:48.542Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 51,
+              "msg_text": "d",
+              "msg_time": "2023-03-10T16:41:31.054Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 55,
+              "msg_text": "sfd",
+              "msg_time": "2023-03-10T16:42:37.733Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            }
+          ]
+        },
+        {
+          "conversation_id": 1,
+          "person_a": {
+            "name": "Shubham Kulkarni",
+            "email": "skulkarn@ucsd.edu"
+          },
+          "person_b": {
+            "name": "Manasi Agrawal",
+            "email": "maagrawa@ucsd.edu"
+          },
+          "last_msg": {
+            "msg_id": 83,
+            "msg_text": "dsafdsafa",
+            "msg_time": "2023-03-10T17:32:00.494Z",
+            "sender": {
+              "email": "skulkarn@ucsd.edu",
+              "name": "Shubham Kulkarni"
+            }
+          },
+          "messages": [
+            {
+              "msg_id": 1,
+              "msg_text": "Hi. This is Shubham.",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 2,
+              "msg_text": "Hi Shubham. This is Manasi.",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Manasi Agrawal",
+                "email": "maagrawa@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 3,
+              "msg_text": "Hi Manasi. How can I help you today?",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 4,
+              "msg_text": "I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Manasi Agrawal",
+                "email": "maagrawa@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 5,
+              "msg_text": "On my way now.",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 6,
+              "msg_text": "Tour is complete. Please leave a review!",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 7,
+              "msg_text": "Thanks for your work!",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Manasi Agrawal",
+                "email": "maagrawa@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 8,
+              "msg_text": "Thanks Manasi!",
+              "msg_time": "2023-03-10T15:35:13.289Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 23,
+              "msg_text": "great",
+              "msg_time": "2023-03-10T15:58:35.714Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 24,
+              "msg_text": "wonderful",
+              "msg_time": "2023-03-10T16:00:34.826Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 25,
+              "msg_text": "excellent",
+              "msg_time": "2023-03-10T16:04:30.116Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 28,
+              "msg_text": "hi",
+              "msg_time": "2023-03-10T16:05:39.138Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 46,
+              "msg_text": "sd",
+              "msg_time": "2023-03-10T16:40:16.236Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 52,
+              "msg_text": "sdfds",
+              "msg_time": "2023-03-10T16:41:32.982Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 54,
+              "msg_text": "s",
+              "msg_time": "2023-03-10T16:42:35.432Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 64,
+              "msg_text": "sdfsd",
+              "msg_time": "2023-03-10T16:46:45.369Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 74,
+              "msg_text": "dsafsda",
+              "msg_time": "2023-03-10T16:52:25.502Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 76,
+              "msg_text": "asdfsa",
+              "msg_time": "2023-03-10T17:28:36.095Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 79,
+              "msg_text": "sdafsdaf",
+              "msg_time": "2023-03-10T17:28:44.150Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            },
+            {
+              "msg_id": 83,
+              "msg_text": "dsafdsafa",
+              "msg_time": "2023-03-10T17:32:00.494Z",
+              "sender": {
+                "name": "Shubham Kulkarni",
+                "email": "skulkarn@ucsd.edu"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
