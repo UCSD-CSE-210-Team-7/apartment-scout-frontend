@@ -37,11 +37,11 @@ function TourSummaryPage() {
 
       <h1 className={styles.title}> Pictures of the Tour</h1>
       <div className={styles.imagestyling}>
-        <img className={styles.image} src={apt1} alt="Apartment Image 1" />
+        <img className={styles.image} src={apt1} alt="Apartment View 1" />
 
-        <img className={styles.image} src={apt2} alt="Apartment Image 2" />
+        <img className={styles.image} src={apt2} alt="Apartment View 2" />
 
-        <img className={styles.image} src={apt3} alt="Apartment Image 3" />
+        <img className={styles.image} src={apt3} alt="Apartment View 3" />
       </div>
     </>
   );

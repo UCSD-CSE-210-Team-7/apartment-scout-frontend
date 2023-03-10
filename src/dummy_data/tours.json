@@ -1,0 +1,122 @@
+{
+  "data": {
+    "users": [
+      {
+        "tours": [
+          {
+            "tour_id": 2,
+            "tour_address": "37 W Van Buren Street Chicago IL 60605",
+            "requested_by": {
+              "email": "shs004@ucsd.edu",
+              "name": "Shanay Shah",
+              "created_on": "2023-02-15T18:04:00.000Z",
+              "last_login": "2023-02-15T18:04:00.000Z",
+              "is_scout": false,
+              "calendly_link": null,
+              "regions": []
+            },
+            "scouted_by": {
+              "email": "abokade@ucsd.edu",
+              "name": "Ajinkya Bokade",
+              "created_on": "2023-02-15T18:01:00.000Z",
+              "last_login": "2023-02-15T18:01:00.000Z",
+              "is_scout": true,
+              "calendly_link": null,
+              "regions": [
+                92092,
+                60605
+              ]
+            },
+            "date_requested": "2023-02-15T18:09:00.000Z",
+            "date_completed": "2023-02-15T19:15:00.000Z",
+            "status": "COMPLETE",
+            "tour_summary": "Great apartment. Definitely live here.",
+            "tour_review_text": "Thanks for the excellent tour. I'll rent ASAP",
+            "tour_review_stars": 5
+          }
+        ]
+      },
+      {
+        "tours": [
+          {
+            "tour_id": 3,
+            "tour_address": "9500 Gilman Drive La Jolla CA 92092",
+            "requested_by": {
+              "email": "yaz083@ucsd.edu",
+              "name": "Yang Zhang",
+              "created_on": "2023-02-15T18:04:00.000Z",
+              "last_login": "2023-02-15T18:04:00.000Z",
+              "is_scout": false,
+              "calendly_link": null,
+              "regions": []
+            },
+            "scouted_by": {
+              "email": "gnir@ucsd.edu",
+              "name": "Guy Nir",
+              "created_on": "2023-02-15T18:02:00.000Z",
+              "last_login": "2023-02-15T18:02:00.000Z",
+              "is_scout": true,
+              "calendly_link": null,
+              "regions": [
+                92092,
+                99971
+              ]
+            },
+            "date_requested": "2023-02-15T18:10:00.000Z",
+            "date_completed": "2023-02-15T19:20:00.000Z",
+            "status": "COMPLETE",
+            "tour_summary": "Crappy house. Do not live here.",
+            "tour_review_text": "Thanks for the tour.",
+            "tour_review_stars": 5
+          }
+        ]
+      },
+      {
+        "tours": []
+      },
+      {
+        "tours": []
+      },
+      {
+        "tours": []
+      },
+      {
+        "tours": [
+          {
+            "tour_id": 1,
+            "tour_address": "625 8th Avenue New York NY ",
+            "requested_by": {
+              "email": "maagrawa@ucsd.edu",
+              "name": "Manasi Agrawal",
+              "created_on": "2023-02-15T18:03:00.000Z",
+              "last_login": "2023-02-15T18:03:00.000Z",
+              "is_scout": false,
+              "calendly_link": null,
+              "regions": []
+            },
+            "scouted_by": {
+              "email": "skulkarn@ucsd.edu",
+              "name": "Shubham Kulkarni",
+              "created_on": "2023-02-15T18:00:00.000Z",
+              "last_login": "2023-02-15T18:00:00.000Z",
+              "is_scout": true,
+              "calendly_link": "https://calendly.com/shubhamkulkarni01/60min",
+              "regions": [
+                92092,
+                60605,
+                10010,
+                2
+              ]
+            },
+            "date_requested": "2023-02-15T18:08:00.000Z",
+            "date_completed": "2023-02-15T19:08:00.000Z",
+            "status": "COMPLETE",
+            "tour_summary": "Very loud. Be cautious.",
+            "tour_review_text": "Thanks for the excellent tour. I'll rent ASAP.",
+            "tour_review_stars": 5
+          }
+        ]
+      }
+    ]
+  }
+}
