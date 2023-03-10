@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useCalendlyEventListener, InlineWidget } from "react-calendly";
 import ScoutCard from "../components/ScoutCard";
 import { useMutation, useQuery, gql } from "@apollo/client";
@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import userImage from "../img/user.png";
 import "../styles/calendar-styles.scss";
 
-const QUERY_USER_DETAILS = gql`
+export const QUERY_USER_DETAILS = gql`
   query UserDetails($email: String!) {
     userDetails(email: $email) {
       email
@@ -26,7 +26,7 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
-const CREATE_TOUR = gql`
+export const CREATE_TOUR = gql`
   mutation CreateTour($scoutedBy: String!, $tourAddress: String!) {
     createTour(scouted_by: $scoutedBy, tour_address: $tourAddress) {
       tour_id
@@ -40,7 +40,7 @@ const CREATE_TOUR = gql`
 const ScoutCalendarPage = () => {
   const { email } = useParams();
   const [tourAddress, setTourAddress] = useState("");
-  const { data } = useQuery(QUERY_USER_DETAILS, {
+  const { data, loading } = useQuery(QUERY_USER_DETAILS, {
     variables: { email },
   });
   const scout = data?.userDetails;
@@ -48,15 +48,17 @@ const ScoutCalendarPage = () => {
   const [createTourMutation] = useMutation(CREATE_TOUR);
 
   useCalendlyEventListener({
-    onEventScheduled: async (e) => {
-      await createTourMutation({
-        variables: {
-          scoutedBy: scout.email,
-          tourAddress: tourAddress,
-        },
-      });
-    },
+    onEventScheduled: async () =>
+    createTourMutation({
+      variables: {
+        scoutedBy: email,
+        tourAddress: tourAddress,
+      },
+    })
   });
+
+  if (!data || loading)
+    return <h1>Loading...</h1>
 
   return (
     <div className="App">
@@ -83,11 +85,6 @@ const ScoutCalendarPage = () => {
                     user={scout}
                     userImage={userImage}
                   ></ScoutCard>
-                </Grid>
-                <Grid item>
-                  <button className="chat-button" type="button">
-                    Chat with Me
-                  </button>
                 </Grid>
               </Grid>
             </Grid>
