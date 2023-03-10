@@ -4,7 +4,7 @@ import userImg from "../img/user.png";
 import { useQuery, useMutation, gql } from "@apollo/client";
 import Loading from '../components/Loading';
 
-const QUERY_USER_DETAILS = gql`
+export const QUERY_USER_DETAILS = gql`
   query Me {
     me {
       email
@@ -23,7 +23,7 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
-const UPDATE_USER_MUTATION = gql`
+export const UPDATE_USER_MUTATION = gql`
   mutation UpdateUser(
     $email: String!
     $name: String
@@ -73,16 +73,17 @@ function Badge({ name, state = "false", color = "green" }) {
   );
 }
 
-function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
+function Zipcodes({ zipcodes, focusLast, onChange, onDelete, onAdd }) {
   return (
     <div style={{ padding: "1em", display: "flex", flexDirection: "column" }}>
       <p style={{ margin: 0 }}>regions</p>
       {zipcodes.map((elem, idx) => (
-        <div style={{ padding: "0.5em" }}>
+        <div key={idx} style={{ padding: "0.5em" }}>
           <input
             type="number"
-            value={elem}
+            value={elem || 0}
             onChange={(e) => onChange(idx, parseInt(e.target.value))}
+            autoFocus={ focusLast && idx === zipcodes.length - 1 }
             style={{
               width: "fit-content",
               textAlign: "center",
@@ -125,13 +126,13 @@ function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
 function Field({ name, value, placeholder, handleChange, disabled, style }) {
   return (
     <div style={{ padding: "1em" }}>
-      <p style={{ margin: 0 }}>{name}</p>
+      <label style={{ margin: 0 }}>{name}</label>
       <input
         type="text"
         readOnly={disabled}
         disabled={disabled}
         placeholder={placeholder}
-        value={value}
+        value={value||''}
         onChange={handleChange}
         style={{ ...style }}
       />
@@ -141,6 +142,7 @@ function Field({ name, value, placeholder, handleChange, disabled, style }) {
 
 const Profile = () => {
   const fileInput = React.createRef();
+  const [focusLast, setFocusLast] = useState(false)
 
   const [user, setUser] = useState({
     email: "",
@@ -164,10 +166,6 @@ const Profile = () => {
   });
 
   const [updateUserMutation, {loading: updateLoading}] = useMutation(UPDATE_USER_MUTATION, { onCompleted: () => alert('user updated!')});
-
-  const handleNameChange = (e) => {
-    setUser({ ...user, name: e.target.value });
-  };
 
   /*
   const handleImageUpload = (e) => {
@@ -244,7 +242,7 @@ const Profile = () => {
         }}
       >
         <h1>Personal Info</h1>
-        <Field name="name" value={user.name} handleChange={handleNameChange} />
+        <Field name="name" value={user.name} handleChange={(e) => setUser({ ...user, name: e.target.value })} />
         <Field disabled name="email" value={user.email} />
         <Field
           name="Calendly link"
@@ -257,11 +255,13 @@ const Profile = () => {
         />
         <Zipcodes
           zipcodes={user.regions}
+          focusLast={focusLast}
           onAdd={(val) => {
             setUser({
               ...user,
               regions: [...user.regions, val],
             });
+            setFocusLast(true)
           }}
           onDelete={(i) => {
             setUser({
