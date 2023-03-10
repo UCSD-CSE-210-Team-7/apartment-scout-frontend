@@ -7,7 +7,7 @@ import apt2 from "../img/apt2.jpeg";
 import apt3 from "../img/apt3.jpeg";
 import Loading from '../components/Loading';
 
-const QUERY_TOUR_DETAILS = gql`
+export const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
     tour(tour_id: $tour_id) {
       tour_summary
@@ -25,7 +25,7 @@ function TourSummaryPage() {
     return <Loading/>
   }
 
-  console.log(data, loading);
+  // console.log(data, loading);
 
   return (
     <>
