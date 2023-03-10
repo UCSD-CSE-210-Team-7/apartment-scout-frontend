@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, signOut } from "./firebase";
 
@@ -8,26 +8,30 @@ const cookies = new Cookies();
 const Auth = React.createContext();
 export default Auth;
 
-export const AuthProvider = (props) => {
-  const [credential, setCredential] = React.useState(null);
-  const [user, setUser] = React.useState(null);
+export const AuthProvider = ({children, initialCredential, initialUser}) => {
+  const [credential, setCredential] = React.useState(initialCredential)
+  const [user, setUser] = React.useState(initialUser);
   const navigate = useNavigate();
 
-  auth.onAuthStateChanged(u => {
-    if (credential === null && u !== null) {
-      setCredential(u.accessToken);
+  useEffect(() => { 
+    auth.onAuthStateChanged(u => {
+      setCredential(u?.accessToken);
       setUser(u)
+    })
+  }, [])
+
+  useEffect(() => {
+    if(!credential){
+      cookies.remove("sessionCookie");
+      navigate("/");
     }
-  });
+  }, [credential, navigate])
 
   async function login() {
   }
 
   async function logout() {
     await signOut(auth)
-    setCredential(null);
-    cookies.remove("sessionCookie");
-    navigate("/");
   }
 
   const exportObj = {
@@ -40,5 +44,5 @@ export const AuthProvider = (props) => {
     URL,
   };
 
-  return <Auth.Provider value={exportObj}>{props.children}</Auth.Provider>;
+  return <Auth.Provider value={exportObj}>{children}</Auth.Provider>;
 };

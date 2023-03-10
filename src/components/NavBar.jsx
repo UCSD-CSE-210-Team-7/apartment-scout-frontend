@@ -28,6 +28,7 @@ const NavigationBar = () => {
     );
   };
 
+
   if (pathname === "/") {
     return;
   }

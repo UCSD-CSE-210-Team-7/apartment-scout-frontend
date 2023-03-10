@@ -17,9 +17,7 @@ import Auth from "../utils/auth";
 
 import Cookies from "universal-cookie";
 
-export const ApolloProvider = (props) => {
-  const auth = useContext(Auth);
-
+export function getLink(auth){
   const httpLink = new HttpLink({
     uri: "http://localhost:4000/",
     credentials: "include",
@@ -60,9 +58,16 @@ export const ApolloProvider = (props) => {
     concat(authMiddleware, httpLink)
   );
 
+  return splitLink;
+
+}
+
+export function ApolloProvider(props){
+  const auth = useContext(Auth);
+
   const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: splitLink,
+    link: getLink(auth),
   });
 
   return (
