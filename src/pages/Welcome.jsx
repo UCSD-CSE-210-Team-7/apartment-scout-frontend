@@ -1,7 +1,6 @@
+import React, { useContext } from 'react';
+import Auth from '../utils/auth';
 import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithPopup } from "firebase/auth";
-import { GoogleSignOn } from "../utils//firebase";
-
 import { useMutation, gql } from '@apollo/client';
 
 export const MUTATION_CREATE_USER = gql`
@@ -15,30 +14,28 @@ export const MUTATION_CREATE_USER = gql`
 
 function WelcomePage() {
   const navigate = useNavigate();
+  const auth = useContext(Auth);
 
   const [ createUserMutation ] = useMutation(MUTATION_CREATE_USER);
 
   const handleLogin = async () => {
-    const auth = await getAuth();
-    const result = await signInWithPopup(auth, GoogleSignOn);
-    console.log(result)
+    const result = await auth.login()
 
-    createUserMutation({
-      variables: {
-        name: result.user.displayName
-      }, 
-      context: {
-        headers: {
-          authorization: result.user.accessToken
+    try{
+      const user = await createUserMutation({
+        variables: {
+          name: result.user.displayName
+        }, 
+        context: {
+          headers: {
+            authorization: result.user.accessToken
+          }
         }
-      }
-    }).then(r => {
-      console.log('user created', r)
+      })
       navigate('/profile')
-    }).catch(err => {
-      console.log('user already exists', err)
+    } catch(err) {
       navigate('/home')
-    })
+    }
   };
 
   return (
