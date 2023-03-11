@@ -236,13 +236,12 @@ test("profile regions change", async () => {
         let zipCodeElement = screen.getByDisplayValue(expectedUser.regions[1]);
         await userEvent.clear(zipCodeElement);
         await userEvent.type(screen.getByDisplayValue(0), '91112');
-        await screen.findByDisplayValue('91112')
-        await userEvent.click(screen.getByText('Save'));
     });
 
-    await screen.findByText('Saving...');
+    await screen.findByDisplayValue('91112')
+    act(() => userEvent.click(screen.getByText('Save')))
+    await screen.findByText('Saving...')
     await screen.findByText('Save');
-
     serverReply.regions.forEach((zipcode, i) => expect(screen.getByDisplayValue(zipcode)).toBeInTheDocument());
 });
 
