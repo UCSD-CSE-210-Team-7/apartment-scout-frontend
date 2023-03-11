@@ -27,6 +27,12 @@ const QUERY_USER_DETAILS = gql`
       is_scout
       calendly_link
       tours {
+        scouted_by {
+          tours {
+            tour_id
+            tour_review_text
+          }
+        }
         tour_id
         tour_review_text
         tour_review_stars
@@ -86,7 +92,7 @@ function ScoutDetails() {
 
   return (
     <Card sx={{ margin: "50px", height: "730px" }}>
-      <Grid container spacing={1} display="flex" direction="row">
+      <Grid container spacing={60} display="flex" direction="row">
         <Grid item xs={4}>
           <ScoutCard
             key={user.name}
@@ -95,9 +101,9 @@ function ScoutDetails() {
           ></ScoutCard>
         </Grid>
 
-        {user.tours.map((i) => (
+        {user.tours.map((tour) => (
           <Grid item xs={6}>
-            <Item>Review 2</Item>
+            <Item>{tour.tour_review_text}</Item>
           </Grid>
         ))}
       </Grid>
@@ -109,7 +115,7 @@ function ScoutDetails() {
         width={"1300px"}
         height={"50px"}
       >
-        <Button variant="contained">33 Tours Cpmpleted</Button>
+        <Button  sx={{ bgcolor: '#1976d2', color: 'white!important' }} disabled>{user.tours? user.tours.length : 0} tours completed</Button>
         <Button variant="contained" onClick={handleChatButtonClick}>
           Chat with Me
         </Button>
