@@ -1,0 +1,593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile data shows up 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="display: flex; flex-direction: column; padding: 0px 6em; align-items: center;"
+    >
+      <h1
+        style="font-size: 3rem; margin: 1em 0em; padding: 1em 3em; color: rgb(2, 62, 138); background: rgb(173, 232, 244);"
+      >
+        My Profile
+      </h1>
+      <img
+        alt="user"
+        src="user.png"
+        style="margin: 2em 0px; height: 20em; width: 20em;"
+      />
+      <label>
+        <input
+          style="display: none;"
+          type="file"
+        />
+        <h1
+          style="color: white; cursor: pointer;"
+        >
+          Edit profile photo
+        </h1>
+      </label>
+      <div
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+      >
+        Scout
+      </div>
+    </div>
+    <div
+      style="border: 1px solid black; display: flex; flex-direction: column; flex-grow: 1; padding: 2em; background: white; font-size: 2em;"
+    >
+      <h1>
+        Personal Info
+      </h1>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          name
+        </label>
+        <input
+          type="text"
+          value="Shubham Kulkarni"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          email
+        </label>
+        <input
+          disabled=""
+          readonly=""
+          type="text"
+          value="skulkarn@ucsd.edu"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          Calendly link
+        </label>
+        <input
+          placeholder="Paste Calendly link here"
+          style="width: 100%;"
+          type="text"
+          value="https://calendly.com/shubhamkulkarni01/60min"
+        />
+      </div>
+      <div
+        style="padding: 1em; display: flex; flex-direction: column;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          regions
+        </p>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="92092"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="60605"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="10010"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="2"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            placeholder="add new region"
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        style="align-self: center; padding: 0.5em 1em; background: rgb(2, 62, 138); color: white; border-radius: 1em;"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`profile regions add 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="display: flex; flex-direction: column; padding: 0px 6em; align-items: center;"
+    >
+      <h1
+        style="font-size: 3rem; margin: 1em 0em; padding: 1em 3em; color: rgb(2, 62, 138); background: rgb(173, 232, 244);"
+      >
+        My Profile
+      </h1>
+      <img
+        alt="user"
+        src="user.png"
+        style="margin: 2em 0px; height: 20em; width: 20em;"
+      />
+      <label>
+        <input
+          style="display: none;"
+          type="file"
+        />
+        <h1
+          style="color: white; cursor: pointer;"
+        >
+          Edit profile photo
+        </h1>
+      </label>
+      <div
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+      >
+        Scout
+      </div>
+    </div>
+    <div
+      style="border: 1px solid black; display: flex; flex-direction: column; flex-grow: 1; padding: 2em; background: white; font-size: 2em;"
+    >
+      <h1>
+        Personal Info
+      </h1>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          name
+        </label>
+        <input
+          type="text"
+          value="Ajinkya Bokade"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          email
+        </label>
+        <input
+          disabled=""
+          readonly=""
+          type="text"
+          value="abokade@ucsd.edu"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          Calendly link
+        </label>
+        <input
+          placeholder="Paste Calendly link here"
+          style="width: 100%;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        style="padding: 1em; display: flex; flex-direction: column;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          regions
+        </p>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="92092"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="60605"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            placeholder="add new region"
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        style="align-self: center; padding: 0.5em 1em; background: rgb(2, 62, 138); color: white; border-radius: 1em;"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`profile regions change 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="display: flex; flex-direction: column; padding: 0px 6em; align-items: center;"
+    >
+      <h1
+        style="font-size: 3rem; margin: 1em 0em; padding: 1em 3em; color: rgb(2, 62, 138); background: rgb(173, 232, 244);"
+      >
+        My Profile
+      </h1>
+      <img
+        alt="user"
+        src="user.png"
+        style="margin: 2em 0px; height: 20em; width: 20em;"
+      />
+      <label>
+        <input
+          style="display: none;"
+          type="file"
+        />
+        <h1
+          style="color: white; cursor: pointer;"
+        >
+          Edit profile photo
+        </h1>
+      </label>
+      <div
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+      >
+        Scout
+      </div>
+    </div>
+    <div
+      style="border: 1px solid black; display: flex; flex-direction: column; flex-grow: 1; padding: 2em; background: white; font-size: 2em;"
+    >
+      <h1>
+        Personal Info
+      </h1>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          name
+        </label>
+        <input
+          type="text"
+          value="Ajinkya Bokade"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          email
+        </label>
+        <input
+          disabled=""
+          readonly=""
+          type="text"
+          value="abokade@ucsd.edu"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          Calendly link
+        </label>
+        <input
+          placeholder="Paste Calendly link here"
+          style="width: 100%;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        style="padding: 1em; display: flex; flex-direction: column;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          regions
+        </p>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="92092"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="60605"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            placeholder="add new region"
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        style="align-self: center; padding: 0.5em 1em; background: rgb(2, 62, 138); color: white; border-radius: 1em;"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`profile regions delete 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="display: flex; flex-direction: column; padding: 0px 6em; align-items: center;"
+    >
+      <h1
+        style="font-size: 3rem; margin: 1em 0em; padding: 1em 3em; color: rgb(2, 62, 138); background: rgb(173, 232, 244);"
+      >
+        My Profile
+      </h1>
+      <img
+        alt="user"
+        src="user.png"
+        style="margin: 2em 0px; height: 20em; width: 20em;"
+      />
+      <label>
+        <input
+          style="display: none;"
+          type="file"
+        />
+        <h1
+          style="color: white; cursor: pointer;"
+        >
+          Edit profile photo
+        </h1>
+      </label>
+      <div
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+      >
+        Scout
+      </div>
+    </div>
+    <div
+      style="border: 1px solid black; display: flex; flex-direction: column; flex-grow: 1; padding: 2em; background: white; font-size: 2em;"
+    >
+      <h1>
+        Personal Info
+      </h1>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          name
+        </label>
+        <input
+          type="text"
+          value="Ajinkya Bokade"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          email
+        </label>
+        <input
+          disabled=""
+          readonly=""
+          type="text"
+          value="abokade@ucsd.edu"
+        />
+      </div>
+      <div
+        style="padding: 1em;"
+      >
+        <label
+          style="margin: 0px;"
+        >
+          Calendly link
+        </label>
+        <input
+          placeholder="Paste Calendly link here"
+          style="width: 100%;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        style="padding: 1em; display: flex; flex-direction: column;"
+      >
+        <p
+          style="margin: 0px;"
+        >
+          regions
+        </p>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="92092"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value="60605"
+          />
+          <button
+            style="color: white; background: red; border-radius: 0.5em; margin: 0em 0.5em; padding: 0em 0.5em;"
+          >
+            X
+          </button>
+        </div>
+        <div
+          style="padding: 0.5em;"
+        >
+          <input
+            placeholder="add new region"
+            style="text-align: center; border: 0px; border-bottom: 1px solid black;"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        style="align-self: center; padding: 0.5em 1em; background: rgb(2, 62, 138); color: white; border-radius: 1em;"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

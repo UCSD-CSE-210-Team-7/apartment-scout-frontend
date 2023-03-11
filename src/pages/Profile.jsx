@@ -7,7 +7,7 @@ import { useQuery, useMutation, gql } from "@apollo/client";
 import React, { useState } from "react";
 
 // Define GraphQL queries for fetching user details
-const QUERY_USER_DETAILS = gql`
+export const QUERY_USER_DETAILS = gql`
   query Me {
     me {
       email
@@ -27,7 +27,7 @@ const QUERY_USER_DETAILS = gql`
 `;
 
 // Define GraphQL mutations for updating user details
-const UPDATE_USER_MUTATION = gql`
+export const UPDATE_USER_MUTATION = gql`
   mutation UpdateUser(
     $email: String!
     $name: String
@@ -95,16 +95,17 @@ function Badge({ name, state = "false", color = "green" }) {
  *
  * @returns {JSX.Element} The JSX element for the Zipcodes component.
  */
-function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
+function Zipcodes({ zipcodes, focusLast, onChange, onDelete, onAdd }) {
   return (
     <div style={{ padding: "1em", display: "flex", flexDirection: "column" }}>
       <p style={{ margin: 0 }}>regions</p>
       {zipcodes.map((elem, idx) => (
-        <div style={{ padding: "0.5em" }}>
+        <div key={idx} style={{ padding: "0.5em" }}>
           <input
             type="number"
-            value={elem}
+            value={elem || 0}
             onChange={(e) => onChange(idx, parseInt(e.target.value))}
+            autoFocus={ focusLast && idx === zipcodes.length - 1 }
             style={{
               width: "fit-content",
               textAlign: "center",
@@ -159,13 +160,13 @@ function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
 function Field({ name, value, placeholder, handleChange, disabled, style }) {
   return (
     <div style={{ padding: "1em" }}>
-      <p style={{ margin: 0 }}>{name}</p>
+      <label style={{ margin: 0 }}>{name}</label>
       <input
         type="text"
         readOnly={disabled}
         disabled={disabled}
         placeholder={placeholder}
-        value={value}
+        value={value||''}
         onChange={handleChange}
         style={{ ...style }}
       />
@@ -179,6 +180,7 @@ function Field({ name, value, placeholder, handleChange, disabled, style }) {
  */
 const Profile = () => {
   const fileInput = React.createRef();
+  const [focusLast, setFocusLast] = useState(false)
 
   // Set initial user state
   const [user, setUser] = useState({
@@ -208,11 +210,6 @@ const Profile = () => {
     UPDATE_USER_MUTATION,
     { onCompleted: () => alert("user updated!") }
   );
-
-  // Function to handle name changes and update user state
-  const handleNameChange = (e) => {
-    setUser({ ...user, name: e.target.value });
-  };
 
   /*
   const handleImageUpload = (e) => {
@@ -288,7 +285,7 @@ const Profile = () => {
         }}
       >
         <h1>Personal Info</h1>
-        <Field name="name" value={user.name} handleChange={handleNameChange} />
+        <Field name="name" value={user.name} handleChange={(e) => setUser({ ...user, name: e.target.value })} />
         <Field disabled name="email" value={user.email} />
         <Field
           name="Calendly link"
@@ -301,11 +298,13 @@ const Profile = () => {
         />
         <Zipcodes
           zipcodes={user.regions}
+          focusLast={focusLast}
           onAdd={(val) => {
             setUser({
               ...user,
               regions: [...user.regions, val],
             });
+            setFocusLast(true)
           }}
           onDelete={(i) => {
             setUser({
