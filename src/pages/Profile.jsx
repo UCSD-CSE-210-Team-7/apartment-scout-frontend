@@ -63,10 +63,16 @@ export const UPDATE_USER_MUTATION = gql`
  * @param {string} name - Name to be displayed inside the badge
  * @param {string} state - Optional boolean string which indicates whether the user is scout or not
  * @param {string} color - Optional background color of badge if state is true
- * 
+ *
  * @returns {JSX.Element} The JSX element for the Badge component.
  */
-function Toggle({ trueValue, falseValue, state = false, color = "green", toggle }) {
+function Toggle({
+  trueValue,
+  falseValue,
+  state = false,
+  color = "green",
+  toggle,
+}) {
   return (
     <div
       style={{
@@ -78,9 +84,9 @@ function Toggle({ trueValue, falseValue, state = false, color = "green", toggle 
         color: "white",
         fontSize: "2em",
         textAlign: "center",
-        cursor: 'pointer',
+        cursor: "pointer",
       }}
-      onClick = {toggle}
+      onClick={toggle}
     >
       {state ? trueValue : falseValue}
     </div>
@@ -107,7 +113,7 @@ function Zipcodes({ zipcodes, focusLast, onChange, onDelete, onAdd }) {
             type="number"
             value={elem || 0}
             onChange={(e) => onChange(idx, parseInt(e.target.value))}
-            autoFocus={ focusLast && idx === zipcodes.length - 1 }
+            autoFocus={focusLast && idx === zipcodes.length - 1}
             style={{
               width: "fit-content",
               textAlign: "center",
@@ -162,13 +168,13 @@ function Zipcodes({ zipcodes, focusLast, onChange, onDelete, onAdd }) {
 function Field({ name, value, placeholder, handleChange, disabled, style }) {
   return (
     <div style={{ padding: "1em" }}>
-      <label style={{ display: 'block', margin: 0 }}>{name}</label>
+      <label style={{ display: "block", margin: 0 }}>{name}</label>
       <input
         type="text"
         readOnly={disabled}
         disabled={disabled}
         placeholder={placeholder}
-        value={value||''}
+        value={value || ""}
         onChange={handleChange}
         style={{ ...style }}
       />
@@ -182,7 +188,7 @@ function Field({ name, value, placeholder, handleChange, disabled, style }) {
  */
 const Profile = () => {
   const fileInput = React.createRef();
-  const [focusLast, setFocusLast] = useState(false)
+  const [focusLast, setFocusLast] = useState(false);
 
   // Set initial user state
   const [user, setUser] = useState({
@@ -197,7 +203,7 @@ const Profile = () => {
     image: userImg,
   });
 
-  // Fetch the existing user details 
+  // Fetch the existing user details
   const { loading: userLoading } = useQuery(QUERY_USER_DETAILS, {
     onCompleted: (data) => {
       setUser({
@@ -272,7 +278,13 @@ const Profile = () => {
             Edit profile photo
           </h1>
         </label>
-        <Toggle trueValue="Scout Enabled" falseValue="Scout Disabled" state={user.is_scout} toggle={e => setUser(u => ({...u, is_scout: !u.is_scout}))} color="green" />
+        <Toggle
+          trueValue="Scout Enabled"
+          falseValue="Scout Disabled"
+          state={user.is_scout}
+          toggle={(e) => setUser((u) => ({ ...u, is_scout: !u.is_scout }))}
+          color="green"
+        />
       </div>
 
       <div
@@ -287,7 +299,11 @@ const Profile = () => {
         }}
       >
         <h1>Personal Info</h1>
-        <Field name="name" value={user.name} handleChange={(e) => setUser({ ...user, name: e.target.value })} />
+        <Field
+          name="name"
+          value={user.name}
+          handleChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
         <Field disabled name="email" value={user.email} />
         <Field
           name="Calendly link"
@@ -298,36 +314,38 @@ const Profile = () => {
           }
           style={{ width: "100%" }}
         />
-        <Zipcodes
-          zipcodes={user.regions}
-          focusLast={focusLast}
-          onAdd={(val) => {
-            setUser({
-              ...user,
-              regions: [...user.regions, val],
-            });
-            setFocusLast(true)
-          }}
-          onDelete={(i) => {
-            setUser({
-              ...user,
-              regions: [
-                ...user.regions.slice(0, i),
-                ...user.regions.slice(i + 1),
-              ],
-            });
-          }}
-          onChange={(i, val) => {
-            setUser({
-              ...user,
-              regions: [
-                ...user.regions.slice(0, i),
-                val,
-                ...user.regions.slice(i + 1),
-              ],
-            });
-          }}
-        />
+        {user.is_scout && (
+          <Zipcodes
+            zipcodes={user.regions}
+            focusLast={focusLast}
+            onAdd={(val) => {
+              setUser({
+                ...user,
+                regions: [...user.regions, val],
+              });
+              setFocusLast(true);
+            }}
+            onDelete={(i) => {
+              setUser({
+                ...user,
+                regions: [
+                  ...user.regions.slice(0, i),
+                  ...user.regions.slice(i + 1),
+                ],
+              });
+            }}
+            onChange={(i, val) => {
+              setUser({
+                ...user,
+                regions: [
+                  ...user.regions.slice(0, i),
+                  val,
+                  ...user.regions.slice(i + 1),
+                ],
+              });
+            }}
+          />
+        )}
         <button
           style={{
             alignSelf: "center",
