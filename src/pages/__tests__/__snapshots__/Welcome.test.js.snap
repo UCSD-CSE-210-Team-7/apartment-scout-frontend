@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<DocumentFragment>
+  <div
+    style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  >
+    <div
+      style="font-size: 8em;"
+    >
+      <span
+        style="color: rgb(173, 232, 244);"
+      >
+        apt
+      </span>
+      <span
+        style="color: rgb(255, 255, 255);"
+      >
+        scout
+      </span>
+    </div>
+    <button
+      style="background: rgb(173, 232, 244); color: rgb(2, 62, 138); font-size: 2.5em; border: 0px; border-radius: 2.5rem; padding: 1rem;"
+    >
+      sign in
+    </button>
+  </div>
+</DocumentFragment>
+`;
