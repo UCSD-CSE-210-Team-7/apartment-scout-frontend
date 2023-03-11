@@ -1,4 +1,4 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,12 +7,18 @@
     margin-left: 2rem;
 }
 
-.text {
+.text-title {
     color: white;
     font-size: 5ch;
     margin-left: 2rem;
     padding-right: 2rem;
-  }
+}
+
+.text-rating {
+    color: white;
+    font-size: 3ch;
+    padding-right: 1rem;
+}
 
 .text-box {
     border-radius: 20px;
@@ -40,3 +46,8 @@
 .button-container {
     overflow: hidden;
 }
+
+.rating-input {
+    margin-right: 6rem;
+}
+

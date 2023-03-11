@@ -34,14 +34,15 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<ChatPage />} />
               <Route path="/chat/:conversation_id" element={<ChatPage />} />
-              <Route path="/tourhome" element={<TourHomePage />} />
-              <Route path="/scoutSubmitReview/" element={<ScoutSubmitReview />} />
-
-              <Route path="/requesterSubmitReview" element={<RequesterSubmitReview />} />
               <Route path="/browse/:email" element={<ScoutDetails />} />
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
-              <Route path="/tourdetails/:tour_id" element={<TourDetailsPage />} />
+
+              <Route path="/tourhome" element={<TourHomePage />} />
+              <Route path="/tourdetails/:role/:tour_id" element={<TourDetailsPage />} />
               <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />   
+              <Route path="/scoutSubmitReview/:tour_id" element={<ScoutSubmitReview />} />
+              <Route path="/requesterSubmitReview/:tour_id" element={<RequesterSubmitReview />} />
+
             </Routes>
           </ApolloProvider>
         </AuthProvider>

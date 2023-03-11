@@ -14,7 +14,8 @@ jest.mock('../src/utils/firebase', () => {
     __esModule: true,
     ...originalModule,
     auth: { onAuthStateChanged: jest.fn() },
-    signOut: jest.fn()
+    signOut: jest.fn(),
+    signInWithPopup: jest.fn(),
   }
 })
 
