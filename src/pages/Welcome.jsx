@@ -22,7 +22,7 @@ function WelcomePage() {
     const result = await auth.login()
 
     try{
-      const user = await createUserMutation({
+      await createUserMutation({
         variables: {
           name: result.user.displayName
         }, 
