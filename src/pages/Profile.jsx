@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import "../styles/profile-styles.scss";
+// Import style files and images
+import Loading from "../components/Loading";
 import userImg from "../img/user.png";
+import "../styles/profile-styles.scss";
+// Import required dependencies
 import { useQuery, useMutation, gql } from "@apollo/client";
-import Loading from '../components/Loading';
+import React, { useState } from "react";
 
+// Define GraphQL queries for fetching user details
 const QUERY_USER_DETAILS = gql`
   query Me {
     me {
@@ -23,6 +26,7 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
+// Define GraphQL mutations for updating user details
 const UPDATE_USER_MUTATION = gql`
   mutation UpdateUser(
     $email: String!
@@ -54,6 +58,14 @@ const UPDATE_USER_MUTATION = gql`
   }
 `;
 
+/**
+ * Badge component which indicates whether the user is a scout or not
+ * @param {string} name - Name to be displayed inside the badge
+ * @param {string} state - Optional boolean string which indicates whether the user is scout or not
+ * @param {string} color - Optional background color of badge if state is true
+ * 
+ * @returns {JSX.Element} The JSX element for the Badge component.
+ */
 function Badge({ name, state = "false", color = "green" }) {
   return (
     <div
@@ -73,6 +85,16 @@ function Badge({ name, state = "false", color = "green" }) {
   );
 }
 
+/**
+ * Component that displays a list of zipcodes and provides functionality to add, edit, and delete them.
+ *
+ * @param {Array<number>} zipcodes - An array of zipcodes to be displayed.
+ * @param {function} onChange - A callback function to handle changes to a specific zipcode.
+ * @param {function} onDelete - A callback function to handle deletion of zipcode.
+ * @param {function} onAdd - A callback function to handle addition of a new zipcode.
+ *
+ * @returns {JSX.Element} The JSX element for the Zipcodes component.
+ */
 function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
   return (
     <div style={{ padding: "1em", display: "flex", flexDirection: "column" }}>
@@ -122,6 +144,18 @@ function Zipcodes({ zipcodes, onChange, onDelete, onAdd }) {
   );
 }
 
+/**
+ * Component that displays an input field with a label, and value
+ *
+ * @param {string} name - The label for the input field.
+ * @param {string} value - The current value of the input field.
+ * @param {string} placeholder - The placeholder text for the input box.
+ * @param {function} handleChange - A callback function to handle changes to the input value.
+ * @param {boolean} disabled - A flag to indicate whether the input box should be disabled.
+ * @param {Object} style - An object containing inline styles to be applied to the field.
+ *
+ * @returns {JSX.Element} The JSX element for the Field component.
+ */
 function Field({ name, value, placeholder, handleChange, disabled, style }) {
   return (
     <div style={{ padding: "1em" }}>
@@ -139,9 +173,14 @@ function Field({ name, value, placeholder, handleChange, disabled, style }) {
   );
 }
 
+/**
+ * Profile component while displays the user details and allows to edit the details
+ * @returns {JSX.Element} The JSX element for the Field component.
+ */
 const Profile = () => {
   const fileInput = React.createRef();
 
+  // Set initial user state
   const [user, setUser] = useState({
     email: "",
     name: "",
@@ -154,6 +193,7 @@ const Profile = () => {
     image: userImg,
   });
 
+  // Fetch the existing user details 
   const { loading: userLoading } = useQuery(QUERY_USER_DETAILS, {
     onCompleted: (data) => {
       setUser({
@@ -163,8 +203,13 @@ const Profile = () => {
     },
   });
 
-  const [updateUserMutation, {loading: updateLoading}] = useMutation(UPDATE_USER_MUTATION, { onCompleted: () => alert('user updated!')});
+  // Use mutation to update user data
+  const [updateUserMutation, { loading: updateLoading }] = useMutation(
+    UPDATE_USER_MUTATION,
+    { onCompleted: () => alert("user updated!") }
+  );
 
+  // Function to handle name changes and update user state
   const handleNameChange = (e) => {
     setUser({ ...user, name: e.target.value });
   };
@@ -175,8 +220,7 @@ const Profile = () => {
   };
   */
 
-  if(userLoading)
-    return <Loading/>
+  if (userLoading) return <Loading />;
 
   return (
     <div
@@ -295,7 +339,7 @@ const Profile = () => {
             updateUserMutation({
               variables: user,
             });
-          }} 
+          }}
           disabled={updateLoading}
         >
           {updateLoading ? "Saving..." : "Save"}
