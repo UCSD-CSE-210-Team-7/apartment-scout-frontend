@@ -59,14 +59,14 @@ export const UPDATE_USER_MUTATION = gql`
 `;
 
 /**
- * Badge component which indicates whether the user is a scout or not
+ * Toggle component that allows user to toggle scout state on and off
  * @param {string} name - Name to be displayed inside the badge
  * @param {string} state - Optional boolean string which indicates whether the user is scout or not
  * @param {string} color - Optional background color of badge if state is true
  * 
  * @returns {JSX.Element} The JSX element for the Badge component.
  */
-function Badge({ name, state = "false", color = "green" }) {
+function Toggle({ trueValue, falseValue, state = false, color = "green", toggle }) {
   return (
     <div
       style={{
@@ -78,9 +78,11 @@ function Badge({ name, state = "false", color = "green" }) {
         color: "white",
         fontSize: "2em",
         textAlign: "center",
+        cursor: 'pointer',
       }}
+      onClick = {toggle}
     >
-      {name}
+      {state ? trueValue : falseValue}
     </div>
   );
 }
@@ -160,7 +162,7 @@ function Zipcodes({ zipcodes, focusLast, onChange, onDelete, onAdd }) {
 function Field({ name, value, placeholder, handleChange, disabled, style }) {
   return (
     <div style={{ padding: "1em" }}>
-      <label style={{ margin: 0 }}>{name}</label>
+      <label style={{ display: 'block', margin: 0 }}>{name}</label>
       <input
         type="text"
         readOnly={disabled}
@@ -270,7 +272,7 @@ const Profile = () => {
             Edit profile photo
           </h1>
         </label>
-        <Badge name="Scout" state={user.is_scout} color="green" />
+        <Toggle trueValue="Scout Enabled" falseValue="Scout Disabled" state={user.is_scout} toggle={e => setUser(u => ({...u, is_scout: !u.is_scout}))} color="green" />
       </div>
 
       <div

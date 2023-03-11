@@ -30,9 +30,9 @@ exports[`profile data shows up 1`] = `
         </h1>
       </label>
       <div
-        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center; cursor: pointer;"
       >
-        Scout
+        Scout Enabled
       </div>
     </div>
     <div
@@ -45,7 +45,7 @@ exports[`profile data shows up 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           name
         </label>
@@ -58,7 +58,7 @@ exports[`profile data shows up 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           email
         </label>
@@ -73,7 +73,7 @@ exports[`profile data shows up 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           Calendly link
         </label>
@@ -199,9 +199,9 @@ exports[`profile regions add 1`] = `
         </h1>
       </label>
       <div
-        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center; cursor: pointer;"
       >
-        Scout
+        Scout Enabled
       </div>
     </div>
     <div
@@ -214,7 +214,7 @@ exports[`profile regions add 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           name
         </label>
@@ -227,7 +227,7 @@ exports[`profile regions add 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           email
         </label>
@@ -242,7 +242,7 @@ exports[`profile regions add 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           Calendly link
         </label>
@@ -340,9 +340,9 @@ exports[`profile regions change 1`] = `
         </h1>
       </label>
       <div
-        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center; cursor: pointer;"
       >
-        Scout
+        Scout Enabled
       </div>
     </div>
     <div
@@ -355,7 +355,7 @@ exports[`profile regions change 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           name
         </label>
@@ -368,7 +368,7 @@ exports[`profile regions change 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           email
         </label>
@@ -383,7 +383,7 @@ exports[`profile regions change 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           Calendly link
         </label>
@@ -481,9 +481,9 @@ exports[`profile regions delete 1`] = `
         </h1>
       </label>
       <div
-        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center;"
+        style="padding: 0.4em 0em; width: 10em; background: green; margin: 2em 0px 0px; color: white; font-size: 2em; text-align: center; cursor: pointer;"
       >
-        Scout
+        Scout Enabled
       </div>
     </div>
     <div
@@ -496,7 +496,7 @@ exports[`profile regions delete 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           name
         </label>
@@ -509,7 +509,7 @@ exports[`profile regions delete 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           email
         </label>
@@ -524,7 +524,7 @@ exports[`profile regions delete 1`] = `
         style="padding: 1em;"
       >
         <label
-          style="margin: 0px;"
+          style="display: block; margin: 0px;"
         >
           Calendly link
         </label>
