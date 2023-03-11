@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Project Title
+###Apartment Scout Frontend
+Application aims to improve the rental process by connecting users and their homes of interest using third-party agents for trusted in-person tours, providing unbiased information, and facilitating their decision-making for renting a home.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Content
 
-## Available Scripts
+- [About The App](#about-the-app)
+- [Screenshots](#screenshots)
+- [Packages](#packages)
+- [Setup](#setup)
+- [Team](#team)
 
-In the project directory, you can run:
+## About The App
+Apartment Scout aims to enhance the rental experience by leveraging the expertise of third-party agents to connect users with properties of interest. Agents provide trusted, unbiased information and facilitate in-person tours, empowering renters to make informed decisions about their new home.
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Packages
+React 18 is used as the front-end library to design components and provide a seamless user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+GraphQL is used as the query language to interact with the server and fetch data. 
 
-### `npm test`
+Material UI is used as a component library to implement a consistent and modern design across the application.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React-Calendly package is used to integrate the Calendly scheduling widget into the application.
 
-### `npm run build`
+SASS is used as the preprocessor for CSS to write modular, maintainable, and reusable stylesheets. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Firebase is used for Google authentication to securely authenticate users using their Google account.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+GraphQL-ws is used for WebSocket communication for chat, allowing real-time messaging between users.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Prettier is used as the code formatter to automatically format the code and ensure consistency in coding style across the application. 
 
-### `npm run eject`
+## Setup
+Make sure you have installed the latest Node.js installed.
+- Download or clone the repository
+- Run `npm install`
+- Run the pg docker container
+- Run the backend server
+- Run the client `npm start`
+- Open http://localhost:3000 in the browser
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Team
+Team 7:
+Shanay Shah
+Manasi Agrawal
+Shubham Kulkarni
+Yang Zhang
+Guy Nir
+Ajinkya Bokade
