@@ -1,17 +1,36 @@
 import "../styles/submit-review.scss";
 import { useState } from "react"
+import { useParams } from 'react-router-dom';
+import { gql, useMutation } from '@apollo/client';
 
+const CREATE_REVIEW_MUTATION = gql`
+mutation CreateReview($review_text: String!,  $tour_id: Int!) {
+  createReview(review_text: $review_text,  tour_id: $tour_id ) {
+    tour_id
+  }
+}
+`;
 function ScoutSubmitReview() {
+    const { tour_id } = useParams();
     const [reviewText, setReviewText] = useState('');
-
+    const [createReviewMutation] = useMutation(CREATE_REVIEW_MUTATION);
     const handleReviewTextChange = (event) => {
         setReviewText(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // TODO: submit review text to the backend
-        console.log(`Review Text: ${reviewText}`);
+        try{
+            const {data} = await createReviewMutation({
+                variables:{
+                    review_text: reviewText,
+                    tour_id: parseInt(tour_id),
+                },
+            });
+            window.alert("Review submitted successfully!");
+        } catch (error){
+            console.log("Error: ", error)
+        }
     };
 
 
