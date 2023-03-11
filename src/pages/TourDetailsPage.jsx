@@ -29,6 +29,7 @@ export const QUERY_TOUR_DETAILS = gql`
 
 function TourDetailsPage() {
   const tour_id = parseInt(useParams().tour_id);
+  const role = useParams().role
   const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
     variables: { tour_id },
   });
@@ -41,13 +42,16 @@ function TourDetailsPage() {
     });
 
   const navigateToChat = () => {
-    //navigate to /home
     navigate('/chat');
 };
 
 const navigateToReview = () => {
-  //navigate to /home
-  navigate('/requesterSubmitReview');
+  if (role === "requester") {
+    navigate('/requesterSubmitReview/' + tour_id);
+  } else if (role === "scout") {
+    navigate('/scoutSubmitReview/' + tour_id);
+  }
+
 };
 
   if (!data || loading ) {
