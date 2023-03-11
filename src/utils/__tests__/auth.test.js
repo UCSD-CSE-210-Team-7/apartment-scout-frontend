@@ -82,7 +82,24 @@ test("registers callback", async () => {
   expect(auth.onAuthStateChanged).toHaveBeenCalled()
 });
 
-test("sets credential with callback value", async () => {
+test("sets credential with nullish callback value", async () => {
+  auth.onAuthStateChanged = jest.fn(f => f({accessToken: 0}))
+  const verify = jest.fn()
+  const { asFragment } = render(
+    <AuthProvider initialCredential={null} initialUser={null}>
+      <Component verify={verify}/>
+    </AuthProvider>
+  )
+
+  await waitFor(() => expect(auth.onAuthStateChanged).toHaveBeenCalled())
+  await waitFor(() => expect(verify.mock.calls.length).toEqual(3))
+  expect(verify.mock.calls.length).toEqual(3)
+  expect(verify.mock.calls[0][0].credential).toBeNull()
+  expect(verify.mock.calls[1][0].credential).toEqual(0)
+  expect(verify.mock.calls[2][0].credential).toEqual(0)
+});
+
+test("sets credential with non-null callback value", async () => {
   auth.onAuthStateChanged = jest.fn(f => f({accessToken: 'token'}))
   const verify = jest.fn()
   const { asFragment } = render(
