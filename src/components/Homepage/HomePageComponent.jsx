@@ -35,7 +35,7 @@ function HomePageComponent({ tableColumns, tableData }) {
   const tour_id = "1" 
   const navigateToDetails = () =>
     navigate({
-      pathname: '/tourdetails/' + tour_id
+      pathname: '/tourdetails/' + activeButton + "/" + tour_id
     });
 
   return (
