@@ -1,5 +1,4 @@
-# Project Title
-###Apartment Scout Frontend
+# Apartment Scout Frontend
 Application aims to improve the rental process by connecting users and their homes of interest using third-party agents for trusted in-person tours, providing unbiased information, and facilitating their decision-making for renting a home.
 
 ## Table of Content
@@ -41,11 +40,10 @@ Make sure you have installed the latest Node.js installed.
 - Run the client `npm start`
 - Open http://localhost:3000 in the browser
 
-## Team
-Team 7:
-Shanay Shah
-Manasi Agrawal
-Shubham Kulkarni
-Yang Zhang
-Guy Nir
-Ajinkya Bokade
+## Team 7
+Shanay Shah <br />
+Manasi Agrawal <br />
+Shubham Kulkarni <br />
+Yang Zhang <br />
+Guy Nir <br />
+Ajinkya Bokade <br />
