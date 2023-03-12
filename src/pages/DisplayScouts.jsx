@@ -1,10 +1,14 @@
+// Import required dependencies
 import React, { useState } from "react";
+import { useLazyQuery, gql } from "@apollo/client";
 import userImage from "../img/user.png";
+
+// Import style files and images
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "../components/ScoutCard";
-import { useLazyQuery, gql } from "@apollo/client";
 import Loading from '../components/Loading';
 
+// Define GraphQL queries for fetching user details region wise i.e., by using zipcodes entered.
 export const QUERY_USER_BY_REGIONS = gql`
   query UsersByRegion($zipcode: Int) {
     usersByRegion(zipcode: $zipcode) {
@@ -18,6 +22,12 @@ export const QUERY_USER_BY_REGIONS = gql`
     }
   }
 `;
+
+/** 
+* The InputBar takes in the zipcode and then maps it to all the scout profiles 
+* who have added the same zipcodes in their profile page. On clicking the Go button all the possible
+* scouts are displayed in order.
+*/
 
 function InputBar({ submit }) {
   const [zipcode, setZipcode] = useState("");
@@ -62,6 +72,8 @@ function InputBar({ submit }) {
             padding: "0 1em",
             margin: "0 0 0 1em",
           }}
+
+          // Event handler to navigate to DisplayScouts in the region on click of Go button
           onClick={() => submit(parseInt(zipcode))}
         >
           Go
@@ -71,7 +83,15 @@ function InputBar({ submit }) {
   );
 }
 
+/**
+ * DisplayScouts component displays a list of all the scouts that are available in the zip code region entered by the user.
+ * The scout's name, profile picture and the rating (number of start provided by the existing users).
+ * The user can click on the name and it will direct them to the scoutDetails Page.
+ *  @returns {JSX.Element} The JSX element for the DisplayScouts component.
+ */
+
 function DisplayScouts() {
+  // Fetch the ScoutDetails by Regions
   const [getUsersByRegion, { data, loading }] = useLazyQuery(QUERY_USER_BY_REGIONS);
 
   let content;

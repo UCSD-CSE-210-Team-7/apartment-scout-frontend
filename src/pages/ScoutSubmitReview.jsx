@@ -1,8 +1,10 @@
+// Import required dependencies
 import "../styles/submit-review.scss";
 import { useState } from "react"
 import { useParams } from 'react-router-dom';
 import { gql, useMutation } from '@apollo/client';
 
+// Define GraphQL queries for fetching reviews.
 const CREATE_REVIEW_FOR_HOUSE_MUTATION = gql`
 mutation CreateReviewForHouse($review_text: String!,  $tour_id: Int!) {
   createReviewForHouse(review_text: $review_text,  tour_id: $tour_id ) {
@@ -10,6 +12,12 @@ mutation CreateReviewForHouse($review_text: String!,  $tour_id: Int!) {
   }
 }
 `;
+
+/**
+ * Scout Submit Review component displays the review that scouts submit after the tour is done.
+ * and allows actions to chat with the scout and see the availability.
+ * @returns {JSX.Element} The JSX element for the ScoutDetails component.
+ */
 function ScoutSubmitReview() {
     const { tour_id } = useParams();
     const [reviewText, setReviewText] = useState('');

@@ -60,7 +60,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 /**
- * Scout details component while displays the scout details (name, rating, reviews, tours completed)
+ * Scout details component displays the scout details (name, rating, reviews, tours completed)
  * and allows actions to chat with the scout and see the availability.
  * @returns {JSX.Element} The JSX element for the ScoutDetails component.
  */

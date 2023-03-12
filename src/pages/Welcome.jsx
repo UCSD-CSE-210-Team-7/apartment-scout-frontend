@@ -1,8 +1,10 @@
+// Import required dependencies
 import React, { useContext } from 'react';
 import Auth from '../utils/auth';
 import { useNavigate } from "react-router-dom";
 import { useMutation, gql } from '@apollo/client';
 
+// Define GraphQL queries for creating user details like name and email.
 export const MUTATION_CREATE_USER = gql`
   mutation CreateUser($name: String!) {
     createUser(name: $name){
@@ -12,10 +14,16 @@ export const MUTATION_CREATE_USER = gql`
   }
 `;
 
+/**
+ * The WelcomePage component creates user details (name, email)
+ * and provides authentication for the users to sign in via their google accounts 
+ * when they click on the sign in button and once successful take them.
+ */
 function WelcomePage() {
   const navigate = useNavigate();
   const auth = useContext(Auth);
 
+  // Use mutation to create user.
   const [ createUserMutation ] = useMutation(MUTATION_CREATE_USER);
 
   const handleLogin = async () => {
