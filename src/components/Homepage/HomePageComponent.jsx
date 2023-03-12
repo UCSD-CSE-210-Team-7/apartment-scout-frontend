@@ -129,7 +129,7 @@ function HomePageComponent({ tableColumns}) {
           <h1 className="inprogress-text">In Progress Tours </h1>
         </div>
         
-        {activeButton == "scout" && scoutPlannedTours?.getTours?.map((tour, idxTour) => (
+        {activeButton === "scout" && scoutPlannedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
             sx={{
@@ -171,7 +171,7 @@ function HomePageComponent({ tableColumns}) {
             </Grid>
           </Box>
         ))} 
-        {activeButton == "requester" && requesterPlannedTours?.getTours?.map((tour, idxTour) => (
+        {activeButton === "requester" && requesterPlannedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
             sx={{
@@ -218,7 +218,7 @@ function HomePageComponent({ tableColumns}) {
           <h1 className="past-text">Past Tours </h1>
         </div>
   
-        {activeButton == "scout" && scoutCompletedTours?.getTours?.map((tour, idxTour) => (
+        {activeButton === "scout" && scoutCompletedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
             sx={{
@@ -262,7 +262,7 @@ function HomePageComponent({ tableColumns}) {
             </Grid>
           </Box>
         ))}
-        {activeButton == "requester" && requesterCompletedTours?.getTours?.map((tour, idxTour) => (
+        {activeButton === "requester" && requesterCompletedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
             sx={{
