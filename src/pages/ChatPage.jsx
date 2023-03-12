@@ -1,3 +1,4 @@
+// Import all dependencies
 import Chat from "../components/ChatInterface/Chat";
 import Sidebar from "../components/ChatInterface/Sidebar";
 import "../styles/chat-styles.scss";

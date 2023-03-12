@@ -1,3 +1,4 @@
+// import all the dependencies
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
@@ -7,6 +8,7 @@ import apt2 from "../img/apt2.jpeg";
 import apt3 from "../img/apt3.jpeg";
 import Loading from '../components/Loading';
 
+// GraphQL query to retrieve the tour summary (review) based on the tourid
 export const QUERY_TOUR_DETAILS = gql`
   query TourDetails($tour_id: Int) {
     tour(tour_id: $tour_id) {
@@ -15,9 +17,19 @@ export const QUERY_TOUR_DETAILS = gql`
   }
 `;
 
+/**
+ * The TourSummaryPage display the summary of the tour which is submitted by the scout
+ * The scout submits a review/opinion on the apartment that they toured along with the pictures of the apartment
+ * @returns {JSX.Element} The JSX element for the Tour Summary Page Component
+ */
+
 function TourSummaryPage() {
-  const tour_id = parseInt(useParams().tour_id);
-  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
+
+   // retrieve the tour_id from the url
+  const tour_id = parseInt(useParams().tour_id);     
+  
+  // store the data in some variables
+  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {      
     variables: { tour_id },
   });
 
