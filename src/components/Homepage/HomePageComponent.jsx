@@ -1,3 +1,4 @@
+// Import required dependencies, componenets and assets.
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -10,6 +11,9 @@ import { useState, useContext } from 'react';
 import Auth from "../../utils/auth";
 import { gql, useQuery } from "@apollo/client";
 
+
+// CSS for the HomepageComponent.
+// Styled component based on the 'Paper' component
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -20,6 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   // '.MuiOutlinedInput-notchedOutline': { border: 0 },
 }));
 
+// Define GraphQL queries for fetching tour details like tour_id, address, dates, requester, etc.
 const QUERY_TOURS = gql`
 query Tours($role: String!, $user: String!, $status: String!) {
   getTours(role: $role, user: $user, status: $status) {
@@ -37,7 +42,13 @@ query Tours($role: String!, $user: String!, $status: String!) {
 }
 `;
 
-
+/**
+ * HomePageComponent component displays the tour details like reviews, images, ratings
+ * both from the requester and scout perspective. The scout has to submit an unbiased review of the 
+ * apartment along with the images whereas the requester submits a scout review along with a rating.
+ * The component allows actions to chat with the scout and see their availability via the view schedule option.
+ * @returns {JSX.Element} The JSX element for the HomePageComponent.
+ */
 function HomePageComponent({ tableColumns}) {
   const auth = useContext(Auth);
   const selfEmail = auth?.user?.email;
@@ -50,7 +61,7 @@ function HomePageComponent({ tableColumns}) {
     },
   })
 
-  
+  // scout planned tours component 
   const scoutPlannedTable = scoutPlannedTours?.getTours?.map(tour => [
     tour.requested_by.name,
     tour.tour_address,
@@ -82,6 +93,7 @@ function HomePageComponent({ tableColumns}) {
     },
   });
 
+  // Requester planned tours component
   const requesterPlannedTable = requesterPlannedTours?.getTours?.map(tour => [
     tour.scouted_by.name,
     tour.tour_address,
@@ -106,7 +118,7 @@ function HomePageComponent({ tableColumns}) {
 
 
 
-
+// Event handler to handle button clicks.
   const [activeButton, setActiveButton] = useState('requester');
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
@@ -122,13 +134,21 @@ function HomePageComponent({ tableColumns}) {
     return (
       <div style={{ flexGrow: 1 }}>
         <div className="userTypeContainer">
+
+        {/* Two buttons provided to facilitate two functionalities
+        1] Tour as a requester, where the user is a requester and can view the scouts and previous tour
+        along with reviews and images provided.
+        2] Tour as a scout where te user is a scout and the user submits a review and images on the
+        portal for requesters to check and chat with the requesters.
+        */}
+         
           <button className={`userTypeButton1 ${activeButton === 'requester' ? 'active' : 'inactive'}`} onClick={() => handleButtonClick('requester')}>Tours as a requester</button>
           <button className={`userTypeButton2 ${activeButton === 'scout' ? 'active' : 'inactive'}`} onClick={() => handleButtonClick('scout')}>Tours as a scout</button>
         </div>
         <div className="inprogress-header">
           <h1 className="inprogress-text">In Progress Tours </h1>
         </div>
-        
+        {/* user when actiavted in Scout mode */}
         {activeButton === "scout" && scoutPlannedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
@@ -171,6 +191,8 @@ function HomePageComponent({ tableColumns}) {
             </Grid>
           </Box>
         ))} 
+
+        {/* user when activated in Requester Mode. */}
         {activeButton === "requester" && requesterPlannedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
@@ -208,6 +230,9 @@ function HomePageComponent({ tableColumns}) {
                 xs={4}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
+                {/* Event handler to view TourDetailspage where the requester can View
+                the review and images posted by the scout on click of View Tour button */}
+
                 <Button variant="contained" onClick={() => navigateToDetails(tour.tour_id)}>View Tour</Button>
               </Grid>
             </Grid>
@@ -217,7 +242,7 @@ function HomePageComponent({ tableColumns}) {
         <div className="past-header">
           <h1 className="past-text">Past Tours </h1>
         </div>
-  
+        {/* Scout Completed/Past tours component */}
         {activeButton === "scout" && scoutCompletedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
@@ -255,6 +280,8 @@ function HomePageComponent({ tableColumns}) {
                 xs={4}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
+                {/* Event handler to view TourDetailspage where the requester can View
+                the review and images posted by the scout on click of View Tour button */}
                 <Button variant="contained" color="success" onClick={() => navigateToDetails(tour.tour_id)}>
                   View Tour
                 </Button>
@@ -262,6 +289,7 @@ function HomePageComponent({ tableColumns}) {
             </Grid>
           </Box>
         ))}
+         {/* Requester Completed/Past tours component */}
         {activeButton === "requester" && requesterCompletedTours?.getTours?.map((tour, idxTour) => (
           <Box
             key={tour.tour_id}
@@ -299,6 +327,9 @@ function HomePageComponent({ tableColumns}) {
                 xs={4}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
+                {/* Event handler to view TourDetailspage where the requester can View
+                the review and images posted by the scout on click of View Tour button */}
+
                 <Button variant="contained" color="success" onClick={() => navigateToDetails(tour.tour_id)}>
                   View Tour
                 </Button>

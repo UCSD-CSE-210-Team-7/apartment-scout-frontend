@@ -1,7 +1,19 @@
+// Import required dependencies, componenets and assets.
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Auth from "../utils/auth";
 import "../styles/NavBar.css";
+
+
+/**
+ * NavigationBar component displays the name of the website "aptcout". It contains three buttons on
+ * the top right namely the home, chat and account buttons. All these buttons are linked to various
+ * web pages. The home button will always bring the user back to the home page where they enter the
+ * zip codes. the chat button will open the chat box where all the messages are saved. The account button
+ * has 3 more options namely profile, tours and logout. 
+ * The navigation bar is consistent to all pages and always present on every page.
+ * @returns {JSX.Element} The JSX element for the HomePageComponent.
+ */
 
 const NavigationBar = () => {
   const { logout } = useContext(Auth);
@@ -44,6 +56,8 @@ const NavigationBar = () => {
         justifyContent: "space-between",
       }}
     >
+
+       {/* The links to all the various webpages are defined here on clicking the different functionalities. */}
       <Link to="/home">
         <div>
           <span style={{ fontSize: "3.5em", color: "#ADE8F4" }}>apt</span>

@@ -1,9 +1,11 @@
+// Import required dependencies, componenets and assets.
 import React, { useContext, useEffect, useState, useRef } from "react";
 import Auth from "../../utils/auth";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
 import Loading from '../Loading';
 
+// CSS for the chatpage, chatbox and messages displayed.
 const Message = ({ message, sentBySelf }) => {
   const baseStyle = {
     listStyleType: "none",
@@ -31,6 +33,8 @@ const Message = ({ message, sentBySelf }) => {
   const now = new Date();
 
   let msg_time = "";
+
+  // displaying the date, and time in hours and minutes when the message is sent.
 
   if (now.getMonth() === date.getMonth() && now.getDate() === date.getDate()) {
     msg_time = date.toLocaleString("en-US", {
@@ -77,6 +81,10 @@ const Input = ({ sendMessage }) => {
         padding: "0.5em",
       }}
     >
+
+      {/* chat functionality of hitting the send button, where the messages should be displayed on the 
+      right hand side of the chat when sent. */}
+
       <input
         type="text"
         placeholder="Type..."
@@ -105,6 +113,7 @@ const Input = ({ sendMessage }) => {
   );
 };
 
+// chat functionality after authentication of the scouts and requesters and storing all chats and emails.
 const Chat = ({ loading, conversation, sendMessage }) => {
 
   const user = useContext(Auth)?.user?.email;

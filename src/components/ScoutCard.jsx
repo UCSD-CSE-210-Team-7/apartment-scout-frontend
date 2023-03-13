@@ -1,8 +1,15 @@
+// Import required dependencies, componenets and assets.
 import React from "react";
 import { Link } from "react-router-dom";
 import { Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
 import Loading from './Loading';
+
+/**
+ * ScoutCard component displays the name, email, tour ratings and display image of the scouts.
+ * @returns {JSX.Element} The JSX element for the HomePageComponent.
+ */
+
 
 function ScoutCard({user, userImage}) {
   if(!user)

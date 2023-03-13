@@ -1,7 +1,13 @@
+// Import required dependencies, componenets and assets.
 import React, { useContext } from "react";
 import Auth from "../../utils/auth";
 import userImage from "../../img/user.png";
 import Loading from '../Loading';
+
+// Sidebar in chat displayed and stores all the people the user has messaged and 
+// moves the ordering of the list according to the time of last message sent or recieved.
+// eg- the last person you messaged or whose text you received should be stored on the top of the 
+// page.
 
 const Sidebar = ({ conversations, selectedConversation, onSelectConversation }) => {
   const user = useContext(Auth)?.user?.email;
