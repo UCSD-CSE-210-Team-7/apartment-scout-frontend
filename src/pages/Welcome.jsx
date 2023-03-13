@@ -17,7 +17,8 @@ export const MUTATION_CREATE_USER = gql`
 /**
  * The WelcomePage component creates user details (name, email)
  * and provides authentication for the users to sign in via their google accounts 
- * when they click on the sign in button and once successful take them.
+ * when they click on the sign in button and once successful takes them to the home page where they
+ * enter the zipcode for which they want to request the tour.
  */
 function WelcomePage() {
   const navigate = useNavigate();
