@@ -1,4 +1,4 @@
-// import all the dependencies
+// Import all the dependencies
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";

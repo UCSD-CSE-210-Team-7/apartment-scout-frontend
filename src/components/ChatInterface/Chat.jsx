@@ -1,4 +1,4 @@
-// Import required dependencies, componenets and assets.
+// Import required dependencies, components and assets.
 import React, { useContext, useEffect, useState, useRef } from "react";
 import Auth from "../../utils/auth";
 import userImg from "../../img/user.png";

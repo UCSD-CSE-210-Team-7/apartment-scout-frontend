@@ -1,4 +1,4 @@
-// Import required dependencies, componenets and assets.
+// Import required dependencies, components and assets.
 import React from "react";
 import { Link } from "react-router-dom";
 import { Rating, Icon } from "@mui/material";

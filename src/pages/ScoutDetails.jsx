@@ -41,7 +41,7 @@ const QUERY_USER_DETAILS = gql`
   }
 `;
 
-// Define GraphQL mutations for creating conversation
+// Define GraphQL mutation for creating conversation
 const CREATE_CONVERSATION_MUTATION = gql`
   mutation CreateConversation($person_a: String!, $person_b: String!) {
     createConversation(person_a: $person_a, person_b: $person_b) {

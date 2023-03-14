@@ -25,7 +25,7 @@ export const QUERY_USER_BY_REGIONS = gql`
 
 /** 
 * The InputBar takes in the zipcode and then maps it to all the scout profiles 
-* who have added the same zipcodes in their profile page. On clicking the Go button all the possible
+* who have added the same zipcodes in their profiles. On clicking the Go button all the possible
 * scouts are displayed in order.
 */
 

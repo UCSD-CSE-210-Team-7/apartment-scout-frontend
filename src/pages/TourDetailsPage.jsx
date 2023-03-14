@@ -30,11 +30,12 @@ export const QUERY_TOUR_DETAILS = gql`
 
 
 /**
- * The TourDetailsPage component displays the details of a specific tour.
- * This display the user who requested the tour, the scout of the tour, the address of the apartment, the cost of the tour
- * The date the tour was requested on and the date the tour was completed on
- * This page also has three buttons which allows the user to submit a review of the tour, view the tour summary
- * and chat with respective user (requester/scout)
+ * The TourDetailsPage component displays the details of a specific tour selected by the user.
+ * It displays the scout and requester of the tour, the address of the apartment, the cost of the tour,
+ * the date the tour was requested on and the date the tour was completed on.
+ * This page also has three buttons which allows the user to submit a review of the tour if he is in "scout"
+ * role defined by the button in the previous page, or submit a review of the scout if he is in "requester"
+ * role, view the tour summary, and chat with respective user (requester/scout)
  * @returns {JSX.Element} The JSX element for the Tour Details Page Component
  */
 
@@ -81,7 +82,7 @@ function TourDetailsPage() {
     return <Loading/>
   }
 
-  // The following code is for all the elemnts and how they are styled on the page
+  // The following code is for all the elements and how they are styled on the page
   return (
     <>
       <h1 className="title"> Tour Details </h1>

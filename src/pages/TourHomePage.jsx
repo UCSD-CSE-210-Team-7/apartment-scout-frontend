@@ -1,4 +1,4 @@
-// import the dependencies
+// Import the dependencies
 import HomePageComponent from "../components/Homepage/HomePageComponent";
 
 

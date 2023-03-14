@@ -43,10 +43,11 @@ query Tours($role: String!, $user: String!, $status: String!) {
 `;
 
 /**
- * HomePageComponent component displays the tour details like reviews, images, ratings
- * both from the requester and scout perspective. The scout has to submit an unbiased review of the 
- * apartment along with the images whereas the requester submits a scout review along with a rating.
- * The component allows actions to chat with the scout and see their availability via the view schedule option.
+ * HomePageComponent component displays the tour details in the tour home page. For each tour of the user,
+ * it is fetching the name of his partner, the address, the requested date and the due date both from
+ * the requester and scout perspective, since a user is default to be a requester, but he can also be
+ * a scout. In each tour, there is a "view" button for user to click and see further details implemented
+ * by "TourDetailsPage"
  * @returns {JSX.Element} The JSX element for the HomePageComponent.
  */
 function HomePageComponent({ tableColumns}) {

@@ -8,7 +8,7 @@ import { gql, useMutation } from '@apollo/client';
 
 // Define GraphQL queries for submitting scout reviews.
 const CREATE_REVIEW_FOR_SCOUT_MUTATION = gql`
-mutation CreateReviewForScout($review_text: String!, $rating: Int!  $tour_id: Int!) {
+mutation CreateReviewForScout($review_text: String!, $rating: Int!,  $tour_id: Int!) {
   createReviewForScout(review_text: $review_text, rating: $rating,  tour_id: $tour_id ) {
     tour_id
   }
@@ -31,7 +31,7 @@ function RequesterSubmitReview() {
     const [reviewText, setReviewText] = useState('');
     const { tour_id } = useParams();
     
-    // Backend integartion to store all the reviews submitted on the click of the submit button to be 
+    // Backend integration to store all the reviews submitted on the click of the submit button to be 
     // stored in the graphql db.  
 
     const [createReviewForScoutMutation] = useMutation(CREATE_REVIEW_FOR_SCOUT_MUTATION);

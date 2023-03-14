@@ -1,4 +1,4 @@
-// Import required dependencies, componenets and assets.
+// Import required dependencies, components and assets.
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Auth from "../utils/auth";
