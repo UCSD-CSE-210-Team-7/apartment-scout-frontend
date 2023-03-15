@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import Auth from "../../utils/auth";
 import userImg from "../../img/user.png";
 import sendButtonImg from "../../img/send_icon.png";
-import Loading from '../Loading';
+import Loading from "../Loading";
 
 // CSS for the chatpage, chatbox and messages displayed.
 const Message = ({ message, sentBySelf }) => {
@@ -81,7 +81,6 @@ const Input = ({ sendMessage }) => {
         padding: "0.5em",
       }}
     >
-
       {/* chat functionality of hitting the send button, where the messages should be displayed on the 
       right hand side of the chat when sent. */}
 
@@ -115,9 +114,8 @@ const Input = ({ sendMessage }) => {
 
 // chat functionality after authentication of the scouts and requesters and storing all chats and emails.
 const Chat = ({ loading, conversation, sendMessage }) => {
-
   const user = useContext(Auth)?.user?.email;
-  const messages = conversation?.messages
+  const messages = conversation?.messages;
 
   const messagesEndRef = useRef(null);
 
@@ -138,10 +136,9 @@ const Chat = ({ loading, conversation, sendMessage }) => {
     >
       {!conversation ? (
         <h1 style={{ alignSelf: "center" }}>Select a conversation</h1>
-      ) : 
-        loading ? 
-        <Loading/> :
-        (
+      ) : loading ? (
+        <Loading />
+      ) : (
         <>
           <div
             style={{
@@ -168,13 +165,14 @@ const Chat = ({ loading, conversation, sendMessage }) => {
               overflowY: "scroll",
             }}
           >
-            {messages && messages.map((m) => (
-              <Message
-                message={m}
-                key={m.msg_id}
-                sentBySelf={m.sender.email === user}
-              />
-            ))}
+            {messages &&
+              messages.map((m) => (
+                <Message
+                  message={m}
+                  key={m.msg_id}
+                  sentBySelf={m.sender.email === user}
+                />
+              ))}
             <div ref={messagesEndRef} />
           </div>
           <Input sendMessage={sendMessage} />

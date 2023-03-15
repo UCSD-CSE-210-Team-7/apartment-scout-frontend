@@ -8,31 +8,28 @@ const cookies = new Cookies();
 const Auth = React.createContext();
 export default Auth;
 
-export const AuthProvider = ({children, initialCredential, initialUser}) => {
-  const [credential, setCredential] = React.useState(initialCredential)
+export const AuthProvider = ({ children, initialCredential, initialUser }) => {
+  const [credential, setCredential] = React.useState(initialCredential);
   const [user, setUser] = React.useState(initialUser);
   const navigate = useNavigate();
 
-  useEffect(
-    () => {
-      return auth.onAuthStateChanged(u => {
-        setCredential(u?.accessToken);
-        setUser(u)
-        if(!u?.accessToken){
-          cookies.remove("sessionCookie");
-          navigate("/");
-        }
-      })
-    }, 
-    [navigate]
-  )
+  useEffect(() => {
+    return auth.onAuthStateChanged((u) => {
+      setCredential(u?.accessToken);
+      setUser(u);
+      if (!u?.accessToken) {
+        cookies.remove("sessionCookie");
+        navigate("/");
+      }
+    });
+  }, [navigate]);
 
   async function login() {
     return signInWithPopup();
   }
 
   async function logout() {
-    await signOut()
+    await signOut();
   }
 
   const exportObj = {

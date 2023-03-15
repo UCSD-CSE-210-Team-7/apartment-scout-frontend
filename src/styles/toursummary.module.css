@@ -1,36 +1,33 @@
-.container{
-	vertical-align: middle;
-	overflow: auto;
-	min-height: 150px;
-    max-height: 800px;
-	border:  1px solid;
-	padding: 30px;
-	border-radius: 15px;
-	display: grid;
-	background-color: white;
-    font-size: 25px;
-    margin: 0 4em;
+.container {
+  vertical-align: middle;
+  overflow: auto;
+  min-height: 150px;
+  max-height: 800px;
+  border: 1px solid;
+  padding: 30px;
+  border-radius: 15px;
+  display: grid;
+  background-color: white;
+  font-size: 25px;
+  margin: 0 4em;
 }
 
-
 .title {
-	margin-top: 70px;
-	margin-left: 100px;
-	color: white;
-	margin-bottom: 30px;
+  margin-top: 70px;
+  margin-left: 100px;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .imagestyling {
-    display: flex;
-    flex-wrap: wrap;
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
-.image{
-    margin-left: 120px;
-    margin-bottom: 70px;
-    height: 400px;
-    width: 600px;
-    border: 1px solid;
+.image {
+  margin-left: 120px;
+  margin-bottom: 70px;
+  height: 400px;
+  width: 600px;
+  border: 1px solid;
 }

@@ -6,7 +6,7 @@ import userImage from "../img/user.png";
 // Import style files and images
 import "../styles/display-scout-styles.scss";
 import ScoutCard from "../components/ScoutCard";
-import Loading from '../components/Loading';
+import Loading from "../components/Loading";
 
 // Define GraphQL queries for fetching user details region wise i.e., by using zipcodes entered.
 export const QUERY_USER_BY_REGIONS = gql`
@@ -23,11 +23,11 @@ export const QUERY_USER_BY_REGIONS = gql`
   }
 `;
 
-/** 
-* The InputBar takes in the zipcode and then maps it to all the scout profiles 
-* who have added the same zipcodes in their profiles. On clicking the Go button all the possible
-* scouts are displayed in order.
-*/
+/**
+ * The InputBar takes in the zipcode and then maps it to all the scout profiles
+ * who have added the same zipcodes in their profiles. On clicking the Go button all the possible
+ * scouts are displayed in order.
+ */
 
 function InputBar({ submit }) {
   const [zipcode, setZipcode] = useState("");
@@ -72,7 +72,6 @@ function InputBar({ submit }) {
             padding: "0 1em",
             margin: "0 0 0 1em",
           }}
-
           // Event handler to navigate to DisplayScouts in the region on click of Go button
           onClick={() => submit(parseInt(zipcode))}
         >
@@ -92,22 +91,19 @@ function InputBar({ submit }) {
 
 function DisplayScouts() {
   // Fetch the ScoutDetails by Regions
-  const [getUsersByRegion, { data, loading }] = useLazyQuery(QUERY_USER_BY_REGIONS);
+  const [getUsersByRegion, { data, loading }] = useLazyQuery(
+    QUERY_USER_BY_REGIONS
+  );
 
   let content;
-  if(loading)
-    content = <Loading/>
-  else if(data?.usersByRegion?.users.length === 0)
-    content = <h1>No scouts in this zipcode yet :(</h1>
-  else if(data?.usersByRegion?.users.length > 0)
-    content = data.usersByRegion.users.map(user => <ScoutCard
-                  key={user.name}
-                  user={user}
-                  userImage={userImage}
-                  />
-              )
-  else
-    content = <h1> Enter a zipcode first! </h1>
+  if (loading) content = <Loading />;
+  else if (data?.usersByRegion?.users.length === 0)
+    content = <h1>No scouts in this zipcode yet :(</h1>;
+  else if (data?.usersByRegion?.users.length > 0)
+    content = data.usersByRegion.users.map((user) => (
+      <ScoutCard key={user.name} user={user} userImage={userImage} />
+    ));
+  else content = <h1> Enter a zipcode first! </h1>;
 
   return (
     <div>
@@ -121,7 +117,7 @@ function DisplayScouts() {
           justifyContent: "space-between",
           padding: "1em 6em",
         }}
-      > 
+      >
         {content}
       </div>
     </div>

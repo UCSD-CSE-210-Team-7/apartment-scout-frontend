@@ -16,8 +16,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -26,8 +26,8 @@
         "msg_text": "Hi Shubham. This is Manasi.",
         "msg_time": "2023-02-28T13:58:49.334Z",
         "sender": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+          "name": "Test User",
+          "email": "test@gmail.com"
         },
         "conversation": {
           "conversation_id": 1,
@@ -36,8 +36,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -56,8 +56,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -66,8 +66,8 @@
         "msg_text": "I need a tour for 625 8th Avenue New York NY. Please get this done ASAP.",
         "msg_time": "2023-02-28T13:58:49.334Z",
         "sender": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+          "name": "Test User",
+          "email": "test@gmail.com"
         },
         "conversation": {
           "conversation_id": 1,
@@ -76,8 +76,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -96,8 +96,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -116,8 +116,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -126,8 +126,8 @@
         "msg_text": "Thanks for your work!",
         "msg_time": "2023-02-28T13:58:49.334Z",
         "sender": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+          "name": "Test User",
+          "email": "test@gmail.com"
         },
         "conversation": {
           "conversation_id": 1,
@@ -136,8 +136,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       },
@@ -156,8 +156,8 @@
             "name": "Shubham Kulkarni"
           },
           "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
+            "name": "Test User",
+            "email": "test@gmail.com"
           }
         }
       }

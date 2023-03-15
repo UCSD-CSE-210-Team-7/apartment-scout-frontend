@@ -1,26 +1,25 @@
 {
   "data": {
-
-    "conversations": [ 
+    "conversations": [
       {
-          "conversation_id": 1,
-          "person_a": {
-              "name": "Shubham Kulkarni",
-              "email": "skulkarn@ucsd.edu"
-          },
-          "person_b": {
-              "name": "Test User",
-              "email": "test@gmail.com"
-          },
-          "last_msg": {
-              "msg_id": 1,
-              "msg_text": "Thanks best friend!",
-              "msg_time": "2023-03-08T16:59:06.895Z",
-              "sender": {
-                  "email": "skulkarn@ucsd.edu",
-                  "name": "Shubham Kulkarni"
-              }
+        "conversation_id": 1,
+        "person_a": {
+          "name": "Shubham Kulkarni",
+          "email": "skulkarn@ucsd.edu"
+        },
+        "person_b": {
+          "name": "Test User",
+          "email": "test@gmail.com"
+        },
+        "last_msg": {
+          "msg_id": 1,
+          "msg_text": "Thanks best friend!",
+          "msg_time": "2023-03-08T16:59:06.895Z",
+          "sender": {
+            "email": "skulkarn@ucsd.edu",
+            "name": "Shubham Kulkarni"
           }
+        }
       }
     ]
   }

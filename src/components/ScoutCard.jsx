@@ -3,17 +3,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Rating, Icon } from "@mui/material";
 import "../styles/scout-card-styles.scss";
-import Loading from './Loading';
+import Loading from "./Loading";
 
 /**
  * ScoutCard component displays the name, email, tour ratings and display image of the scouts.
  * @returns {JSX.Element} The JSX element for the HomePageComponent.
  */
 
-
-function ScoutCard({user, userImage}) {
-  if(!user)
-    return <Loading/>
+function ScoutCard({ user, userImage }) {
+  if (!user) return <Loading />;
 
   return (
     <Link to={`/browse/${user.email}`}>

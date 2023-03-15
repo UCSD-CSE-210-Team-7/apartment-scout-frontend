@@ -4,7 +4,7 @@ import "../styles/tourdetailspage.scss";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
-import Loading from '../components/Loading';
+import Loading from "../components/Loading";
 
 // A GraphQL query to retrieve all tour details based on the tour_id which is passed in the url
 export const QUERY_TOUR_DETAILS = gql`
@@ -28,7 +28,6 @@ export const QUERY_TOUR_DETAILS = gql`
   }
 `;
 
-
 /**
  * The TourDetailsPage component displays the details of a specific tour selected by the user.
  * It displays the scout and requester of the tour, the address of the apartment, the cost of the tour,
@@ -41,45 +40,45 @@ export const QUERY_TOUR_DETAILS = gql`
 
 function TourDetailsPage() {
   // retrieve the tourid from the url
-  const tour_id = parseInt(useParams().tour_id);   
-  
+  const tour_id = parseInt(useParams().tour_id);
+
   // retrieve the role from the url - requester or scout
-  const role = useParams().role    
+  const role = useParams().role;
 
   const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
     variables: { tour_id },
   });
 
   // define a variable to create hyperlinks to different pages
-  const navigate = useNavigate();       
+  const navigate = useNavigate();
 
   /**
-   * Next three functions are for the three different buttons defined on the page. 
+   * Next three functions are for the three different buttons defined on the page.
    * Each function defines which page to go to when a button is clicked.
-  */ 
+   */
   const navigateToTourSummary = () =>
     navigate({
-      pathname: '/toursummary/'+ tour_id
+      pathname: "/toursummary/" + tour_id,
     });
 
   const navigateToChat = () => {
-    navigate('/chat');
+    navigate("/chat");
   };
 
-  /**  
-   * This function checks what is the role of the user (requester or scout) 
+  /**
+   * This function checks what is the role of the user (requester or scout)
    * And accordingly redirects to the appropriate "submit a review" page.
-  */
+   */
   const navigateToReview = () => {
     if (role === "requester") {
-      navigate('/requesterSubmitReview/' + tour_id);
+      navigate("/requesterSubmitReview/" + tour_id);
     } else if (role === "scout") {
-      navigate('/scoutSubmitReview/' + tour_id);
+      navigate("/scoutSubmitReview/" + tour_id);
     }
   };
 
-  if (!data || loading ) {
-    return <Loading/>
+  if (!data || loading) {
+    return <Loading />;
   }
 
   // The following code is for all the elements and how they are styled on the page
@@ -139,20 +138,21 @@ function TourDetailsPage() {
           </div>
 
           <div className="vertical-col-right">
-            
             {/* The next three buttons redirect to different pages */}
-            <button className="actions-chat"
-            onClick={navigateToChat}>
-            Chat </button>
-            
-            <button className="actions-chat" 
-            onClick={navigateToReview}>
-            Submit a Review </button>
+            <button className="actions-chat" onClick={navigateToChat}>
+              Chat{" "}
+            </button>
 
-            <button className="actions-complete" 
-            onClick={navigateToTourSummary}> 
-            View Summary </button>
-          
+            <button className="actions-chat" onClick={navigateToReview}>
+              Submit a Review{" "}
+            </button>
+
+            <button
+              className="actions-complete"
+              onClick={navigateToTourSummary}
+            >
+              View Summary{" "}
+            </button>
           </div>
         </div>
       </div>

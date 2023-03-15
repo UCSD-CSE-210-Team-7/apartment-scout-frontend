@@ -20,10 +20,7 @@
             "tour_review_stars": 5
           }
         ],
-        "regions": [
-          92092,
-          60605
-        ],
+        "regions": [92092, 60605],
         "conversations": [
           {
             "conversation_id": 2
@@ -49,10 +46,7 @@
             "tour_review_stars": 5
           }
         ],
-        "regions": [
-          92092,
-          99971
-        ],
+        "regions": [92092, 99971],
         "conversations": [
           {
             "conversation_id": 3
@@ -123,12 +117,7 @@
             "tour_review_stars": 5
           }
         ],
-        "regions": [
-          92092,
-          60605,
-          10010,
-          2
-        ],
+        "regions": [92092, 60605, 10010, 2],
         "conversations": [
           {
             "conversation_id": 1

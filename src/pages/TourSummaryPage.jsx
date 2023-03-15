@@ -6,7 +6,7 @@ import styles from "../styles/toursummary.module.css";
 import apt1 from "../img/apt1.jpeg";
 import apt2 from "../img/apt2.jpeg";
 import apt3 from "../img/apt3.jpeg";
-import Loading from '../components/Loading';
+import Loading from "../components/Loading";
 
 // GraphQL query to retrieve the tour summary (review) based on the tourid
 export const QUERY_TOUR_DETAILS = gql`
@@ -24,17 +24,16 @@ export const QUERY_TOUR_DETAILS = gql`
  */
 
 function TourSummaryPage() {
+  // retrieve the tour_id from the url
+  const tour_id = parseInt(useParams().tour_id);
 
-   // retrieve the tour_id from the url
-  const tour_id = parseInt(useParams().tour_id);     
-  
   // store the data in some variables
-  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {      
+  const { data, loading } = useQuery(QUERY_TOUR_DETAILS, {
     variables: { tour_id },
   });
 
   if (!data || loading) {
-    return <Loading/>
+    return <Loading />;
   }
 
   // console.log(data, loading);
@@ -43,9 +42,7 @@ function TourSummaryPage() {
     <>
       <h1 className={styles.title}> Review </h1>
       <div className={styles.container}>
-        <p>
-          {data.tour.tour_summary}
-        </p>
+        <p>{data.tour.tour_summary}</p>
       </div>
 
       <h1 className={styles.title}> Pictures of the Tour</h1>

@@ -17,7 +17,7 @@ import Auth from "../utils/auth";
 
 import Cookies from "universal-cookie";
 
-export function getLink(auth){
+export function getLink(auth) {
   const httpLink = new HttpLink({
     uri: "http://localhost:4000/",
     credentials: "include",
@@ -34,13 +34,13 @@ export function getLink(auth){
 
   const authMiddleware = new ApolloLink((operation, forward) => {
     // add the authorization to the headers
-    operation.setContext(data => {
+    operation.setContext((data) => {
       return {
         headers: {
           authorization: auth.credential,
           ...(data.headers ? data.headers : {}),
-        }
-      }
+        },
+      };
     });
 
     return forward(operation);
@@ -59,10 +59,9 @@ export function getLink(auth){
   );
 
   return splitLink;
-
 }
 
-export function ApolloProvider(props){
+export function ApolloProvider(props) {
   const auth = useContext(Auth);
 
   const client = new ApolloClient({
@@ -75,4 +74,4 @@ export function ApolloProvider(props){
       {props.children}
     </ReferenceApolloProvider>
   );
-};
+}

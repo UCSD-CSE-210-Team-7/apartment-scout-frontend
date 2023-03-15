@@ -14,7 +14,6 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
 // Define GraphQL queries for fetching user details
 const QUERY_USER_DETAILS = gql`
   query UserDetails($email: String!) {

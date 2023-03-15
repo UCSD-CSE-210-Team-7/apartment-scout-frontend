@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { signInWithPopup as _signInWithPopup, signOut as _signOut, getAuth, GoogleAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup as _signInWithPopup,
+  signOut as _signOut,
+  getAuth,
+  GoogleAuthProvider,
+} from "firebase/auth";
 
 // Your web app's Firebase configuration.
 const firebaseConfig = {
@@ -22,6 +27,6 @@ GoogleSignOn.setCustomParameters({
   prompt: "select_account",
 });
 
-const signInWithPopup = () => _signInWithPopup(auth, GoogleSignOn)
-const signOut = () => _signOut(auth)
+const signInWithPopup = () => _signInWithPopup(auth, GoogleSignOn);
+const signOut = () => _signOut(auth);
 export { signOut, signInWithPopup };

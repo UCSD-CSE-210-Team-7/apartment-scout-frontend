@@ -19,8 +19,6 @@ import RequesterSubmitReview from "./pages/RequesterSubmitReview";
 import TourDetailsPage from "./pages/TourDetailsPage";
 import TourSummaryPage from "./pages/TourSummaryPage";
 
-
-
 function App() {
   return (
     <div className={styles.app}>
@@ -38,11 +36,22 @@ function App() {
               <Route path="/scout/:email" element={<ScoutCalendarPage />} />
 
               <Route path="/tourhome" element={<TourHomePage />} />
-              <Route path="/tourdetails/:role/:tour_id" element={<TourDetailsPage />} />
-              <Route path="/toursummary/:tour_id" element={<TourSummaryPage />} />   
-              <Route path="/scoutSubmitReview/:tour_id" element={<ScoutSubmitReview />} />
-              <Route path="/requesterSubmitReview/:tour_id" element={<RequesterSubmitReview />} />
-
+              <Route
+                path="/tourdetails/:role/:tour_id"
+                element={<TourDetailsPage />}
+              />
+              <Route
+                path="/toursummary/:tour_id"
+                element={<TourSummaryPage />}
+              />
+              <Route
+                path="/scoutSubmitReview/:tour_id"
+                element={<ScoutSubmitReview />}
+              />
+              <Route
+                path="/requesterSubmitReview/:tour_id"
+                element={<RequesterSubmitReview />}
+              />
             </Routes>
           </ApolloProvider>
         </AuthProvider>
