@@ -110,7 +110,7 @@ function ScoutDetails() {
 
         <div style={{display: 'flex', flexDirection: 'column'}}>
           {user.tours.filter(tour => tour?.tour_review_text?.length > 0).map((tour) => (
-            <div style={{margin: '2em', padding: '3em', background: 'white'}}>
+            <div key={tour.tour_id} style={{margin: '2em', padding: '3em', background: 'white'}}>
               <span>{tour.tour_review_text}</span>
             </div>
           ))}
