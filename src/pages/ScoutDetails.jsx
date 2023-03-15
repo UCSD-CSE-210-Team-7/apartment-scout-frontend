@@ -98,8 +98,8 @@ function ScoutDetails() {
   };
 
   return (
-    <Card sx={{ margin: "50px", height: "730px" }}>
-      <Grid container spacing={60} display="flex" direction="row">
+    <div style={{background: '#aaaaaa', padding: '4em'}}>
+      <div style={{display:'flex', marginBottom: '2em'}}>
         <Grid item xs={4}>
           <ScoutCard
             key={user.name}
@@ -108,20 +108,16 @@ function ScoutDetails() {
           ></ScoutCard>
         </Grid>
 
-        {user.tours.map((tour) => (
-          <Grid item xs={6}>
-            <Item>{tour.tour_review_text}</Item>
-          </Grid>
-        ))}
-      </Grid>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          {user.tours.filter(tour => tour?.tour_review_text?.length > 0).map((tour) => (
+            <div style={{margin: '2em', padding: '3em', background: 'white'}}>
+              <span>{tour.tour_review_text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <Stack
-        spacing={35}
-        direction="row"
-        marginLeft={"100px"}
-        width={"1300px"}
-        height={"50px"}
-      >
+      <div style={{flexDirection:"row", display: 'flex', justifyContent: 'space-evenly'}} >
         <Button sx={{ bgcolor: "#1976d2", color: "white!important" }} disabled>
           {user.tours ? user.tours.length : 0} tours completed
         </Button>
@@ -131,8 +127,8 @@ function ScoutDetails() {
         <Button variant="contained" onClick={handleScheduleButtonClick}>
           See Schedule
         </Button>
-      </Stack>
-    </Card>
+      </div>
+    </div>
   );
 }
 
